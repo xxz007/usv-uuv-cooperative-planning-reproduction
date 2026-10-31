@@ -11,8 +11,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3838,
-      "sha256": "8aef2f07b8df38fe3fb70d78326d3dcba0cfbdb41218b3ed8c0c35f8b4225c16"
+      "bytes": 13560,
+      "sha256": "271f27a3695c3dbdde210ba14c333c74f5510a3a7c047c0246a688482f2ce50d"
     },
     {
       "path": "data/inputs/p2_case.json",
@@ -73,6 +73,11 @@
       "path": "data/provenance/vrx/runtime_versions.json",
       "bytes": 587,
       "sha256": "5daa2946f998b1fbadcb6b57ee2a581535f4f07cfea64bd38b1673d00090db77"
+    },
+    {
+      "path": "docs/assets/experiment_framework_v01.png",
+      "bytes": 1438967,
+      "sha256": "2ef20833919a52d0377a208f67897e27893564a58ff9f2a332aec5a1655ed99e"
     },
     {
       "path": "docs/learning/01_path_planning.md",
