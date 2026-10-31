@@ -1202,13 +1202,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 5079,
-      "sha256": "f8ab45d90f8351d979f413a45c42930ff0ee4ea9e7732cd75e3c758c27938c9d"
+      "bytes": 5114,
+      "sha256": "5541ac28d1566facf0b828072f03bf60cd41d088d99d435180d757d53e7ee79c"
     },
     {
       "path": "docs/p5_platform.md",
-      "bytes": 4281,
-      "sha256": "f8981c13d152a8fe2e3d5891e67adc9f995e44e869ec0ac61ea57a167b0da397"
+      "bytes": 4352,
+      "sha256": "842ee1a210598b0910006f3d6e92e05b5551997047c474d1e6e0ce34ff0a1731"
     },
     {
       "path": "docs/publication_validation.json",
@@ -1222,13 +1222,18 @@
     },
     {
       "path": "docs/results.md",
-      "bytes": 3037,
-      "sha256": "103e48ad29c9298066426ec2aef8c44fd6fa2573056078c4b5e7f74d3a40092e"
+      "bytes": 3089,
+      "sha256": "20b7beee3ad559b8c2adfd8721f908beee6b19a5180cc5cd5174099cea9aaae9"
     },
     {
       "path": "docs/sources.md",
       "bytes": 1600,
       "sha256": "d617a0cca594daab9269b9030ae1b26547a2c4123d59abed45786a89959e42d7"
+    },
+    {
+      "path": "docs/vrx_environment.md",
+      "bytes": 1892,
+      "sha256": "022bfe4ce73499a861fa8423fb76c3a1d6d443f14d597d4cb7ca11e78708aac5"
     },
     {
       "path": "requirements-core.txt",
