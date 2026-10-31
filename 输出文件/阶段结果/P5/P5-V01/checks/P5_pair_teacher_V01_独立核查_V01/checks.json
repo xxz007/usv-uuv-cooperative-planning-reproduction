@@ -1,0 +1,360 @@
+{
+  "status": "PASS",
+  "source_run": "/Users/omo/Desktop/复现/项目复现/Pyomo/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations",
+  "output": "/Users/omo/Desktop/复现/项目复现/Pyomo/输出文件/阶段结果/P5/P5-V01/checks/P5_pair_teacher_V01_独立核查_V01",
+  "checker_sha256": "90ea9277db96e596108a4e295893d4edd8a0ad338d12b9cf11a2b253845031b7",
+  "checks": [
+    {
+      "name": "required_saved_inputs",
+      "status": "PASS",
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "name": "frozen_config_sha",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "controller_sha",
+      "status": "PASS",
+      "detail": "Compared with this project's actual controller bytes; deployment identity needs separate launch evidence"
+    },
+    {
+      "name": "active_config_sha",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "source_id",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "common_task_and_criteria",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "metadata_identity",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "goal_and_forward_from_measured_start",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "dispatch_time_origin_and_initial_age",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "dispatch_clock_received",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "owned_node_zero_publications",
+      "status": "PASS",
+      "detail": "Publish records only; not an acknowledgement from Gazebo"
+    },
+    {
+      "name": "task_thrust_publish_evidence",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "usable_post_dispatch_odometry",
+      "status": "PASS",
+      "detail": {
+        "used": 157,
+        "excluded": {
+          "pre_dispatch": 0,
+          "shutdown_or_waiting": 11,
+          "unusable": 0
+        }
+      }
+    },
+    {
+      "name": "observed_hold_gap_limit",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "native_start_pose",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "reference_full_terminal_window",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "two_reported_systems",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "VRX_three_metrics",
+      "status": "PASS",
+      "detail": {
+        "recomputed": {
+          "system": "VRX",
+          "completion_time_s": 15.7,
+          "maximum_cross_track_m": 0.005537707353757693,
+          "boundary_violation_events": 0
+        },
+        "reported": {
+          "system": "VRX",
+          "status": "COMPLETED",
+          "completion_time_s": 15.7,
+          "maximum_cross_track_m": 0.005537707353757471,
+          "boundary_violation_events": 0
+        }
+      }
+    },
+    {
+      "name": "VRX_completion_status_and_null",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "ideal_2D_three_metrics",
+      "status": "PASS",
+      "detail": {
+        "recomputed": {
+          "system": "ideal_2D",
+          "completion_time_s": 12.7,
+          "maximum_cross_track_m": 1.871391930308164e-12,
+          "boundary_violation_events": 0
+        },
+        "reported": {
+          "system": "ideal_2D",
+          "status": "COMPLETED",
+          "completion_time_s": 12.7,
+          "maximum_cross_track_m": 1.8705037518884637e-12,
+          "boundary_violation_events": 0
+        }
+      }
+    },
+    {
+      "name": "ideal_2D_completion_status_and_null",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "summary_task_completed",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "csv_row_counts",
+      "status": "PASS",
+      "detail": {
+        "recounted": {
+          "clock": 4447,
+          "commands": 166,
+          "odometry": 168,
+          "reference_2d": 128
+        }
+      }
+    },
+    {
+      "name": "clock_fields",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "commands",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "odometry_fields",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "logged_geometry",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "task_window",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "reference_fields",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "source_bytes_unchanged",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "source_file_inventory_unchanged",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "metrics": [
+    {
+      "system": "VRX",
+      "completion_time_s": 15.7,
+      "maximum_cross_track_m": 0.005537707353757693,
+      "boundary_violation_events": 0
+    },
+    {
+      "system": "ideal_2D",
+      "completion_time_s": 12.7,
+      "maximum_cross_track_m": 1.871391930308164e-12,
+      "boundary_violation_events": 0
+    }
+  ],
+  "windows": {
+    "VRX": {
+      "dispatch_clock_s": 3.2,
+      "first_task_wall_s": 4.6758049707859755,
+      "last_included_odom_stamp_s": 18.9,
+      "last_included_wall_s": 29.85484505444765,
+      "terminal_observed": "COMPLETED",
+      "shutdown_first_publish_wall_s": 29.855111744254827,
+      "valid_rows": 157,
+      "excluded_rows": {
+        "pre_dispatch": 0,
+        "shutdown_or_waiting": 11,
+        "unusable": 0
+      }
+    },
+    "ideal_2D": {
+      "elapsed_zero_s": 0.0,
+      "last_included_elapsed_s": 12.7,
+      "terminal_observed": "COMPLETED",
+      "logged_rows": 128
+    }
+  },
+  "row_counts": {
+    "clock": 4447,
+    "commands": 166,
+    "odometry": 168,
+    "reference_2d": 128
+  },
+  "provenance": {
+    "source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+    "framework_version": "FRAMEWORK-V19",
+    "script_sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+    "config_sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+    "dispatch_clock_s": 3.2,
+    "initial_odometry_age_s": 0.0,
+    "upstream_build_verification": "NOT_VERIFIED_BY_THIS_SAVED_LOG_CHECKER"
+  },
+  "source_hashes_before": {
+    "run/clock.csv": {
+      "sha256": "80d444f4db0c2e0ee6d46ce84e866fc7b9fe18fd8f51674e3fbfbcb6e20f6d20",
+      "bytes": 198223
+    },
+    "run/commands.csv": {
+      "sha256": "511f9d51e222ec99ca2b939b6e1df33ec2986ea88b0dbe31193bc96cb6ca991a",
+      "bytes": 35064
+    },
+    "run/common_inputs.json": {
+      "sha256": "a1bae9ad07531003ea6f77302de63ebbb650b95e7d3fc26872c3af95cf19f114",
+      "bytes": 2072
+    },
+    "run/frozen_config.json": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    },
+    "run/metadata.json": {
+      "sha256": "2265592fc8ac294360478ec094093028ec2729b5687029f4b1cde258ad20aacd",
+      "bytes": 1590
+    },
+    "run/metrics.csv": {
+      "sha256": "ec73613a10a5bc9b969040611691b425fe1697ad01932864b9e8fe63903f0006",
+      "bytes": 174
+    },
+    "run/odometry.csv": {
+      "sha256": "b0bf0c42e96b2bbebfb318f9be0779993d0e9aa2b05f63c885d2261da9873036",
+      "bytes": 142910
+    },
+    "run/reference_2d.csv": {
+      "sha256": "957fa57631afba8519e46277ddcdf1246df82909faba1a7421fab83829642ffa",
+      "bytes": 17481
+    },
+    "run/summary.json": {
+      "sha256": "8ff75fee99981954b2cc5c6362a9be07973e9f60e32fb510044078526aea6e18",
+      "bytes": 1058
+    },
+    "run/摘要.md": {
+      "sha256": "75fe09d383cf4f0ff3299db48e541f1a15fd71edbb85f0386d057dae3621e885",
+      "bytes": 844
+    },
+    "controller": {
+      "sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+      "bytes": 28049
+    },
+    "active_config": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    }
+  },
+  "source_hashes_after": {
+    "run/clock.csv": {
+      "sha256": "80d444f4db0c2e0ee6d46ce84e866fc7b9fe18fd8f51674e3fbfbcb6e20f6d20",
+      "bytes": 198223
+    },
+    "run/commands.csv": {
+      "sha256": "511f9d51e222ec99ca2b939b6e1df33ec2986ea88b0dbe31193bc96cb6ca991a",
+      "bytes": 35064
+    },
+    "run/common_inputs.json": {
+      "sha256": "a1bae9ad07531003ea6f77302de63ebbb650b95e7d3fc26872c3af95cf19f114",
+      "bytes": 2072
+    },
+    "run/frozen_config.json": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    },
+    "run/metadata.json": {
+      "sha256": "2265592fc8ac294360478ec094093028ec2729b5687029f4b1cde258ad20aacd",
+      "bytes": 1590
+    },
+    "run/metrics.csv": {
+      "sha256": "ec73613a10a5bc9b969040611691b425fe1697ad01932864b9e8fe63903f0006",
+      "bytes": 174
+    },
+    "run/odometry.csv": {
+      "sha256": "b0bf0c42e96b2bbebfb318f9be0779993d0e9aa2b05f63c885d2261da9873036",
+      "bytes": 142910
+    },
+    "run/reference_2d.csv": {
+      "sha256": "957fa57631afba8519e46277ddcdf1246df82909faba1a7421fab83829642ffa",
+      "bytes": 17481
+    },
+    "run/summary.json": {
+      "sha256": "8ff75fee99981954b2cc5c6362a9be07973e9f60e32fb510044078526aea6e18",
+      "bytes": 1058
+    },
+    "run/摘要.md": {
+      "sha256": "75fe09d383cf4f0ff3299db48e541f1a15fd71edbb85f0386d057dae3621e885",
+      "bytes": 844
+    },
+    "controller": {
+      "sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+      "bytes": 28049
+    },
+    "active_config": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    }
+  },
+  "definition": "Received usable post-dispatch task samples through the first observed terminal event; shutdown excluded. Hold spans sampled poses with a bounded gap, not proof of continuous or lossless observation.",
+  "scope": "Saved-log arithmetic only; no simulation, ROS commands, upstream deployment verification, collision/energy/hardware claim or learner acceptance."
+}

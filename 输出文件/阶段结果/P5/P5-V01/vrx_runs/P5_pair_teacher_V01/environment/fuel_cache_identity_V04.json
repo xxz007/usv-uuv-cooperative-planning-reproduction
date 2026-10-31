@@ -1,0 +1,534 @@
+{
+  "status": "PASS",
+  "cache": "/root/autodl-tmp/P5_VRX_20261030_V01/fuel-cache-V04",
+  "models": [
+    "fuel.gazebosim.org/openrobotics/models/antenna/5",
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7",
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7",
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4",
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5",
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4",
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4",
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5",
+    "fuel.gazebosim.org/openrobotics/models/post/4",
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3",
+    "fuel.gazebosim.org/openrobotics/models/tent/4",
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4",
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3"
+  ],
+  "files": {
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/meshes/antenna.dae": {
+      "sha256": "1e3b69ac144184dcdfd4754690715bbe343194a19d2ecc5d2205211d3a8f472e",
+      "bytes": 478249
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/meshes/antenna.png": {
+      "sha256": "f59abf4d4599977b977b62067735888cc352eb2c47fe4a4c2664d3c20ba62995",
+      "bytes": 488812
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/model.config": {
+      "sha256": "f7ec13827a02369f342c57384b4ff43e585ebd614384171c2f8242aeb6d7da7c",
+      "bytes": 282
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/model.sdf": {
+      "sha256": "4c1a0908d1878618719e6e2086560903ac41d19ad12692d12e6cc30c0ee8ac9c",
+      "bytes": 707
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/thumbnails/1.png": {
+      "sha256": "3505dcda5bf5c612208ab53aa128795745a45a69a61d628ff7685b81a05672fd",
+      "bytes": 35454
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/thumbnails/2.png": {
+      "sha256": "d3415a058340682e915fd217aa3ff7a86da04005f9102857fadadf34a972fc5c",
+      "bytes": 16753
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/thumbnails/3.png": {
+      "sha256": "8196d8b864611ff2d7834fff591551218d8b25ea72924457a2ca155c3c674b42",
+      "bytes": 35756
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/thumbnails/4.png": {
+      "sha256": "872e2915e27e5984080341536dbca7c44584f88c5b749b6cd28a9b3423fcdbc7",
+      "bytes": 35634
+    },
+    "fuel.gazebosim.org/openrobotics/models/antenna/5/thumbnails/5.png": {
+      "sha256": "a6f57d7ec27ffb05727abf4a604e0047964a0aa047b8de6b3bd64e5b0a85448a",
+      "bytes": 34862
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/mesh/foldable_chair.dae": {
+      "sha256": "fd035ca9ddf21ffc6757bb6d5a794be5299df6329b8f1574945826ec3fe66345",
+      "bytes": 161587
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/mesh/foldable_chair.png": {
+      "sha256": "d120f8068d09dd91bd3fde4401406cdf4c620dfb529bcbb535827532f4632a3a",
+      "bytes": 4790083
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/model.config": {
+      "sha256": "50e6d163666f7d591097dc6648e638cfdb7a5dc9c132f7e3547792362d8d20d7",
+      "bytes": 284
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/model.sdf": {
+      "sha256": "b0bc74f54875cc228a3933600b94253d223c6f4a28c104190e85c1ea1d0cbe91",
+      "bytes": 564
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/thumbnails/1.png": {
+      "sha256": "44d669a7e29f31412d3835ea6281f32307f1889822010e3801a2997fa7231ceb",
+      "bytes": 71380
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/thumbnails/2.png": {
+      "sha256": "0b309b88735f6ed4f3cdfdf26bd0a6fe279e6b3c66a770991a021bd732a08973",
+      "bytes": 66932
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/thumbnails/3.png": {
+      "sha256": "39aeef8cece94535bc7ebaefc455ae23a0d0ff8aa3e16fdd208abbd325c39191",
+      "bytes": 58136
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/thumbnails/4.png": {
+      "sha256": "0098616c70ccab3df49556ce921c8a77875b5db26dd68e71ea79d56db0fde183",
+      "bytes": 78030
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/thumbnails/5.png": {
+      "sha256": "015e2a54045ac81e0c813c227676599966193f854cb62ceaf83ae2d96e314ddc",
+      "bytes": 57912
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/mesh/foldable_table.dae": {
+      "sha256": "abc15a34b5110d7f62d661ee6e9ef2ff70b45f42d7548e7dc4b7c837b77779d6",
+      "bytes": 132511
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/mesh/foldable_table.png": {
+      "sha256": "a9bd7a92ab81e214750108ecf305b1bdced61516612ede87202d5af1f537c1da",
+      "bytes": 487294
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/model.config": {
+      "sha256": "800f41a313d0bf92169d96318383f1625fd8195954160f8f0acaf17bd3b59f28",
+      "bytes": 284
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/model.sdf": {
+      "sha256": "ad8df2ce58088802d66fda3031110864678f4281e1f3e278e61165445d71dd75",
+      "bytes": 670
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/thumbnails/1.png": {
+      "sha256": "dbab22aa2e6c8d7a94697b2c13815884a170707333fc5f7608db4037183478ac",
+      "bytes": 29777
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/thumbnails/2.png": {
+      "sha256": "e01d2a1dde396f1f34083be906a8552b4e082b80fd19954bbd1c533e5c7a1a70",
+      "bytes": 30322
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/thumbnails/3.png": {
+      "sha256": "79aa5ff02146ef449314599f9c5d5540f034f55bd22607ee1fdc0691cea4bcd6",
+      "bytes": 23589
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/thumbnails/4.png": {
+      "sha256": "a108aa096e3dc1078715fafbe9f5785c215431576e7353b6f4ce0d13d184020c",
+      "bytes": 25873
+    },
+    "fuel.gazebosim.org/openrobotics/models/foldable_table/4/thumbnails/5.png": {
+      "sha256": "8133e8bbc37c221d117f12f227b90843663c503d33c69983a838ff0f346dd2c8",
+      "bytes": 23590
+    },
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7/model.config": {
+      "sha256": "7dbeddf95b88b57c2f4d61cd5d72f3ae04b22bd93bb97a4a9b2a3eea53acfb23",
+      "bytes": 310
+    },
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7/model.sdf": {
+      "sha256": "aa384f8ac422e87c8ac760c211f645a977d12691f858e07e3dfc6ee53784f6c4",
+      "bytes": 1299
+    },
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7/thumbnails/1.png": {
+      "sha256": "b7fb0d2a1a963a312442b27726412d37656d9355ebc9bc8e54cb1b143e1a86af",
+      "bytes": 94470
+    },
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7/thumbnails/2.png": {
+      "sha256": "20c57adc05ad850edd7f893d6b225920c1cd4af950f1bb8bb7705350cd6e2cbf",
+      "bytes": 99890
+    },
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7/thumbnails/3.png": {
+      "sha256": "064a36e43dcbfae805ab181f4154f713a3ac06d57b39e6da1764b8c058bd8d93",
+      "bytes": 69630
+    },
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7/thumbnails/4.png": {
+      "sha256": "99736a8f28c0344c99735ceea95f7a4f83e499f9fbd95ca522daa4057a5a6d6e",
+      "bytes": 66059
+    },
+    "fuel.gazebosim.org/openrobotics/models/ground_station/7/thumbnails/5.png": {
+      "sha256": "faba45f3859a411210f0999f1e5d61f55be20337d5fafc4e7f27ab9224f17c00",
+      "bytes": 67179
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7/model.config": {
+      "sha256": "0d53f26e8c1aad2915cbc8df35efca254ea7ddeadd1f6f8c1f90bf7db8735619",
+      "bytes": 476
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7/model.sdf": {
+      "sha256": "10dbd9345e629dd97d905791619cc423f6840def6297d179a88edd74bbb40993",
+      "bytes": 2038
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7/thumbnails/1.png": {
+      "sha256": "8d3e52126d163f86621e04c8a0920ffa10168a685bb301f2fa75fc21b75cbfc5",
+      "bytes": 43543
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7/thumbnails/2.png": {
+      "sha256": "9fdb2fdca8845da75559e17404c1e712cb00e7df0ed2fde86d6c79045e22f2d3",
+      "bytes": 37444
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7/thumbnails/3.png": {
+      "sha256": "520f03c979d32f4bdfda18e96d9381dbeea0a5d71ff9d60261834ea2bd3f08a8",
+      "bytes": 56133
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7/thumbnails/4.png": {
+      "sha256": "69523258e7dc50a327048fd8aa752e90412ca31bfc5b320c494df8dfb2ba4982",
+      "bytes": 47231
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_black/7/thumbnails/5.png": {
+      "sha256": "5c7feba778d9dffa4fcfb2c92016fda8784d3db3dfb4d39c01c8627512f9703e",
+      "bytes": 55731
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4/model.config": {
+      "sha256": "84a9ed7efda871803c9292c544b32810c4fc0a087a2fc439d7a9d33292febcc0",
+      "bytes": 476
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4/model.sdf": {
+      "sha256": "c23c406a1bb10a5ee9a12d4e6d09a6e47501beab54173af8dbca89746379fb49",
+      "bytes": 2083
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4/thumbnails/1.png": {
+      "sha256": "8d3e52126d163f86621e04c8a0920ffa10168a685bb301f2fa75fc21b75cbfc5",
+      "bytes": 43543
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4/thumbnails/2.png": {
+      "sha256": "9fdb2fdca8845da75559e17404c1e712cb00e7df0ed2fde86d6c79045e22f2d3",
+      "bytes": 37444
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4/thumbnails/3.png": {
+      "sha256": "520f03c979d32f4bdfda18e96d9381dbeea0a5d71ff9d60261834ea2bd3f08a8",
+      "bytes": 56133
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4/thumbnails/4.png": {
+      "sha256": "69523258e7dc50a327048fd8aa752e90412ca31bfc5b320c494df8dfb2ba4982",
+      "bytes": 47231
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_green/4/thumbnails/5.png": {
+      "sha256": "5c7feba778d9dffa4fcfb2c92016fda8784d3db3dfb4d39c01c8627512f9703e",
+      "bytes": 55731
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/materials/textures/MarkerBuoy_Base_Color.png": {
+      "sha256": "dbfd0d388074ea58428345deda5e1466ad44ee2c073bb1494904df51cee47e95",
+      "bytes": 1445393
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/materials/textures/MarkerBuoy_Roughness.png": {
+      "sha256": "a72849eb34208ee2d27911422102f6365db629b279e61f572e7a94462d2e56be",
+      "bytes": 229977
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/meshes/mb_marker_buoy.dae": {
+      "sha256": "51eef99e67e7bd6f6e8f3070d78a403f5b04210563374347a77a48ed2753272d",
+      "bytes": 72330
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/model.config": {
+      "sha256": "82f4394e475a9cf553ee30f555c95e4afb50e8f1dbd19efdc8788de4bcd15158",
+      "bytes": 474
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/model.sdf": {
+      "sha256": "643fafc2c05058a657f797ea83e2a7a76636f342ded9542ad8f3764aa241c03b",
+      "bytes": 1921
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/thumbnails/1.png": {
+      "sha256": "8d3e52126d163f86621e04c8a0920ffa10168a685bb301f2fa75fc21b75cbfc5",
+      "bytes": 43543
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/thumbnails/2.png": {
+      "sha256": "9fdb2fdca8845da75559e17404c1e712cb00e7df0ed2fde86d6c79045e22f2d3",
+      "bytes": 37444
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/thumbnails/3.png": {
+      "sha256": "520f03c979d32f4bdfda18e96d9381dbeea0a5d71ff9d60261834ea2bd3f08a8",
+      "bytes": 56133
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/thumbnails/4.png": {
+      "sha256": "69523258e7dc50a327048fd8aa752e90412ca31bfc5b320c494df8dfb2ba4982",
+      "bytes": 47231
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/thumbnails/5.png": {
+      "sha256": "5c7feba778d9dffa4fcfb2c92016fda8784d3db3dfb4d39c01c8627512f9703e",
+      "bytes": 55731
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4/model.config": {
+      "sha256": "bd10da3e0a2c361992f6074777399daaf77ccbda324dc65c320bbcfbae3027c1",
+      "bytes": 476
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4/model.sdf": {
+      "sha256": "416c523f3abc7a6657696fe9d3ba525525c951cc2af335fff3c841ea97eb4f12",
+      "bytes": 2038
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4/thumbnails/1.png": {
+      "sha256": "8d3e52126d163f86621e04c8a0920ffa10168a685bb301f2fa75fc21b75cbfc5",
+      "bytes": 43543
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4/thumbnails/2.png": {
+      "sha256": "9fdb2fdca8845da75559e17404c1e712cb00e7df0ed2fde86d6c79045e22f2d3",
+      "bytes": 37444
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4/thumbnails/3.png": {
+      "sha256": "520f03c979d32f4bdfda18e96d9381dbeea0a5d71ff9d60261834ea2bd3f08a8",
+      "bytes": 56133
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4/thumbnails/4.png": {
+      "sha256": "69523258e7dc50a327048fd8aa752e90412ca31bfc5b320c494df8dfb2ba4982",
+      "bytes": 47231
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_white/4/thumbnails/5.png": {
+      "sha256": "5c7feba778d9dffa4fcfb2c92016fda8784d3db3dfb4d39c01c8627512f9703e",
+      "bytes": 55731
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4/model.config": {
+      "sha256": "5f75dcb4f7651b5eae773eb5d71f8374baeadf17f1fe5d09fdb7b771071c02ec",
+      "bytes": 474
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4/model.sdf": {
+      "sha256": "a11f3ba2d197a9caadb4bf64833ea63b3b0a0f34089847744019cdee0d7eb505",
+      "bytes": 1570
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4/thumbnails/1.png": {
+      "sha256": "8d0765833cd9a37d4b75b6e92fd5c3c13e61e46c2cd4ea75358db86468f03ee8",
+      "bytes": 87529
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4/thumbnails/2.png": {
+      "sha256": "a752ee71e450c6896813216b17dc99475c4c10a87345f9b693dd74e83ac56480",
+      "bytes": 107704
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4/thumbnails/3.png": {
+      "sha256": "120368864ab89cc36bd6b67b31c50bcbd4671d1f7dec6b19b38cf9314a50381f",
+      "bytes": 112357
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4/thumbnails/4.png": {
+      "sha256": "1fb8b88d35d5b413174481d9516b4b91fdb8cb0b23e3ffd05b0085bbd5b5427e",
+      "bytes": 108575
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_black/4/thumbnails/5.png": {
+      "sha256": "6e2c69fc63affed01fd97c202df1c987991e0d3a3431eab92cb8a3295e47d6d8",
+      "bytes": 113443
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/materials/textures/RoundBarrierBuoy_Base_Color.png": {
+      "sha256": "0761e6e8bc9c72754c64e831be7d55110fcc64bbe9de0520188851d7743ad08e",
+      "bytes": 1940047
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/materials/textures/RoundBarrierBuoy_Roughness.png": {
+      "sha256": "862edbed81ae36d96f4a9458aa275da9a94394086ba3c8e37dca303a8383c9b6",
+      "bytes": 115685
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/meshes/mb_round_buoy.dae": {
+      "sha256": "771586ae29826060885e1856d8995b31c27aa25d24bb1bd31eecf8390d7b79aa",
+      "bytes": 50843
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/model.config": {
+      "sha256": "fd9ca533357d3fa2bae701050879103745468fa0380286dee4359d5be94a5076",
+      "bytes": 475
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/model.sdf": {
+      "sha256": "e9cb8aa0702ab0090d9bc26c2651d2038e932f402a9afae0cb5e0742fb974d85",
+      "bytes": 1437
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/thumbnails/1.png": {
+      "sha256": "8d0765833cd9a37d4b75b6e92fd5c3c13e61e46c2cd4ea75358db86468f03ee8",
+      "bytes": 87529
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/thumbnails/2.png": {
+      "sha256": "a752ee71e450c6896813216b17dc99475c4c10a87345f9b693dd74e83ac56480",
+      "bytes": 107704
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/thumbnails/3.png": {
+      "sha256": "120368864ab89cc36bd6b67b31c50bcbd4671d1f7dec6b19b38cf9314a50381f",
+      "bytes": 112357
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/thumbnails/4.png": {
+      "sha256": "1fb8b88d35d5b413174481d9516b4b91fdb8cb0b23e3ffd05b0085bbd5b5427e",
+      "bytes": 108575
+    },
+    "fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/thumbnails/5.png": {
+      "sha256": "6e2c69fc63affed01fd97c202df1c987991e0d3a3431eab92cb8a3295e47d6d8",
+      "bytes": 113443
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/materials/textures/post.png": {
+      "sha256": "20ac0a41b4926eaeeb5a0038c5ba4ada8ec72597f6183752e5e0176129cfa9cd",
+      "bytes": 4639513
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/meshes/post.dae": {
+      "sha256": "69cbcfefab21705dc2893354a894eeca8397fd653957566dea97a7c3ef5506b9",
+      "bytes": 120005
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/model.config": {
+      "sha256": "9db74332fe0590be46d0ce19754dbd62b535c4ca8261c4bfa16ba91ad76b6d04",
+      "bytes": 299
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/model.sdf": {
+      "sha256": "5c8027ed77ef84791d9a73e1776fca9657463169a51ea7484309b5218615e554",
+      "bytes": 730
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/thumbnails/1.png": {
+      "sha256": "695be3dd1709c08de15f8f119a62154016f5bc22020b8727f55be4c403b06896",
+      "bytes": 83229
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/thumbnails/2.png": {
+      "sha256": "6e8e8b3aaa78816c2269aac03fa233b77f5365554664cfbb569f6897e9d4f25b",
+      "bytes": 85447
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/thumbnails/3.png": {
+      "sha256": "89befe9668ba8620f7a2670f4a29bff612e680a239780e1f332a20285650ed0a",
+      "bytes": 105354
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/thumbnails/4.png": {
+      "sha256": "ee0adb9e8c274b291f29b30b7ac9fe8a13d120c4e048a0940215bafac7d726a5",
+      "bytes": 104857
+    },
+    "fuel.gazebosim.org/openrobotics/models/post/4/thumbnails/5.png": {
+      "sha256": "54ac9fb7ce629fdac555c0fc2ef1a1b74d8c29283ae9f9b04fca6eb653347bf8",
+      "bytes": 102009
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/Dock.png": {
+      "sha256": "9984d9a2fb335f3b2438c78c1ddb5f3ab9df10970854d20cd95fc8089b74c6f4",
+      "bytes": 23022273
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/DockDark.png": {
+      "sha256": "3d51e976443f3861a04eee7751bf5eb2501f937b1f0470a5ec712ede91ceeb2f",
+      "bytes": 22725141
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/MetalGalvanized.png": {
+      "sha256": "1b7b8f85bbb56f8af5a6b3fce85f095dcb45b9d01cd98b59f1b75af534f3a28d",
+      "bytes": 18497636
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/RoofCorrugated.png": {
+      "sha256": "d7e42e3205e45559194abb2b66ffdf1f50cd790ac6408d1d9a2378258576410a",
+      "bytes": 20063424
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/Terrain.png": {
+      "sha256": "bbc337c9af330b88a6fa529cdd91a2734501cda57f8671ef03a126912fc2a2f4",
+      "bytes": 37158185
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/TreeDiffuse.png": {
+      "sha256": "d5315f7b65713fcf1e6f99e0bb09d8b811ed73f96458cf7c8c812af4d2fe07bc",
+      "bytes": 1304583
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/Wall_05.png": {
+      "sha256": "14c98e9ec657f90d5e889bffe68944bbae9226bc5f23f495c0ae223d41263b68",
+      "bytes": 1042544
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/materials/textures/Windows_Dark.png": {
+      "sha256": "028cea95596179caf10233bc4f831a3824183c9c3640d76aa5d4fe451d0b76af",
+      "bytes": 359379
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/meshes/sydney_regatta.dae": {
+      "sha256": "7f79cc08a746d1afbf59b25a25a9f71ae8b979790eaf2ff1dda5b3114e9826f3",
+      "bytes": 17636894
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/meshes/sydney_regatta_shore.dae": {
+      "sha256": "59eb8247847b33906b44a8f8ad76b6d8bd95b9f0a0fa5f1508960d83601275b1",
+      "bytes": 900857
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/model.config": {
+      "sha256": "be71ec14038d44f3a26413dec2791ed22e18e4ac18c4afb2d65ae50f6c3982f2",
+      "bytes": 407
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/model.sdf": {
+      "sha256": "eef05ac19c33a1b980079d4f7137222d593d0f49938dc688e91e5aa7b5b7b6a9",
+      "bytes": 2686
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/thumbnails/1.png": {
+      "sha256": "71cb4c4336eb1d50c7e6f773fae04e7e2c471dadf6abc5e224ab1f199fe0bf8f",
+      "bytes": 44336
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/thumbnails/2.png": {
+      "sha256": "18ce733bbf75bc042aa8836b1e0a1d4bb171e294c83d58d2b1ff96cbbfbc0972",
+      "bytes": 110649
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/thumbnails/3.png": {
+      "sha256": "f0d7ade20ac9c70607ecdb920871938bcc587516b9854a2050c70d51d1e5b8bc",
+      "bytes": 12198
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/thumbnails/4.png": {
+      "sha256": "91e0baee82022fff1e43e367d60f22cfc5bd37f7d4ede1be6c37a63126a8432b",
+      "bytes": 14138
+    },
+    "fuel.gazebosim.org/openrobotics/models/sydney_regatta/3/thumbnails/5.png": {
+      "sha256": "1ce80b69f2bee10db518d4453eacf8b1aa1835ed2bff84dbdcb65ea41b72b92b",
+      "bytes": 12105
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/mesh/tent.dae": {
+      "sha256": "0f7396af0dfc144839d9c583361db85a40e6c1fb6e0c2694084241c668f7beec",
+      "bytes": 116724
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/mesh/tent.png": {
+      "sha256": "50c4ed8a59fd1ae2165f73e04a3314a2476f2cf9b5e2cacee3fd7b72b24bc439",
+      "bytes": 289259
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/model.config": {
+      "sha256": "80bb6c8094c60b95567a7b6fe61354f35e3fd36768a1fa56d734d20a7938574b",
+      "bytes": 290
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/model.sdf": {
+      "sha256": "a6e9010f7bb6b5c527b0f050c2540361b990a4357592286d767f0ed5b72422b0",
+      "bytes": 646
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/thumbnails/1.png": {
+      "sha256": "d70f3d763300b299344bf9a79c4d70408d4a90f9debd82249b074048c8613a02",
+      "bytes": 69995
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/thumbnails/2.png": {
+      "sha256": "502b6eee459549f052e56665d4b54199b9e0c189fba00328a02d1a7b4f55415c",
+      "bytes": 99280
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/thumbnails/3.png": {
+      "sha256": "abfc3a7bb1e156e5aa3a23a04f299d449276c3b7e349eb1758115938e48a397d",
+      "bytes": 43280
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/thumbnails/4.png": {
+      "sha256": "9d89d0b72707e13a8847f89dec43b53fdfc3e88135a83378d6839270f63aff6c",
+      "bytes": 43280
+    },
+    "fuel.gazebosim.org/openrobotics/models/tent/4/thumbnails/5.png": {
+      "sha256": "aa2d77a0cd8ae287dd0337561d7dd993a6c35194992195d5a3d2dd41732b11aa",
+      "bytes": 43269
+    }
+  },
+  "recursive_include_dependencies": [
+    {
+      "uri": "https://fuel.gazebosim.org/1.0/openrobotics/models/tent",
+      "cache_model_configs": [
+        "fuel.gazebosim.org/openrobotics/models/tent/4/model.config"
+      ]
+    },
+    {
+      "uri": "https://fuel.gazebosim.org/1.0/openrobotics/models/foldable_table",
+      "cache_model_configs": [
+        "fuel.gazebosim.org/openrobotics/models/foldable_table/4/model.config"
+      ]
+    },
+    {
+      "uri": "https://fuel.gazebosim.org/1.0/openrobotics/models/foldable_table",
+      "cache_model_configs": [
+        "fuel.gazebosim.org/openrobotics/models/foldable_table/4/model.config"
+      ]
+    },
+    {
+      "uri": "https://fuel.gazebosim.org/1.0/openrobotics/models/foldable_chair",
+      "cache_model_configs": [
+        "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/model.config"
+      ]
+    },
+    {
+      "uri": "https://fuel.gazebosim.org/1.0/openrobotics/models/foldable_chair",
+      "cache_model_configs": [
+        "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/model.config"
+      ]
+    },
+    {
+      "uri": "https://fuel.gazebosim.org/1.0/openrobotics/models/foldable_chair",
+      "cache_model_configs": [
+        "fuel.gazebosim.org/openrobotics/models/foldable_chair/3/model.config"
+      ]
+    }
+  ],
+  "initial90_files_unchanged": true,
+  "manual_chair_import": {
+    "version_from_official_response": 3,
+    "archive_sha256": "2b0ea77947f568db468f55e39c91647ce5c8091016daed5d2bcea2737158dc82",
+    "contained_relative_resources_verified_on_mac": true
+  },
+  "note": "Original official world unchanged;13 resolved models, native extra models plus byte-identical relative-resource Sydney3/chair3 archives. Asset identities separate from VRX Git pin."
+}

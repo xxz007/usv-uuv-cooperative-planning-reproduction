@@ -1,0 +1,7 @@
+{
+  "task_id": "P5-INVALID",
+  "status": "REJECTED",
+  "completed": false,
+  "reason": "goal is outside the declared operating envelope",
+  "published_to_moos": false
+}

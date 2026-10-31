@@ -1,0 +1,51 @@
+{
+  "source_run": "/Users/omo/Desktop/复现/项目复现/Pyomo/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations",
+  "framework_version": "FRAMEWORK-V20",
+  "role": "learner",
+  "run_status": "COMPLETED",
+  "source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "controller_script_sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+  "config_sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+  "renderer_sha256": "2263261efa3d314189c5b549e5ccff942a226e78c6f5b5d276a19ee8207a62da",
+  "source_sha256": {
+    "common_inputs.json": "324639806c3915b692087f14c99831c03b88e7d8cad60069200a09470ef0ae2c",
+    "odometry.csv": "87fc65846610eca1589d3c0b3a50b6916febb588608827476bef357a889bf202",
+    "reference_2d.csv": "450b6a894ad59551c1e7605f6be4f8c1a729d033316a31163128d3d55964b9df",
+    "commands.csv": "040c5663bf50b6e568d4e1567ec384a8cb471fd4cfd52f1cacb40fbf3a1e063b",
+    "summary.json": "09f2b52f50bcf0ca5d1f96b7c5ec31c4018d638f98c1eb1a21245f5f7bff0c51"
+  },
+  "raw_row_counts": {
+    "odometry.csv": 168,
+    "reference_2d.csv": 128,
+    "commands.csv": 164
+  },
+  "selected_row_counts": {
+    "odometry.csv": 157,
+    "reference_2d.csv": 128,
+    "commands.csv": 158
+  },
+  "completion_cutoff_sim_s": {
+    "VRX": 15.7,
+    "ideal_2D": 12.7
+  },
+  "metrics_from_saved_summary": [
+    {
+      "system": "VRX",
+      "status": "COMPLETED",
+      "completion_time_s": 15.7,
+      "maximum_cross_track_m": 0.00868237339575284,
+      "boundary_violation_events": 0
+    },
+    {
+      "system": "ideal_2D",
+      "status": "COMPLETED",
+      "completion_time_s": 12.7,
+      "maximum_cross_track_m": 5.46229728115577e-13,
+      "boundary_violation_events": 0
+    }
+  ],
+  "simulation_runs": 0,
+  "reference_model_runs": 0,
+  "window": "VRX: usable task-phase samples at elapsed>=0, through recorded completion if present; shutdown excluded. Ideal 2D: saved rows through its recorded completion. Unfinished completion remains null.",
+  "boundary": "Lines connect saved received samples; no lossless transport or continuous-state observation claim. Commands are ROS publications, not Gazebo acknowledgement. Coordinate envelope only; no collision, energy or real-vessel validation."
+}

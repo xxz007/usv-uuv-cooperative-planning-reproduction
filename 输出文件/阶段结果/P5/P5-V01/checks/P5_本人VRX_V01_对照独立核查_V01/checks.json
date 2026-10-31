@@ -1,0 +1,360 @@
+{
+  "status": "PASS",
+  "source_run": "/Users/omo/Desktop/复现/项目复现/Pyomo/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations",
+  "output": "/Users/omo/Desktop/复现/项目复现/Pyomo/输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_对照独立核查_V01",
+  "checker_sha256": "90ea9277db96e596108a4e295893d4edd8a0ad338d12b9cf11a2b253845031b7",
+  "checks": [
+    {
+      "name": "required_saved_inputs",
+      "status": "PASS",
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "name": "frozen_config_sha",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "controller_sha",
+      "status": "PASS",
+      "detail": "Compared with this project's actual controller bytes; deployment identity needs separate launch evidence"
+    },
+    {
+      "name": "active_config_sha",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "source_id",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "common_task_and_criteria",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "metadata_identity",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "goal_and_forward_from_measured_start",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "dispatch_time_origin_and_initial_age",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "dispatch_clock_received",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "owned_node_zero_publications",
+      "status": "PASS",
+      "detail": "Publish records only; not an acknowledgement from Gazebo"
+    },
+    {
+      "name": "task_thrust_publish_evidence",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "usable_post_dispatch_odometry",
+      "status": "PASS",
+      "detail": {
+        "used": 157,
+        "excluded": {
+          "pre_dispatch": 0,
+          "shutdown_or_waiting": 11,
+          "unusable": 0
+        }
+      }
+    },
+    {
+      "name": "observed_hold_gap_limit",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "native_start_pose",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "reference_full_terminal_window",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "two_reported_systems",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "VRX_three_metrics",
+      "status": "PASS",
+      "detail": {
+        "recomputed": {
+          "system": "VRX",
+          "completion_time_s": 15.7,
+          "maximum_cross_track_m": 0.00868237339575284,
+          "boundary_violation_events": 0
+        },
+        "reported": {
+          "system": "VRX",
+          "status": "COMPLETED",
+          "completion_time_s": 15.7,
+          "maximum_cross_track_m": 0.00868237339575284,
+          "boundary_violation_events": 0
+        }
+      }
+    },
+    {
+      "name": "VRX_completion_status_and_null",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "ideal_2D_three_metrics",
+      "status": "PASS",
+      "detail": {
+        "recomputed": {
+          "system": "ideal_2D",
+          "completion_time_s": 12.7,
+          "maximum_cross_track_m": 5.46229728115577e-13,
+          "boundary_violation_events": 0
+        },
+        "reported": {
+          "system": "ideal_2D",
+          "status": "COMPLETED",
+          "completion_time_s": 12.7,
+          "maximum_cross_track_m": 5.46229728115577e-13,
+          "boundary_violation_events": 0
+        }
+      }
+    },
+    {
+      "name": "ideal_2D_completion_status_and_null",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "summary_task_completed",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "csv_row_counts",
+      "status": "PASS",
+      "detail": {
+        "recounted": {
+          "clock": 4142,
+          "commands": 164,
+          "odometry": 168,
+          "reference_2d": 128
+        }
+      }
+    },
+    {
+      "name": "clock_fields",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "commands",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "odometry_fields",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "logged_geometry",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "task_window",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "reference_fields",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "source_bytes_unchanged",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "source_file_inventory_unchanged",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "metrics": [
+    {
+      "system": "VRX",
+      "completion_time_s": 15.7,
+      "maximum_cross_track_m": 0.00868237339575284,
+      "boundary_violation_events": 0
+    },
+    {
+      "system": "ideal_2D",
+      "completion_time_s": 12.7,
+      "maximum_cross_track_m": 5.46229728115577e-13,
+      "boundary_violation_events": 0
+    }
+  ],
+  "windows": {
+    "VRX": {
+      "dispatch_clock_s": 1.8,
+      "first_task_wall_s": 2.385961042717099,
+      "last_included_odom_stamp_s": 17.5,
+      "last_included_wall_s": 27.119603522121906,
+      "terminal_observed": "COMPLETED",
+      "shutdown_first_publish_wall_s": 27.119882794097066,
+      "valid_rows": 157,
+      "excluded_rows": {
+        "pre_dispatch": 0,
+        "shutdown_or_waiting": 11,
+        "unusable": 0
+      }
+    },
+    "ideal_2D": {
+      "elapsed_zero_s": 0.0,
+      "last_included_elapsed_s": 12.7,
+      "terminal_observed": "COMPLETED",
+      "logged_rows": 128
+    }
+  },
+  "row_counts": {
+    "clock": 4142,
+    "commands": 164,
+    "odometry": 168,
+    "reference_2d": 128
+  },
+  "provenance": {
+    "source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+    "framework_version": "FRAMEWORK-V20",
+    "script_sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+    "config_sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+    "dispatch_clock_s": 1.8,
+    "initial_odometry_age_s": 0.0,
+    "upstream_build_verification": "NOT_VERIFIED_BY_THIS_SAVED_LOG_CHECKER"
+  },
+  "source_hashes_before": {
+    "run/clock.csv": {
+      "sha256": "3dedd16334ec736d71643fe43c251cec71b578b955688866e77cb9bac5360e6b",
+      "bytes": 182070
+    },
+    "run/commands.csv": {
+      "sha256": "040c5663bf50b6e568d4e1567ec384a8cb471fd4cfd52f1cacb40fbf3a1e063b",
+      "bytes": 34750
+    },
+    "run/common_inputs.json": {
+      "sha256": "324639806c3915b692087f14c99831c03b88e7d8cad60069200a09470ef0ae2c",
+      "bytes": 2072
+    },
+    "run/frozen_config.json": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    },
+    "run/metadata.json": {
+      "sha256": "97c6654ac43d551b39fd74973ca65b1bc40ace6c7d9c0aadb81d999692e86540",
+      "bytes": 1590
+    },
+    "run/metrics.csv": {
+      "sha256": "254010a71975c061b5063a1ef4e24b0f9464d0ac1cf478e1125e88a68059f31f",
+      "bytes": 171
+    },
+    "run/odometry.csv": {
+      "sha256": "87fc65846610eca1589d3c0b3a50b6916febb588608827476bef357a889bf202",
+      "bytes": 142768
+    },
+    "run/reference_2d.csv": {
+      "sha256": "450b6a894ad59551c1e7605f6be4f8c1a729d033316a31163128d3d55964b9df",
+      "bytes": 17469
+    },
+    "run/summary.json": {
+      "sha256": "09f2b52f50bcf0ca5d1f96b7c5ec31c4018d638f98c1eb1a21245f5f7bff0c51",
+      "bytes": 1054
+    },
+    "run/摘要.md": {
+      "sha256": "ab5f3283a4d7587f5e602032497c5b2c497af88f8b3d47590d5d4158e10c395d",
+      "bytes": 841
+    },
+    "controller": {
+      "sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+      "bytes": 28049
+    },
+    "active_config": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    }
+  },
+  "source_hashes_after": {
+    "run/clock.csv": {
+      "sha256": "3dedd16334ec736d71643fe43c251cec71b578b955688866e77cb9bac5360e6b",
+      "bytes": 182070
+    },
+    "run/commands.csv": {
+      "sha256": "040c5663bf50b6e568d4e1567ec384a8cb471fd4cfd52f1cacb40fbf3a1e063b",
+      "bytes": 34750
+    },
+    "run/common_inputs.json": {
+      "sha256": "324639806c3915b692087f14c99831c03b88e7d8cad60069200a09470ef0ae2c",
+      "bytes": 2072
+    },
+    "run/frozen_config.json": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    },
+    "run/metadata.json": {
+      "sha256": "97c6654ac43d551b39fd74973ca65b1bc40ace6c7d9c0aadb81d999692e86540",
+      "bytes": 1590
+    },
+    "run/metrics.csv": {
+      "sha256": "254010a71975c061b5063a1ef4e24b0f9464d0ac1cf478e1125e88a68059f31f",
+      "bytes": 171
+    },
+    "run/odometry.csv": {
+      "sha256": "87fc65846610eca1589d3c0b3a50b6916febb588608827476bef357a889bf202",
+      "bytes": 142768
+    },
+    "run/reference_2d.csv": {
+      "sha256": "450b6a894ad59551c1e7605f6be4f8c1a729d033316a31163128d3d55964b9df",
+      "bytes": 17469
+    },
+    "run/summary.json": {
+      "sha256": "09f2b52f50bcf0ca5d1f96b7c5ec31c4018d638f98c1eb1a21245f5f7bff0c51",
+      "bytes": 1054
+    },
+    "run/摘要.md": {
+      "sha256": "ab5f3283a4d7587f5e602032497c5b2c497af88f8b3d47590d5d4158e10c395d",
+      "bytes": 841
+    },
+    "controller": {
+      "sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+      "bytes": 28049
+    },
+    "active_config": {
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    }
+  },
+  "definition": "Received usable post-dispatch task samples through the first observed terminal event; shutdown excluded. Hold spans sampled poses with a bounded gap, not proof of continuous or lossless observation.",
+  "scope": "Saved-log arithmetic only; no simulation, ROS commands, upstream deployment verification, collision/energy/hardware claim or learner acceptance."
+}

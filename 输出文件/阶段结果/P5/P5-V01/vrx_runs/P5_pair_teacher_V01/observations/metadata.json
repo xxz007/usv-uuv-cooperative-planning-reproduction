@@ -1,0 +1,27 @@
+{
+  "framework_version": "FRAMEWORK-V19",
+  "role": "teacher",
+  "config_version": "P5-VRX-V01",
+  "source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "upstream": {
+    "repository": "https://github.com/osrf/vrx/tree/7609d1bd90ce7edb29d040a082f949e8b089c864",
+    "odometry_plugin": "vrx_urdf/wamv_gazebo/urdf/components/wamv_p3d.xacro",
+    "bridges": "vrx_gz/src/vrx_gz/payload_bridges.py",
+    "required_model_setting": "ground_truth_enabled=true; preserve the original WAM-V physics and H thrusters"
+  },
+  "source_id_evidence": "Declared frozen upstream ID; external launch records must verify the actual VRX checkout/build",
+  "script_sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+  "config_sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+  "started_utc": "2026-10-31T04:14:06Z",
+  "topics": {
+    "odometry": "/wamv/sensors/position/ground_truth_odometry",
+    "clock": "/clock",
+    "left_thrust": "/wamv/thrusters/left/thrust",
+    "right_thrust": "/wamv/thrusters/right/thrust"
+  },
+  "gazebo_process_owner": "external launcher",
+  "observation_qos": "BEST_EFFORT/VOLATILE/KEEP_LAST depth 1000; CSV contains all messages received by this node, not proof of lossless transport",
+  "command_evidence": "Actual Float64 publish calls; no acknowledgement of Gazebo acceptance is inferred",
+  "velocity_estimate": "Filtered native-odometry XY differences projected onto current yaw; twist frame is not assumed",
+  "course_boundary": "No automatic learner-understanding or complete-P5 acceptance claim"
+}

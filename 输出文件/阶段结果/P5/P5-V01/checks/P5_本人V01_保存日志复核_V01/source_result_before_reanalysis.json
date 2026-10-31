@@ -1,0 +1,18 @@
+{
+  "engineering_status": "PASS",
+  "operator_role": "learner",
+  "checks": {
+    "example_actual_movement": true,
+    "scheduler_task_actual_completion": true,
+    "timeout_no_false_completion": true,
+    "invalid_goal_rejected_before_publish": true,
+    "actual_trajectory_recorded": true,
+    "operating_envelope": true
+  },
+  "completed_task_count": 1,
+  "completion_time_s": 19.08,
+  "timeout_task_status": "TIMEOUT",
+  "invalid_task_status": "REJECTED",
+  "learner_course_status": "REQUIRES_SEPARATE_USER_EXECUTION_AND_EXPLANATION_RECORD",
+  "vrx_status": "NOT_EXECUTED"
+}

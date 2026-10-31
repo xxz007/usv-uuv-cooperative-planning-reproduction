@@ -1,0 +1,32 @@
+{
+  "clock_samples": 39,
+  "clock_s": 0.168,
+  "feedback": {
+    "parent": "native world:sydney_regatta",
+    "child": "wamv",
+    "x": -531.9999804895425,
+    "y": 162.00008599010857,
+    "z": -0.10401124016270885,
+    "stamp_sec": 0,
+    "stamp_nanosec": 160000000,
+    "entity_id": 143,
+    "entity_name": "wamv"
+  },
+  "image": {
+    "topic": "/wamv/sensors/cameras/front_left_camera_sensor/image_raw",
+    "width": 1280,
+    "height": 720,
+    "encoding": "rgb8",
+    "step": 3840,
+    "data_bytes": 2764800
+  },
+  "ready": true,
+  "image_topics": [
+    "/wamv/sensors/cameras/front_left_camera_sensor/image_raw",
+    "/wamv/sensors/cameras/front_left_camera_sensor/optical/image_raw",
+    "/wamv/sensors/cameras/front_right_camera_sensor/image_raw",
+    "/wamv/sensors/cameras/front_right_camera_sensor/optical/image_raw",
+    "/wamv/sensors/cameras/middle_right_camera_sensor/image_raw",
+    "/wamv/sensors/cameras/middle_right_camera_sensor/optical/image_raw"
+  ]
+}

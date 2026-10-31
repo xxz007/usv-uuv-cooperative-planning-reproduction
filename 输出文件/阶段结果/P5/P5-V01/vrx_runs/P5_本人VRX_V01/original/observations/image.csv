@@ -1,0 +1,2 @@
+wall_elapsed_s,phase,clock_s,stamp_sec,stamp_nanosec,frame_id,encoding,width,height,step,is_bigendian,data_bytes,data_sha256,data_file
+1.0267834160476923,zero_baseline,1.1480000000000001,1,124000000,wamv/wamv/base_link/front_left_camera_sensor,rgb8,1280,720,3840,0,2764800,203929367519fb15e46218203e34583b00773d7d5e2c1e0bb4d4835510127eff,first_image.data.bin

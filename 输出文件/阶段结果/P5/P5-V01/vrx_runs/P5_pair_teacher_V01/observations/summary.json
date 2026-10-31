@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETED",
+  "task_completed": true,
+  "role": "teacher",
+  "framework_version": "FRAMEWORK-V19",
+  "source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "error": null,
+  "stop_publication_error": null,
+  "wall_elapsed_s": 29.909298775717616,
+  "received_or_published_rows": {
+    "clock": 4447,
+    "odometry": 168,
+    "commands": 166,
+    "reference_2d": 128
+  },
+  "common_inputs_obtained": true,
+  "metrics": [
+    {
+      "system": "VRX",
+      "status": "COMPLETED",
+      "completion_time_s": 15.7,
+      "maximum_cross_track_m": 0.005537707353757471,
+      "boundary_violation_events": 0
+    },
+    {
+      "system": "ideal_2D",
+      "status": "COMPLETED",
+      "completion_time_s": 12.7,
+      "maximum_cross_track_m": 1.8705037518884637e-12,
+      "boundary_violation_events": 0
+    }
+  ],
+  "course_acceptance": "NOT_AUTOMATICALLY_ASSESSED",
+  "scope": "One actual ROS/VRX task plus a separately executed ideal 2D model; sampled coordinate envelope only; no collision, energy or hardware-validation claim"
+}

@@ -1,0 +1,36 @@
+{
+  "role": "learner",
+  "framework_version": "FRAMEWORK-V20",
+  "vrx_workspace": "/root/autodl-tmp/P5_VRX_20261030_V01/vrx_ws_accelerated",
+  "upstream_commit": "7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "upstream_clean": true,
+  "upstream_porcelain": "",
+  "declared_source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "expected_commit": "7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "upstream_tracked_clean": true,
+  "build_identity": "Git identity alone does not prove installed binaries correspond to this checkout",
+  "fuel_cache": "/root/autodl-tmp/P5_VRX_20261030_V01/fuel-cache-V04",
+  "asset_requirement": "All world and secondary assets must already be prefetched; directory existence is not completeness verification",
+  "tools_sha256": {
+    "p5_vrx.py": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+    "P5-VRX-V01.json": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+    "VRX_官方原例记录器_V02.py": "a30c7c11f0721bf3b7ec291e0cc4415c90e154869fa09f7d839a6b0f8289994c"
+  },
+  "urdf": "/root/autodl-tmp/P5_VRX_20261030_V01/derived_full_model_V01/with_ground_truth.urdf",
+  "urdf_sha256": "d304ff2b264c6c6ee4f40dcff3e1a84e07c235a163ff0a091345552d13e9ae45",
+  "platform_script_sha256": "0518a4bc05d74910812ea36d1fb9689cf39b5b33974463176c8e3537cb893fac",
+  "status": "COMPLETED",
+  "runs": [
+    {
+      "mode": "original",
+      "status": "COMPLETED",
+      "output": "/root/autodl-tmp/P5_VRX_20261030_V01/platform_runs/P5_本人VRX_V01/original"
+    },
+    {
+      "mode": "pair",
+      "status": "COMPLETED",
+      "output": "/root/autodl-tmp/P5_VRX_20261030_V01/platform_runs/P5_本人VRX_V01/pair"
+    }
+  ],
+  "course_acceptance": "NOT_AUTOMATICALLY_ASSESSED"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "inspected": [
+    "2D_VRX_same_task.png",
+    "VRX_progress_error.png",
+    "original_first_camera_frame.png"
+  ],
+  "checks": [
+    "Correct learner role and COMPLETED labels",
+    "Readable units/legend; no clipped labels",
+    "Same coordinates/time zero; task samples only, shutdown excluded",
+    "Original camera is actual received RGB8 buffer, decoded without image synthesis"
+  ],
+  "files": {
+    "来源.json": "6b826fcead6e88055307fa6c3a8fc5de815b5d536efa5cc57e5c7cd505d7b1b3",
+    "摘要.md": "f417f0605843b92b487e8f457d33bf64c783c431ba376d28a5b05e4a4c20865e",
+    "VRX_progress_error.pdf": "ab345f782da7bdf3fc583444df645980cf1dd523ef9969d88eaa2745fcd07c2f",
+    "VRX_progress_error.png": "cbb50c5f3bc98029d22dfd94c58386f29965df3b292a28faeb47d48f1d2bb882",
+    "2D_VRX_same_task.png": "7b7ce0fb1a43b530120ef75de7f9cb5def8a307ab1db60836919e48681d8a92e",
+    "2D_VRX_same_task.pdf": "d209538686692e0220b14833b9afb33fadc463c133b728e0529ac54e40122be2",
+    "原例相机来源.json": "e47b18a6e6d501e725bf374b70109d5531737c9cbe677061311f3165030cad66",
+    "original_first_camera_frame.png": "981220fd583cce7b9c011bcd0e7fb1ff0eca67585ab5035964c1e4e524878141"
+  }
+}

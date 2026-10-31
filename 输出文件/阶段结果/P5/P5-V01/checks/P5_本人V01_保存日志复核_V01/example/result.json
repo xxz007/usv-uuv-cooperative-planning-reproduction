@@ -1,0 +1,45 @@
+{
+  "raw_alogs": [
+    "MOOSLog_30_10_2026_____23_35_48/MOOSLog_30_10_2026_____23_35_48.alog"
+  ],
+  "sample_count": 53,
+  "dispatch_alog_time_s": 3.14939,
+  "complete_alog_time_s": null,
+  "completion_time_s": null,
+  "completion_pose": null,
+  "completion_pose_age_s": null,
+  "behavior_completion_messages": [],
+  "actual_distance_m": 22.049324862759615,
+  "maximum_cross_track_m": 6.94678088413979,
+  "operating_envelope_violations": 0,
+  "metric_time_scope": "dispatch through completion event, or through last observed pose if not completed",
+  "first_pose": {
+    "alog_time_s": 0.37688,
+    "x_m": 0.0,
+    "y_m": -20.0,
+    "goal_distance_m": 63.245553203367585,
+    "cross_track_m": 0.0,
+    "time_from_dispatch_s": -2.77251
+  },
+  "last_pose": {
+    "alog_time_s": 26.40438,
+    "x_m": 16.28067,
+    "y_m": -31.201,
+    "goal_distance_m": 44.59598879550604,
+    "cross_track_m": 5.477801718106453,
+    "time_from_dispatch_s": 23.25499
+  },
+  "task_id": "P5-EXAMPLE",
+  "status": "EXAMPLE_MOVEMENT",
+  "completed": false,
+  "movement_displacement_m": 19.761645089640187,
+  "goal_m": [
+    60.0,
+    -40.0
+  ],
+  "query_returncode": 1,
+  "executed_framework": "FRAMEWORK-V18",
+  "analyzed_framework": "FRAMEWORK-V18",
+  "simulation_runs": 0,
+  "evidence_source": "copied original raw alog and feedback, verified by SHA"
+}

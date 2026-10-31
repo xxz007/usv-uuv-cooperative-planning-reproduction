@@ -1,0 +1,22 @@
+{
+  "framework": "FRAMEWORK-V18",
+  "config": "P5-MOOS-V01",
+  "operator_role": "learner",
+  "learner_explanation_status": "NOT_COLLECTED_BY_PROGRAM",
+  "moos_source_commit": "dd7030bdba1ea2d01524f0ff2364a3ed0d2c56a6",
+  "binary_build_commit": "UNKNOWN; binary SHA recorded independently",
+  "moos_root": "/Users/omo/Desktop/复现/项目复现/Pyomo/moos-ivp",
+  "binary_sha256": {
+    "MOOSDB": "4b1fc88dfee7c13f640f4de1935c6fa5331f85795786c55a0a6efff3138aa868",
+    "uSimMarineV22": "0a44b72b9f9df6287c35b648efadfe7f0bff90e76e29c6710a04249d4d716573",
+    "pMarinePIDV22": "c009c8e73f3daa8da915ad5464cc4db65923485ceec0d856ee103d0f4b43446c",
+    "pHelmIvP": "4135eb67a2cda1b8b503000e0c89754a6e6aa6bf85af33c1840c9ae2785e778b",
+    "pLogger": "507be629288df2285a4301b65a072250f5420e27a97b694cd01f350c0dc39c51",
+    "uPokeDB": "f3a2659d0f2bfbdcd84894f673eb4f1c86d1da3a0cc4e7a102291b1744fce64c",
+    "uQueryDB": "5ed0c99a210706264aa19d3d7e395a97e3a0a118ba40182cf4335c1ade485bef"
+  },
+  "original_example_sha256": {
+    "alpha.moos": "c9318da3022593c0bd5ecba20ccbe079e3842893584f6277052f88eda994c2bf",
+    "alpha.bhv": "e17fb4a4ce218eddc8a8db149903723359977472734b4065e9df7a21985d04e1"
+  }
+}

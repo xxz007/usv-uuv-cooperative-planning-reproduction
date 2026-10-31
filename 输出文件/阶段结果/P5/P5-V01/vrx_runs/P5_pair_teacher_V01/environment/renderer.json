@@ -1,0 +1,12 @@
+{
+  "source_log": "/root/.gz/rendering/ogre2.log",
+  "copied_log": "/root/autodl-tmp/P5_VRX_20261030_V01/exports/P5_pair_teacher_V01_ogre2.log",
+  "sha256": "c2a200bd93b8e437f3bd23eb0999afdc41b339eb3491d6bec1521e4a80c4ebb7",
+  "log_mtime_utc": "2026-10-31T04:14:36Z",
+  "selected_lines": [
+    "12:13:57: GL_VERSION = 4.5.0 NVIDIA 595.71.05",
+    "12:13:57: GL_VENDOR = NVIDIA Corporation",
+    "12:13:57: GL_RENDERER = NVIDIA GeForce RTX 2080 Ti/PCIe/SSE2"
+  ],
+  "scope": "Renderer log copied after the only owned full-model paired run stopped and before launching another rendering run"
+}

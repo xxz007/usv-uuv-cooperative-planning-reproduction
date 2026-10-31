@@ -1,0 +1,13 @@
+{
+  "task": {
+    "id": "P5-TIMEOUT",
+    "goal_m": [
+      100.0,
+      -20.0
+    ]
+  },
+  "example": false,
+  "timeout_case": true,
+  "port": 59546,
+  "frame": "local ENU: x east, y north, metres; MOOS heading degrees clockwise from north"
+}

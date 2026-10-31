@@ -1,0 +1,28 @@
+{
+  "role": "learner",
+  "script_sha256": "a30c7c11f0721bf3b7ec291e0cc4415c90e154869fa09f7d839a6b0f8289994c",
+  "started_utc": "2026-10-31T04:25:28Z",
+  "pose_topic": "/world/sydney_regatta/pose/info",
+  "model_name_exact_match": "wamv",
+  "image_topic": "/wamv/sensors/cameras/front_left_camera_sensor/image_raw",
+  "clock_topic": "/clock",
+  "thrust_topics": [
+    "/wamv/thrusters/left/thrust",
+    "/wamv/thrusters/right/thrust"
+  ],
+  "protocol": {
+    "zero_baseline_sim_s": 3.0,
+    "equal_thrust_sim_s": 8.0,
+    "each_thrust_n": 100.0,
+    "wall_budget_s": 240.0,
+    "feedback_wall_timeout_s": 10.0,
+    "maximum_model_receive_age_sim_s": 0.5
+  },
+  "pose_transport": "gz.transport13 native Pose_V; no TF conversion",
+  "coordinate_frame": "Native Gazebo world positions in metres from /world/sydney_regatta/pose/info",
+  "callback_boundary": "Background callback enqueues receipt time/message; main thread validates and writes all CSV/state",
+  "raw_phase_definition": "CSV phase is the main-thread processing stage, not a native sample-time segment label",
+  "segment_definition": "After closing raw CSV, select usable native header stamps in half-open publication-clock intervals; exclude pre-protocol and post-stop samples. Boundaries are ROS publication times, not simulator acknowledgement.",
+  "observation_qos": "ROS clock BEST_EFFORT/VOLATILE depth 1000, Image depth 1 for first frame; native GZ pose subscription; no lossless-transport claim",
+  "boundary": "ROS publications, actual model-pose differences and a received rendered Image are separate evidence; no general causal, energy, collision or real-vessel claim"
+}

@@ -1,13 +1,13 @@
 {
-  "status": "PREPARED_FOR_PRIVATE_GITHUB",
-  "framework": "FRAMEWORK-V18",
+  "status": "VERIFIED_FOR_PRIVATE_GITHUB",
+  "framework": "FRAMEWORK-V20",
   "selection": "Explicit source manifest, runtime input references, selected original media and generated publication documentation",
-  "source_records": 99,
+  "source_records": 106,
   "byte_identical_copies": [
     {
       "path": "usv_uuc_cooperation/README.md",
-      "bytes": 3403,
-      "sha256": "8f1635c52867b1c086b88284ec1b660514eacab1b6854e78ac5d4ee568f25704",
+      "bytes": 5239,
+      "sha256": "a192925c0420d875009367a369dee5a1ba5b6506773eb21e8a17256f076262ac",
       "source_path": "usv_uuc_cooperation/README.md",
       "copy_status": "BYTE_IDENTICAL"
     },
@@ -42,7 +42,7 @@
     {
       "path": "usv_uuc_cooperation/config.py",
       "bytes": 2138,
-      "sha256": "603654c7e532218a03a448f365260414f48c1aaa728dabd9b9350aa0026f7e36",
+      "sha256": "271326ba8a76e523971e53b76d0cdc0bc24eb21cd4a55acf5107dc6dbcc7f220",
       "source_path": "usv_uuc_cooperation/config.py",
       "copy_status": "BYTE_IDENTICAL"
     },
@@ -93,6 +93,13 @@
       "bytes": 1240,
       "sha256": "3153648bad806bbaccf9efb7e40f417f9e2436a72c92052540994786d4e5d9b0",
       "source_path": "usv_uuc_cooperation/configs/P5-MOOS-V01.json",
+      "copy_status": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "usv_uuc_cooperation/configs/P5-VRX-V01.json",
+      "bytes": 2300,
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "source_path": "usv_uuc_cooperation/configs/P5-VRX-V01.json",
       "copy_status": "BYTE_IDENTICAL"
     },
     {
@@ -268,6 +275,20 @@
       "bytes": 19834,
       "sha256": "7960e71e63080105899b3530296d4bb36ae92aacc5e1718994385b49d0993906",
       "source_path": "usv_uuc_cooperation/experiments/p5_moos.py",
+      "copy_status": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "usv_uuc_cooperation/experiments/p5_vrx.py",
+      "bytes": 28049,
+      "sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+      "source_path": "usv_uuc_cooperation/experiments/p5_vrx.py",
+      "copy_status": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "usv_uuc_cooperation/experiments/p5_vrx_platform.py",
+      "bytes": 13919,
+      "sha256": "0518a4bc05d74910812ea36d1fb9689cf39b5b33974463176c8e3537cb893fac",
+      "source_path": "usv_uuc_cooperation/experiments/p5_vrx_platform.py",
       "copy_status": "BYTE_IDENTICAL"
     },
     {
@@ -614,6 +635,13 @@
       "copy_status": "BYTE_IDENTICAL"
     },
     {
+      "path": "usv_uuc_cooperation/visualization/p5_vrx.py",
+      "bytes": 11722,
+      "sha256": "2263261efa3d314189c5b549e5ccff942a226e78c6f5b5d276a19ee8207a62da",
+      "source_path": "usv_uuc_cooperation/visualization/p5_vrx.py",
+      "copy_status": "BYTE_IDENTICAL"
+    },
+    {
       "path": "usv_uuc_cooperation/visualization/plotter.py",
       "bytes": 1739,
       "sha256": "7d48c1139a54a3c384e1fd20c48767dfd234c4d5a96b04984666000102ea70a0",
@@ -653,6 +681,27 @@
       "bytes": 1436,
       "sha256": "653bedb3ab8441485c77f001d170f33bc1e43c076fd7b369748ab81583926c54",
       "source_path": "课时资料/P2/P2-L4/配置/P2-L4_案例.json",
+      "copy_status": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "课时资料/P5/源码/VRX_官方原例记录器_V01.py",
+      "bytes": 17557,
+      "sha256": "7ee39aa5643a9ce1ad8e9f1d752888310e05949c65142a97b821c71231d38d38",
+      "source_path": "课时资料/P5/源码/VRX_官方原例记录器_V01.py",
+      "copy_status": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "课时资料/P5/源码/VRX_官方原例记录器_V02.py",
+      "bytes": 21897,
+      "sha256": "a30c7c11f0721bf3b7ec291e0cc4415c90e154869fa09f7d839a6b0f8289994c",
+      "source_path": "课时资料/P5/源码/VRX_官方原例记录器_V02.py",
+      "copy_status": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "课时资料/P5/源码/复核P5_VRX保存日志_V01.py",
+      "bytes": 25335,
+      "sha256": "90ea9277db96e596108a4e295893d4edd8a0ad338d12b9cf11a2b253845031b7",
+      "source_path": "课时资料/P5/源码/复核P5_VRX保存日志_V01.py",
       "copy_status": "BYTE_IDENTICAL"
     },
     {
@@ -705,17 +754,17 @@
       "copy_status": "BYTE_IDENTICAL"
     },
     {
-      "path": "输出文件/版本快照/FRAMEWORK-V18/源码配置_SHA256.txt",
-      "bytes": 11054,
-      "sha256": "71de61a60f724d65334044de324b3661583715ba503b3965c99c776238843a9e",
-      "source_path": "输出文件/版本快照/FRAMEWORK-V18/源码配置_SHA256.txt",
+      "path": "输出文件/版本快照/FRAMEWORK-V20/源码配置_SHA256.txt",
+      "bytes": 11864,
+      "sha256": "1b368963254e5b3f06055ca559547b212cbe0fd51270e08e127ed627ca8e001d",
+      "source_path": "输出文件/版本快照/FRAMEWORK-V20/源码配置_SHA256.txt",
       "copy_status": "BYTE_IDENTICAL"
     },
     {
-      "path": "输出文件/版本快照/FRAMEWORK-V18/版本.json",
-      "bytes": 392,
-      "sha256": "a53fd8b3a6174fe2c453c0e86a1442914a441d60d73fd64e2c815e2cbb7c8527",
-      "source_path": "输出文件/版本快照/FRAMEWORK-V18/版本.json",
+      "path": "输出文件/版本快照/FRAMEWORK-V20/版本.json",
+      "bytes": 599,
+      "sha256": "18a210c99b70dd3ed3eaf26f85346c6e2591a17061b20af3fb9696ddb9977323",
+      "source_path": "输出文件/版本快照/FRAMEWORK-V20/版本.json",
       "copy_status": "BYTE_IDENTICAL"
     },
     {
@@ -1165,13 +1214,6 @@
       "sha256": "b77154401519c85eedfd2a488562b421c27c1e3edc5d04649429da0c28acb16b",
       "source_path": "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/任务执行_同帧对比.gif",
       "copy_status": "BYTE_IDENTICAL"
-    },
-    {
-      "path": "输出文件/版本快照/阶段版本索引.json",
-      "bytes": 20456,
-      "sha256": "7d7c70c695fdda03e904606ee1d86779fad8cca3bd8fe14e7df3f23188a75d1a",
-      "source_path": "输出文件/版本快照/阶段版本索引.json",
-      "copy_status": "BYTE_IDENTICAL"
     }
   ],
   "excluded": [
@@ -1184,6 +1226,7 @@
     "backups",
     "full classroom archives"
   ],
+  "derived_stage_catalog_source_sha256": "7d7c70c695fdda03e904606ee1d86779fad8cca3bd8fe14e7df3f23188a75d1a",
   "p5_saved_evidence": {
     "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_教师V02_保存日志复核_V01",
     "executed_framework": "FRAMEWORK-V17",
@@ -1202,38 +1245,48 @@
     },
     {
       "path": "README.md",
-      "bytes": 5114,
-      "sha256": "5541ac28d1566facf0b828072f03bf60cd41d088d99d435180d757d53e7ee79c"
+      "bytes": 5728,
+      "sha256": "ae8313aed2ef89f0de491b707249b70e34092587621f5d3dff0e3cd530cc1e2d"
+    },
+    {
+      "path": "docs/p5_acceptance.json",
+      "bytes": 2587,
+      "sha256": "9da67f0ade0e688154bf8f349fb0064843093590a907f15dd1337f919b4012bf"
     },
     {
       "path": "docs/p5_platform.md",
-      "bytes": 4352,
-      "sha256": "842ee1a210598b0910006f3d6e92e05b5551997047c474d1e6e0ce34ff0a1731"
+      "bytes": 7018,
+      "sha256": "50e8d81924dc7903b0b61e8bdd740862bfe1b9d48652ce1e3989b52a759ecb06"
     },
     {
       "path": "docs/publication_validation.json",
-      "bytes": 970,
-      "sha256": "943db7271435426bf2cfe3de55b64cc8ba1ae7bf9302462be33fb68ce60fcba0"
+      "bytes": 1392,
+      "sha256": "55fd047313841eaaa2d7ddab79ab0bb835d7d888bf270fd0d2fab81f1aafff5e"
     },
     {
       "path": "docs/reproduction.md",
-      "bytes": 2970,
-      "sha256": "c59e65e9b76426dc8b82e0b20ca85eae358c4ebd50eb1f21ea5f0bb86c0e7d95"
+      "bytes": 4908,
+      "sha256": "20cd3dfb2ce0602cefe66c3eb72aeddcfe6a37667fd5eca8f7945178a83e0e33"
     },
     {
       "path": "docs/results.md",
-      "bytes": 3089,
-      "sha256": "20b7beee3ad559b8c2adfd8721f908beee6b19a5180cc5cd5174099cea9aaae9"
+      "bytes": 4396,
+      "sha256": "2fb7f5d7ae5091bdaa48dea211c54267b1de8918a29b1e639d11dc678436203f"
     },
     {
       "path": "docs/sources.md",
-      "bytes": 1600,
-      "sha256": "d617a0cca594daab9269b9030ae1b26547a2c4123d59abed45786a89959e42d7"
+      "bytes": 3096,
+      "sha256": "bef32f02c9097cc175b130fc698d8298f1ec6cb3694fbbd69494f08c44e406a7"
     },
     {
       "path": "docs/vrx_environment.md",
-      "bytes": 1892,
-      "sha256": "022bfe4ce73499a861fa8423fb76c3a1d6d443f14d597d4cb7ca11e78708aac5"
+      "bytes": 9499,
+      "sha256": "806475f7d015cee309898c70eb899524804b81ae5643c27a08d5e2493de8beaa"
+    },
+    {
+      "path": "docs/vrx_runtime_versions.json",
+      "bytes": 587,
+      "sha256": "5daa2946f998b1fbadcb6b57ee2a581535f4f07cfea64bd38b1673d00090db77"
     },
     {
       "path": "requirements-core.txt",
@@ -1252,8 +1305,8 @@
     },
     {
       "path": "usv_uuc_cooperation/README.md",
-      "bytes": 3403,
-      "sha256": "8f1635c52867b1c086b88284ec1b660514eacab1b6854e78ac5d4ee568f25704"
+      "bytes": 5239,
+      "sha256": "a192925c0420d875009367a369dee5a1ba5b6506773eb21e8a17256f076262ac"
     },
     {
       "path": "usv_uuc_cooperation/__init__.py",
@@ -1278,7 +1331,7 @@
     {
       "path": "usv_uuc_cooperation/config.py",
       "bytes": 2138,
-      "sha256": "603654c7e532218a03a448f365260414f48c1aaa728dabd9b9350aa0026f7e36"
+      "sha256": "271326ba8a76e523971e53b76d0cdc0bc24eb21cd4a55acf5107dc6dbcc7f220"
     },
     {
       "path": "usv_uuc_cooperation/configs/P2-V01.json",
@@ -1314,6 +1367,11 @@
       "path": "usv_uuc_cooperation/configs/P5-MOOS-V01.json",
       "bytes": 1240,
       "sha256": "3153648bad806bbaccf9efb7e40f417f9e2436a72c92052540994786d4e5d9b0"
+    },
+    {
+      "path": "usv_uuc_cooperation/configs/P5-VRX-V01.json",
+      "bytes": 2300,
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c"
     },
     {
       "path": "usv_uuc_cooperation/configs/X1-L1_V01.json",
@@ -1439,6 +1497,16 @@
       "path": "usv_uuc_cooperation/experiments/p5_moos.py",
       "bytes": 19834,
       "sha256": "7960e71e63080105899b3530296d4bb36ae92aacc5e1718994385b49d0993906"
+    },
+    {
+      "path": "usv_uuc_cooperation/experiments/p5_vrx.py",
+      "bytes": 28049,
+      "sha256": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf"
+    },
+    {
+      "path": "usv_uuc_cooperation/experiments/p5_vrx_platform.py",
+      "bytes": 13919,
+      "sha256": "0518a4bc05d74910812ea36d1fb9689cf39b5b33974463176c8e3537cb893fac"
     },
     {
       "path": "usv_uuc_cooperation/experiments/x1_assignment.py",
@@ -1686,6 +1754,11 @@
       "sha256": "0a7557d16394204961b748d4cde0793087420749cbcd734276c9f52e6ea003ac"
     },
     {
+      "path": "usv_uuc_cooperation/visualization/p5_vrx.py",
+      "bytes": 11722,
+      "sha256": "2263261efa3d314189c5b549e5ccff942a226e78c6f5b5d276a19ee8207a62da"
+    },
+    {
       "path": "usv_uuc_cooperation/visualization/plotter.py",
       "bytes": 1739,
       "sha256": "7d48c1139a54a3c384e1fd20c48767dfd234c4d5a96b04984666000102ea70a0"
@@ -1714,6 +1787,26 @@
       "path": "课时资料/P2/P2-L4/配置/P2-L4_案例.json",
       "bytes": 1436,
       "sha256": "653bedb3ab8441485c77f001d170f33bc1e43c076fd7b369748ab81583926c54"
+    },
+    {
+      "path": "课时资料/P5/源码/VRX_官方原例记录器_V01.py",
+      "bytes": 17557,
+      "sha256": "7ee39aa5643a9ce1ad8e9f1d752888310e05949c65142a97b821c71231d38d38"
+    },
+    {
+      "path": "课时资料/P5/源码/VRX_官方原例记录器_V02.py",
+      "bytes": 21897,
+      "sha256": "a30c7c11f0721bf3b7ec291e0cc4415c90e154869fa09f7d839a6b0f8289994c"
+    },
+    {
+      "path": "课时资料/P5/源码/复核P5_VRX保存日志_V01.py",
+      "bytes": 25335,
+      "sha256": "90ea9277db96e596108a4e295893d4edd8a0ad338d12b9cf11a2b253845031b7"
+    },
+    {
+      "path": "课时资料/P5/源码/复核P5_VRX原例保存日志_V01.py",
+      "bytes": 14576,
+      "sha256": "3a60fe4b4cee0487a7145cc3ee8deeed2ed1c8b0d55f4dea87966fd9d77d543b"
     },
     {
       "path": "课时资料/P5/源码/复核P5保存日志_V01.py",
@@ -1776,9 +1869,19 @@
       "sha256": "a53fd8b3a6174fe2c453c0e86a1442914a441d60d73fd64e2c815e2cbb7c8527"
     },
     {
+      "path": "输出文件/版本快照/FRAMEWORK-V20/源码配置_SHA256.txt",
+      "bytes": 11864,
+      "sha256": "1b368963254e5b3f06055ca559547b212cbe0fd51270e08e127ed627ca8e001d"
+    },
+    {
+      "path": "输出文件/版本快照/FRAMEWORK-V20/版本.json",
+      "bytes": 599,
+      "sha256": "18a210c99b70dd3ed3eaf26f85346c6e2591a17061b20af3fb9696ddb9977323"
+    },
+    {
       "path": "输出文件/版本快照/阶段版本索引.json",
-      "bytes": 20456,
-      "sha256": "7d7c70c695fdda03e904606ee1d86779fad8cca3bd8fe14e7df3f23188a75d1a"
+      "bytes": 18149,
+      "sha256": "bbe374a852b1dee5748397f01d4b5151f354b44df15b5591780b6b04074a793e"
     },
     {
       "path": "输出文件/说明文档/P4统一案例实现与展示_V01.md",
@@ -1787,8 +1890,8 @@
     },
     {
       "path": "输出文件/说明文档/阶段成果总览.md",
-      "bytes": 1090,
-      "sha256": "bf684b87afa070f99d83ce18847c1e26485fda99a741dfe6a71f7f53cf3a52db"
+      "bytes": 922,
+      "sha256": "345927deee5fa69f8f44d3abf9fd6b23b6d8072dd79e63d7ca469db23073cc85"
     },
     {
       "path": "输出文件/阶段结果/P1/P1-V01/showcase/AStar_三场景.png",
@@ -1819,6 +1922,31 @@
       "path": "输出文件/阶段结果/P4/P4-V01/showcase/STATIC_FROZEN.gif",
       "bytes": 8470347,
       "sha256": "96dabdaa6c1f5318bb3bb93da47446d8268fb8ed2772a787d8d6849746c28302"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_original_teacher_V03_独立核查_V01/checks.json",
+      "bytes": 10028,
+      "sha256": "7b109eec5e62617b82a0042f4bf4171a520409bcbb974a5d28f3e9460fdf5207"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_original_teacher_V03_独立核查_V01/摘要.md",
+      "bytes": 598,
+      "sha256": "225e8ac2b54e89ae90e7938188b22b65c341b5c40392764710f185b7bab1188c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_pair_teacher_V01_独立核查_V01/checks.json",
+      "bytes": 10032,
+      "sha256": "69695b85a245283de21d90c8993e0b44653460d5de145b97a2ab1cbbd5426745"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_pair_teacher_V01_独立核查_V01/metrics.csv",
+      "bytes": 146,
+      "sha256": "7419bc34473e56a7099cb2d073f87418d38c9416bdb0b09263cd4704dd71810e"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_pair_teacher_V01_独立核查_V01/摘要.md",
+      "bytes": 689,
+      "sha256": "0c12a841f56f1b9e8c0a91919bea640ffc4570292be5a59f62504bb695631fca"
     },
     {
       "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_教师V02_保存日志复核_V01/config.json",
@@ -2016,6 +2144,266 @@
       "sha256": "850e52919fc49c06166f0a66d1904fe28548e215257bebfb182c8c025c7fe06b"
     },
     {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/config.json",
+      "bytes": 1450,
+      "sha256": "29a36ade0e664a81d285b2a741a6f16ea28d6e1946a76abbcb2dd4484dd776ac"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/MOOSLog_30_10_2026_____23_35_48/MOOSLog_30_10_2026_____23_35_48.alog",
+      "bytes": 345456,
+      "sha256": "ba1e5009fb3898c0a02a7e6d16241d9dd66f937c7335548210e85acd4164571f"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/alpha.bhv",
+      "bytes": 2103,
+      "sha256": "e17fb4a4ce218eddc8a8db149903723359977472734b4065e9df7a21985d04e1"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/alpha.moos",
+      "bytes": 5067,
+      "sha256": "6fdd912e1d0acb2a974f67e79a0bbc964ad9224b865ff579f51de3dc083cf30c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/dispatch.json",
+      "bytes": 373,
+      "sha256": "957b79ebb5ebe94f77f19c36eb4d752abb947d8feb528ba4c7d420eb28c37854"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/feedback.json",
+      "bytes": 837,
+      "sha256": "bf2c32191e92434a39dca623815037a4e497b8adb7781448f26671b176ce7761"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/owned_processes.json",
+      "bytes": 1711,
+      "sha256": "70883bc91e588e0f331b509dcb6d942549ee669ef4df15cb413ab7c2f9ab9332"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/queries/feedback/command.json",
+      "bytes": 471,
+      "sha256": "a40e75702fad48f299a66b042699b80186e9b89f8e426c20f6bbdfb9ab5f61b8"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/queries/ready/command.json",
+      "bytes": 470,
+      "sha256": "339262972457b92e8bd83306503059b0644d4a6241aff600b5501d55e79ef6d3"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/ready.json",
+      "bytes": 744,
+      "sha256": "91c7a1c9e116e25b82068020eaea1b2e86729f8524886ac100cc2d0de2d34f99"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/result.json",
+      "bytes": 1331,
+      "sha256": "f3bd78a95322ac6507abaada9000bd2385c1b35af5a04432aaf78442ecc90216"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/task.json",
+      "bytes": 239,
+      "sha256": "d953fe21dfe0eb8628ffd613e444d51a78f180119b62b487031a54220ba12a99"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/trajectory.csv",
+      "bytes": 3919,
+      "sha256": "4895a017c2b6f295bd6e07dfa17e6cd12c3ed22c00b4b6e6fac9d6b7f98f11c2"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/invalid_target.json",
+      "bytes": 169,
+      "sha256": "080f5307e7c261c03c30838830f2b197ebe1d8376b0a75a9ed84ed486fb8b789"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/metadata.json",
+      "bytes": 1188,
+      "sha256": "7e688e106968e0c6727a4562f88da274fd46681e6bae9693a7fda2d88e4a3a5a"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/paired_metrics.json",
+      "bytes": 1260,
+      "sha256": "32a5107f8b65576cfd0bf396074725627d8b6dc28fc817a604b7e740e61b10ad"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/reference_2d.csv",
+      "bytes": 1455,
+      "sha256": "bb109700df790770eee04bc3545c02fa2300e71a3c09f792030d8639f20348a7"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/result.json",
+      "bytes": 1218,
+      "sha256": "ccf88482e9bc222d9b6c52dfd243d3d22fc3a9b9c8b58dbb5743b0979c811e45"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/scheduler_assignment.json",
+      "bytes": 342,
+      "sha256": "ff290edac26f5cf76fe20bc5e32c8d5635cda04062a898176163876b2b5881e0"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/scheduler_problem.json",
+      "bytes": 178,
+      "sha256": "2343a829ace1b6902e53eed4ffee758bf9485d6995d3029f7746f0442d563082"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/source_SHA256.json",
+      "bytes": 25143,
+      "sha256": "afc0db33c255d9461ddf3065ec022ea8498078cbc5aac39ecd202236e0e3bc7d"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/source_result_before_reanalysis.json",
+      "bytes": 579,
+      "sha256": "50f486064bff027ef59b1ec6ab189bed764e6d4fb803505fb31f37504ae856f1"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/MOOSLog_30_10_2026_____23_35_55/MOOSLog_30_10_2026_____23_35_55.alog",
+      "bytes": 306436,
+      "sha256": "2c217e429ca30000cdf631af7ac81fb82c2a0422bb4a58780c0e076e90bc3412"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/alpha.bhv",
+      "bytes": 479,
+      "sha256": "c8ffb981f42aef2a5e72b6825c15ecf519f77148bb5f4ca41565d2b283d4734a"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/alpha.moos",
+      "bytes": 5068,
+      "sha256": "ad4505d88edf9b36bd87b9c9474bfcfe1379e4972de8353cef8cf9038f5e9d4b"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/dispatch.json",
+      "bytes": 402,
+      "sha256": "e064104f6f68eccf2ba6fa941d675bbfc752f1b06b3aa89165495d59907e9037"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/feedback.json",
+      "bytes": 794,
+      "sha256": "a7ebeace7ee8e29c0b38ee8b30d8cf5f9d5d1fe964ad2e47dac12bb09cded4d6"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/owned_processes.json",
+      "bytes": 1710,
+      "sha256": "ebacd1a6d231a2766f1463443b7a53976021f00f1cd1be3f0601e99b89d9dbb1"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/queries/feedback/command.json",
+      "bytes": 478,
+      "sha256": "859284c0ce54959d3fbb390022e9d99de0676b8b96d73c26946c0231ae491fcf"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/queries/ready/command.json",
+      "bytes": 470,
+      "sha256": "6d0b637c5292f91be19c005ead93b59f0f57d2555db8b036ba97fc7b43bb4453"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/ready.json",
+      "bytes": 742,
+      "sha256": "47b15930d633d719332797944c12bb9133e4208a128303d447c43133b559a0b0"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/result.json",
+      "bytes": 1741,
+      "sha256": "c06e086a6e52e8ca75dfbbb0354de72d4e724f976ced78b2b948b0239d443135"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/task.json",
+      "bytes": 240,
+      "sha256": "5acc9b7d7db92f4ff70d6ee77e6d5ceb3c6f610f46d28c4cce37d21a6de9b6d6"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/trajectory.csv",
+      "bytes": 3705,
+      "sha256": "8bb3c23ed3ceff40e1a2ff6f5e57ec31137157f25c0265359617c2ff068646a1"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/MOOSLog_30_10_2026_____23_36_02/MOOSLog_30_10_2026_____23_36_02.alog",
+      "bytes": 122040,
+      "sha256": "7d51d5597ddac842b508423e86de7a3727ce8639d06b399fba5ac98ae2ed34df"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/alpha.bhv",
+      "bytes": 487,
+      "sha256": "c6c8a74322b3ea761c795cbcad90cc99404ad9f76a6ebeeffe6c06de78cd11d0"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/alpha.moos",
+      "bytes": 5068,
+      "sha256": "28b6437aab0577f0a715fa1b859c09d08ee5ff8b31a1befc56ff3f8d4de2fb89"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/dispatch.json",
+      "bytes": 411,
+      "sha256": "930c000a8ee57fb77fb9b2a4ebc56c308fa1e094c3a00cf4e70aff58f8d9cc91"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/feedback.json",
+      "bytes": 839,
+      "sha256": "7512fe481afc67df70f81a6845eb067229e485b9b8215c43359bc67c4eff0673"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/owned_processes.json",
+      "bytes": 1711,
+      "sha256": "a0f9a5206c2e1fd07d4a4c5213bdd5c611e3ac7435db52757ffda20a7d1f0d0a"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/queries/feedback/command.json",
+      "bytes": 481,
+      "sha256": "222171d01fa425f7e382c95d22ff6f37944df48040035efbbfecffdf78841fc9"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/queries/ready/command.json",
+      "bytes": 470,
+      "sha256": "21775ca807307f9f81b614d7d4b755353ffb41102ed7dec4b802dc8f86573986"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/ready.json",
+      "bytes": 741,
+      "sha256": "f2a84d11fc9d0f923bceae0b649fcb232e1f149717cd80e302c5a41b6d89f75e"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/result.json",
+      "bytes": 1297,
+      "sha256": "e280c37f9539d571cfc35e093f5bc252c37228840890ec38483eaa53b592b44f"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/task.json",
+      "bytes": 244,
+      "sha256": "699b895fa34104c9a3b1ea36d567ee5cff6b876d26ebd6f7b3416795d4d9b03d"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/trajectory.csv",
+      "bytes": 1453,
+      "sha256": "73e70c0576553f6085934e1dbf78d1c5b569a276b824f532ae021ebb846070c9"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/摘要.md",
+      "bytes": 1603,
+      "sha256": "8dee7a74ab3ef0922948eeca69eac5db34e7cc5030a7f85dbbd8bef32dd2dfb9"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_原例独立核查_V01/checks.json",
+      "bytes": 10023,
+      "sha256": "ca264ff01c27146bfa3fdb4b94539a9d6320b2661103e56c4f6eaeb3499454af"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_原例独立核查_V01/摘要.md",
+      "bytes": 598,
+      "sha256": "ace01e51ea8bea540d8b5a7fbbb4c9ac8da8a2c26d42a05d5b176add99e0d88a"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_对照独立核查_V01/checks.json",
+      "bytes": 10030,
+      "sha256": "1232125fa393850d9c6d7e3034d7f866751ca53f356c839582e4a1413642d424"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_对照独立核查_V01/metrics.csv",
+      "bytes": 144,
+      "sha256": "2b740697c1fbf3fcfbbc845f8000430641d667ede000464661ac123281d2e676"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_对照独立核查_V01/摘要.md",
+      "bytes": 689,
+      "sha256": "8bb559869af7eb7960847fa5e1686a4ae6e6baa16af456842cdb98c83277c5a3"
+    },
+    {
       "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_教师V02_保存日志复核_V01/2D_MOOS_same_task.pdf",
       "bytes": 20229,
       "sha256": "000fdd6e78dee6b56fdf5df17741196cfddb54ae6e3b4d83be58674e68e5b282"
@@ -2049,6 +2437,271 @@
       "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_教师V02_保存日志复核_V01/视觉核查_V01.json",
       "bytes": 483,
       "sha256": "b19c82e63c9d052d487b9d0977af0b22ae96798efdb3c1df94219f1d9b7a7ddb"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/2D_VRX_same_task.pdf",
+      "bytes": 24671,
+      "sha256": "d209538686692e0220b14833b9afb33fadc463c133b728e0529ac54e40122be2"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/2D_VRX_same_task.png",
+      "bytes": 256909,
+      "sha256": "7b7ce0fb1a43b530120ef75de7f9cb5def8a307ab1db60836919e48681d8a92e"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/VRX_progress_error.pdf",
+      "bytes": 23711,
+      "sha256": "ab345f782da7bdf3fc583444df645980cf1dd523ef9969d88eaa2745fcd07c2f"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/VRX_progress_error.png",
+      "bytes": 368384,
+      "sha256": "cbb50c5f3bc98029d22dfd94c58386f29965df3b292a28faeb47d48f1d2bb882"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/original_first_camera_frame.png",
+      "bytes": 445639,
+      "sha256": "981220fd583cce7b9c011bcd0e7fb1ff0eca67585ab5035964c1e4e524878141"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/原例相机来源.json",
+      "bytes": 824,
+      "sha256": "e47b18a6e6d501e725bf374b70109d5531737c9cbe677061311f3165030cad66"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/摘要.md",
+      "bytes": 1609,
+      "sha256": "f417f0605843b92b487e8f457d33bf64c783c431ba376d28a5b05e4a4c20865e"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/来源.json",
+      "bytes": 2279,
+      "sha256": "6b826fcead6e88055307fa6c3a8fc5de815b5d536efa5cc57e5c7cd505d7b1b3"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/视觉核查_V01.json",
+      "bytes": 1198,
+      "sha256": "304483625ee0c1486e5052f849c02642c1f5a48eb4079b2aaa4344708ae03fd6"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/摘要.md",
+      "bytes": 1703,
+      "sha256": "e27535618a0ba62507d03e806d74d486f9803bbae1014737f5adf292cce5dcfb"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/fuel_cache_identity_V04.json",
+      "bytes": 25616,
+      "sha256": "6f37d4cc81dce062750be02e5597b0041789fed2b927365d8516eb03991828d7"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/renderer.json",
+      "bytes": 592,
+      "sha256": "f65b729ab806bf16d0315eec5fd1e02bfcc08f374f315ddc0906620aeccece33"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_build_result_V01.json",
+      "bytes": 3102,
+      "sha256": "d512f3c6ab1d0f3193b891065d0abce207442a241c2474ae197527f53c5c03ac"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_source_identity_accelerated_V02.json",
+      "bytes": 1125,
+      "sha256": "02f70f0b4607ff9e1a3e92d2337bae62bac76d50e154787168722cbc8b620d8a"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/launch_metadata.json",
+      "bytes": 1219,
+      "sha256": "d1bb60ae6451b484a6c5243958bca7ec27189f1741807257d9efdb09a30ebd14"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/model/derivation_identity_V02.json",
+      "bytes": 2224,
+      "sha256": "99e2027fc90a8ac95d0d3a9d912b46a13634b5b42830f12b3d1c3e7ae88bc9e6"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/clock.csv",
+      "bytes": 198223,
+      "sha256": "80d444f4db0c2e0ee6d46ce84e866fc7b9fe18fd8f51674e3fbfbcb6e20f6d20"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/commands.csv",
+      "bytes": 35064,
+      "sha256": "511f9d51e222ec99ca2b939b6e1df33ec2986ea88b0dbe31193bc96cb6ca991a"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/common_inputs.json",
+      "bytes": 2072,
+      "sha256": "a1bae9ad07531003ea6f77302de63ebbb650b95e7d3fc26872c3af95cf19f114"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/frozen_config.json",
+      "bytes": 2300,
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/metadata.json",
+      "bytes": 1590,
+      "sha256": "2265592fc8ac294360478ec094093028ec2729b5687029f4b1cde258ad20aacd"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/metrics.csv",
+      "bytes": 174,
+      "sha256": "ec73613a10a5bc9b969040611691b425fe1697ad01932864b9e8fe63903f0006"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/odometry.csv",
+      "bytes": 142910,
+      "sha256": "b0bf0c42e96b2bbebfb318f9be0779993d0e9aa2b05f63c885d2261da9873036"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/reference_2d.csv",
+      "bytes": 17481,
+      "sha256": "957fa57631afba8519e46277ddcdf1246df82909faba1a7421fab83829642ffa"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/summary.json",
+      "bytes": 1058,
+      "sha256": "8ff75fee99981954b2cc5c6362a9be07973e9f60e32fb510044078526aea6e18"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/摘要.md",
+      "bytes": 844,
+      "sha256": "75fe09d383cf4f0ff3299db48e541f1a15fd71edbb85f0386d057dae3621e885"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/SHA256.json",
+      "bytes": 4879,
+      "sha256": "e6b54c1a58e1b690321df18259202affc986002ffb6697a577d49a35c614947c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/launch_metadata.json",
+      "bytes": 9819,
+      "sha256": "438c88b73b0cf3432d8c348fa4c3c849905d8952d2eb3cf2c0f72ef564044a62"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/clock.csv",
+      "bytes": 141307,
+      "sha256": "95d1e985a7e0d98de3b94e36600bdf0df71d6d7ccdcc2477eb655c0ef4056519"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/commands.csv",
+      "bytes": 8037,
+      "sha256": "433ff5dc03cb48a2b01e36b98c5504b48bc25bdd1688a8882babb76d17e78d33"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/first_image.data.bin",
+      "bytes": 2764800,
+      "sha256": "203929367519fb15e46218203e34583b00773d7d5e2c1e0bb4d4835510127eff"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/first_image_header.json",
+      "bytes": 456,
+      "sha256": "38628cc381e36592e667a14146463dc26b0dbc01a11bac2373f0ed6e0eeee45c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/image.csv",
+      "bytes": 361,
+      "sha256": "cddcbdd5d7a6bb13cc83aadfbf1481a5a3d44fd1dcf1b3e273dac5149ad65e3a"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/metadata.json",
+      "bytes": 1641,
+      "sha256": "06113e0dc78053971c64714d3f199c4e761b644ab20e9439f4d270bf5efb9daf"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/model_pose.csv",
+      "bytes": 242509,
+      "sha256": "b60a798beddd8e6e8b00480ce5a3a00cb31a03ed12c974e9b828b03255f0cfb3"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/summary.json",
+      "bytes": 5192,
+      "sha256": "1386b2f2ad152b6fa3a905e765429b379673b798224cf4112e7c665b4df79747"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/摘要.md",
+      "bytes": 1352,
+      "sha256": "f90d328b278f31746659b88e713cae90b6430137caf4ac29ef266ccc58819535"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/readiness.json",
+      "bytes": 974,
+      "sha256": "5ae6a3eb43cad577832d1a34f8d168ca039103a99f84187baf621214f0d3d5ff"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/launch_metadata.json",
+      "bytes": 4776,
+      "sha256": "5e249fa75df530fa2fb986cf1e445689da5a35c7357c2ab776e9bb2b3d2aa75c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/clock.csv",
+      "bytes": 182070,
+      "sha256": "3dedd16334ec736d71643fe43c251cec71b578b955688866e77cb9bac5360e6b"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/commands.csv",
+      "bytes": 34750,
+      "sha256": "040c5663bf50b6e568d4e1567ec384a8cb471fd4cfd52f1cacb40fbf3a1e063b"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/common_inputs.json",
+      "bytes": 2072,
+      "sha256": "324639806c3915b692087f14c99831c03b88e7d8cad60069200a09470ef0ae2c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/frozen_config.json",
+      "bytes": 2300,
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/metadata.json",
+      "bytes": 1590,
+      "sha256": "97c6654ac43d551b39fd74973ca65b1bc40ace6c7d9c0aadb81d999692e86540"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/metrics.csv",
+      "bytes": 171,
+      "sha256": "254010a71975c061b5063a1ef4e24b0f9464d0ac1cf478e1125e88a68059f31f"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/odometry.csv",
+      "bytes": 142768,
+      "sha256": "87fc65846610eca1589d3c0b3a50b6916febb588608827476bef357a889bf202"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/reference_2d.csv",
+      "bytes": 17469,
+      "sha256": "450b6a894ad59551c1e7605f6be4f8c1a729d033316a31163128d3d55964b9df"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/summary.json",
+      "bytes": 1054,
+      "sha256": "09f2b52f50bcf0ca5d1f96b7c5ec31c4018d638f98c1eb1a21245f5f7bff0c51"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/摘要.md",
+      "bytes": 841,
+      "sha256": "ab5f3283a4d7587f5e602032497c5b2c497af88f8b3d47590d5d4158e10c395d"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/readiness.json",
+      "bytes": 313,
+      "sha256": "a18ccf7142f948d171ee1f393e2640658386c11787105baf860c2eae79f01f0d"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/summary.json",
+      "bytes": 1753,
+      "sha256": "9dc25b21f21b8583e39da1f8b8d63724dd022da22c4362178b3077dbe00487db"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/摘要.md",
+      "bytes": 936,
+      "sha256": "c54349c8bf81db971914fa477c2b0fa368e2f47ec5b92a4912c7804e1648d8a2"
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/摘要.md",
+      "bytes": 287,
+      "sha256": "b332d3dcdbe083c11d7fb937803ae01b79ca9cc9a9436a6d4171fbec6233bf9c"
     },
     {
       "path": "输出文件/阶段结果/X1/X1-V01/runs/X1-L1_本人V01/路径.json",
@@ -2111,9 +2764,559 @@
       "sha256": "b77154401519c85eedfd2a488562b421c27c1e3edc5d04649429da0c28acb16b"
     }
   ],
-  "stage_catalog_copy": {
-    "status": "BYTE_IDENTICAL",
-    "source_path": "输出文件/版本快照/阶段版本索引.json",
-    "sha256": "7d7c70c695fdda03e904606ee1d86779fad8cca3bd8fe14e7df3f23188a75d1a"
-  }
+  "p5_status": "PASSED",
+  "full_stage_acceptance": "P5 three acceptance points passed; learner execution/explanation verified; P6 not started",
+  "selected_platform_evidence": "Saved MOOS logs, native original WAM-V poses/Image, native Odometry/clock/command/2D comparison, independent audits and genuine plots",
+  "additional_p5_byte_identical_copies": [
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/summary.json",
+      "sha256": "9dc25b21f21b8583e39da1f8b8d63724dd022da22c4362178b3077dbe00487db",
+      "bytes": 1753
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/SHA256.json",
+      "sha256": "e6b54c1a58e1b690321df18259202affc986002ffb6697a577d49a35c614947c",
+      "bytes": 4879
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/摘要.md",
+      "sha256": "c54349c8bf81db971914fa477c2b0fa368e2f47ec5b92a4912c7804e1648d8a2",
+      "bytes": 936
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/launch_metadata.json",
+      "sha256": "438c88b73b0cf3432d8c348fa4c3c849905d8952d2eb3cf2c0f72ef564044a62",
+      "bytes": 9819
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/readiness.json",
+      "sha256": "5ae6a3eb43cad577832d1a34f8d168ca039103a99f84187baf621214f0d3d5ff",
+      "bytes": 974
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/summary.json",
+      "sha256": "1386b2f2ad152b6fa3a905e765429b379673b798224cf4112e7c665b4df79747",
+      "bytes": 5192
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/image.csv",
+      "sha256": "cddcbdd5d7a6bb13cc83aadfbf1481a5a3d44fd1dcf1b3e273dac5149ad65e3a",
+      "bytes": 361
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/first_image_header.json",
+      "sha256": "38628cc381e36592e667a14146463dc26b0dbc01a11bac2373f0ed6e0eeee45c",
+      "bytes": 456
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/摘要.md",
+      "sha256": "f90d328b278f31746659b88e713cae90b6430137caf4ac29ef266ccc58819535",
+      "bytes": 1352
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/commands.csv",
+      "sha256": "433ff5dc03cb48a2b01e36b98c5504b48bc25bdd1688a8882babb76d17e78d33",
+      "bytes": 8037
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/model_pose.csv",
+      "sha256": "b60a798beddd8e6e8b00480ce5a3a00cb31a03ed12c974e9b828b03255f0cfb3",
+      "bytes": 242509
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/metadata.json",
+      "sha256": "06113e0dc78053971c64714d3f199c4e761b644ab20e9439f4d270bf5efb9daf",
+      "bytes": 1641
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/clock.csv",
+      "sha256": "95d1e985a7e0d98de3b94e36600bdf0df71d6d7ccdcc2477eb655c0ef4056519",
+      "bytes": 141307
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/original/observations/first_image.data.bin",
+      "sha256": "203929367519fb15e46218203e34583b00773d7d5e2c1e0bb4d4835510127eff",
+      "bytes": 2764800
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/launch_metadata.json",
+      "sha256": "5e249fa75df530fa2fb986cf1e445689da5a35c7357c2ab776e9bb2b3d2aa75c",
+      "bytes": 4776
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/readiness.json",
+      "sha256": "a18ccf7142f948d171ee1f393e2640658386c11787105baf860c2eae79f01f0d",
+      "bytes": 313
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/summary.json",
+      "sha256": "09f2b52f50bcf0ca5d1f96b7c5ec31c4018d638f98c1eb1a21245f5f7bff0c51",
+      "bytes": 1054
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/frozen_config.json",
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/reference_2d.csv",
+      "sha256": "450b6a894ad59551c1e7605f6be4f8c1a729d033316a31163128d3d55964b9df",
+      "bytes": 17469
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/common_inputs.json",
+      "sha256": "324639806c3915b692087f14c99831c03b88e7d8cad60069200a09470ef0ae2c",
+      "bytes": 2072
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/摘要.md",
+      "sha256": "ab5f3283a4d7587f5e602032497c5b2c497af88f8b3d47590d5d4158e10c395d",
+      "bytes": 841
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/commands.csv",
+      "sha256": "040c5663bf50b6e568d4e1567ec384a8cb471fd4cfd52f1cacb40fbf3a1e063b",
+      "bytes": 34750
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/metadata.json",
+      "sha256": "97c6654ac43d551b39fd74973ca65b1bc40ace6c7d9c0aadb81d999692e86540",
+      "bytes": 1590
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/metrics.csv",
+      "sha256": "254010a71975c061b5063a1ef4e24b0f9464d0ac1cf478e1125e88a68059f31f",
+      "bytes": 171
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/clock.csv",
+      "sha256": "3dedd16334ec736d71643fe43c251cec71b578b955688866e77cb9bac5360e6b",
+      "bytes": 182070
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations/odometry.csv",
+      "sha256": "87fc65846610eca1589d3c0b3a50b6916febb588608827476bef357a889bf202",
+      "bytes": 142768
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/summary.json",
+      "sha256": "8ff75fee99981954b2cc5c6362a9be07973e9f60e32fb510044078526aea6e18",
+      "bytes": 1058
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/frozen_config.json",
+      "sha256": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+      "bytes": 2300
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/reference_2d.csv",
+      "sha256": "957fa57631afba8519e46277ddcdf1246df82909faba1a7421fab83829642ffa",
+      "bytes": 17481
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/common_inputs.json",
+      "sha256": "a1bae9ad07531003ea6f77302de63ebbb650b95e7d3fc26872c3af95cf19f114",
+      "bytes": 2072
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/摘要.md",
+      "sha256": "75fe09d383cf4f0ff3299db48e541f1a15fd71edbb85f0386d057dae3621e885",
+      "bytes": 844
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/commands.csv",
+      "sha256": "511f9d51e222ec99ca2b939b6e1df33ec2986ea88b0dbe31193bc96cb6ca991a",
+      "bytes": 35064
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/metadata.json",
+      "sha256": "2265592fc8ac294360478ec094093028ec2729b5687029f4b1cde258ad20aacd",
+      "bytes": 1590
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/metrics.csv",
+      "sha256": "ec73613a10a5bc9b969040611691b425fe1697ad01932864b9e8fe63903f0006",
+      "bytes": 174
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/clock.csv",
+      "sha256": "80d444f4db0c2e0ee6d46ce84e866fc7b9fe18fd8f51674e3fbfbcb6e20f6d20",
+      "bytes": 198223
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/observations/odometry.csv",
+      "sha256": "b0bf0c42e96b2bbebfb318f9be0779993d0e9aa2b05f63c885d2261da9873036",
+      "bytes": 142910
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/launch_metadata.json",
+      "sha256": "d1bb60ae6451b484a6c5243958bca7ec27189f1741807257d9efdb09a30ebd14",
+      "bytes": 1219
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/renderer.json",
+      "sha256": "f65b729ab806bf16d0315eec5fd1e02bfcc08f374f315ddc0906620aeccece33",
+      "bytes": 592
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_build_result_V01.json",
+      "sha256": "d512f3c6ab1d0f3193b891065d0abce207442a241c2474ae197527f53c5c03ac",
+      "bytes": 3102
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/fuel_cache_identity_V04.json",
+      "sha256": "6f37d4cc81dce062750be02e5597b0041789fed2b927365d8516eb03991828d7",
+      "bytes": 25616
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/model/derivation_identity_V02.json",
+      "sha256": "99e2027fc90a8ac95d0d3a9d912b46a13634b5b42830f12b3d1c3e7ae88bc9e6",
+      "bytes": 2224
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/scheduler_assignment.json",
+      "sha256": "ff290edac26f5cf76fe20bc5e32c8d5635cda04062a898176163876b2b5881e0",
+      "bytes": 342
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/reference_2d.csv",
+      "sha256": "bb109700df790770eee04bc3545c02fa2300e71a3c09f792030d8639f20348a7",
+      "bytes": 1455
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/result.json",
+      "sha256": "ccf88482e9bc222d9b6c52dfd243d3d22fc3a9b9c8b58dbb5743b0979c811e45",
+      "bytes": 1218
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/invalid_target.json",
+      "sha256": "080f5307e7c261c03c30838830f2b197ebe1d8376b0a75a9ed84ed486fb8b789",
+      "bytes": 169
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/paired_metrics.json",
+      "sha256": "32a5107f8b65576cfd0bf396074725627d8b6dc28fc817a604b7e740e61b10ad",
+      "bytes": 1260
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/config.json",
+      "sha256": "29a36ade0e664a81d285b2a741a6f16ea28d6e1946a76abbcb2dd4484dd776ac",
+      "bytes": 1450
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/摘要.md",
+      "sha256": "8dee7a74ab3ef0922948eeca69eac5db34e7cc5030a7f85dbbd8bef32dd2dfb9",
+      "bytes": 1603
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/metadata.json",
+      "sha256": "7e688e106968e0c6727a4562f88da274fd46681e6bae9693a7fda2d88e4a3a5a",
+      "bytes": 1188
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/source_SHA256.json",
+      "sha256": "afc0db33c255d9461ddf3065ec022ea8498078cbc5aac39ecd202236e0e3bc7d",
+      "bytes": 25143
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/source_result_before_reanalysis.json",
+      "sha256": "50f486064bff027ef59b1ec6ab189bed764e6d4fb803505fb31f37504ae856f1",
+      "bytes": 579
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/scheduler_problem.json",
+      "sha256": "2343a829ace1b6902e53eed4ffee758bf9485d6995d3029f7746f0442d563082",
+      "bytes": 178
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/result.json",
+      "sha256": "c06e086a6e52e8ca75dfbbb0354de72d4e724f976ced78b2b948b0239d443135",
+      "bytes": 1741
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/task.json",
+      "sha256": "5acc9b7d7db92f4ff70d6ee77e6d5ceb3c6f610f46d28c4cce37d21a6de9b6d6",
+      "bytes": 240
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/dispatch.json",
+      "sha256": "e064104f6f68eccf2ba6fa941d675bbfc752f1b06b3aa89165495d59907e9037",
+      "bytes": 402
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/alpha.bhv",
+      "sha256": "c8ffb981f42aef2a5e72b6825c15ecf519f77148bb5f4ca41565d2b283d4734a",
+      "bytes": 479
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/alpha.moos",
+      "sha256": "ad4505d88edf9b36bd87b9c9474bfcfe1379e4972de8353cef8cf9038f5e9d4b",
+      "bytes": 5068
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/trajectory.csv",
+      "sha256": "8bb3c23ed3ceff40e1a2ff6f5e57ec31137157f25c0265359617c2ff068646a1",
+      "bytes": 3705
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/ready.json",
+      "sha256": "47b15930d633d719332797944c12bb9133e4208a128303d447c43133b559a0b0",
+      "bytes": 742
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/feedback.json",
+      "sha256": "a7ebeace7ee8e29c0b38ee8b30d8cf5f9d5d1fe964ad2e47dac12bb09cded4d6",
+      "bytes": 794
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/owned_processes.json",
+      "sha256": "ebacd1a6d231a2766f1463443b7a53976021f00f1cd1be3f0601e99b89d9dbb1",
+      "bytes": 1710
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/MOOSLog_30_10_2026_____23_35_55/MOOSLog_30_10_2026_____23_35_55.alog",
+      "sha256": "2c217e429ca30000cdf631af7ac81fb82c2a0422bb4a58780c0e076e90bc3412",
+      "bytes": 306436
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/queries/ready/command.json",
+      "sha256": "6d0b637c5292f91be19c005ead93b59f0f57d2555db8b036ba97fc7b43bb4453",
+      "bytes": 470
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/success/queries/feedback/command.json",
+      "sha256": "859284c0ce54959d3fbb390022e9d99de0676b8b96d73c26946c0231ae491fcf",
+      "bytes": 478
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/result.json",
+      "sha256": "f3bd78a95322ac6507abaada9000bd2385c1b35af5a04432aaf78442ecc90216",
+      "bytes": 1331
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/task.json",
+      "sha256": "d953fe21dfe0eb8628ffd613e444d51a78f180119b62b487031a54220ba12a99",
+      "bytes": 239
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/dispatch.json",
+      "sha256": "957b79ebb5ebe94f77f19c36eb4d752abb947d8feb528ba4c7d420eb28c37854",
+      "bytes": 373
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/alpha.bhv",
+      "sha256": "e17fb4a4ce218eddc8a8db149903723359977472734b4065e9df7a21985d04e1",
+      "bytes": 2103
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/alpha.moos",
+      "sha256": "6fdd912e1d0acb2a974f67e79a0bbc964ad9224b865ff579f51de3dc083cf30c",
+      "bytes": 5067
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/trajectory.csv",
+      "sha256": "4895a017c2b6f295bd6e07dfa17e6cd12c3ed22c00b4b6e6fac9d6b7f98f11c2",
+      "bytes": 3919
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/ready.json",
+      "sha256": "91c7a1c9e116e25b82068020eaea1b2e86729f8524886ac100cc2d0de2d34f99",
+      "bytes": 744
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/feedback.json",
+      "sha256": "bf2c32191e92434a39dca623815037a4e497b8adb7781448f26671b176ce7761",
+      "bytes": 837
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/owned_processes.json",
+      "sha256": "70883bc91e588e0f331b509dcb6d942549ee669ef4df15cb413ab7c2f9ab9332",
+      "bytes": 1711
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/MOOSLog_30_10_2026_____23_35_48/MOOSLog_30_10_2026_____23_35_48.alog",
+      "sha256": "ba1e5009fb3898c0a02a7e6d16241d9dd66f937c7335548210e85acd4164571f",
+      "bytes": 345456
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/queries/ready/command.json",
+      "sha256": "339262972457b92e8bd83306503059b0644d4a6241aff600b5501d55e79ef6d3",
+      "bytes": 470
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/example/queries/feedback/command.json",
+      "sha256": "a40e75702fad48f299a66b042699b80186e9b89f8e426c20f6bbdfb9ab5f61b8",
+      "bytes": 471
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/result.json",
+      "sha256": "e280c37f9539d571cfc35e093f5bc252c37228840890ec38483eaa53b592b44f",
+      "bytes": 1297
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/task.json",
+      "sha256": "699b895fa34104c9a3b1ea36d567ee5cff6b876d26ebd6f7b3416795d4d9b03d",
+      "bytes": 244
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/dispatch.json",
+      "sha256": "930c000a8ee57fb77fb9b2a4ebc56c308fa1e094c3a00cf4e70aff58f8d9cc91",
+      "bytes": 411
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/alpha.bhv",
+      "sha256": "c6c8a74322b3ea761c795cbcad90cc99404ad9f76a6ebeeffe6c06de78cd11d0",
+      "bytes": 487
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/alpha.moos",
+      "sha256": "28b6437aab0577f0a715fa1b859c09d08ee5ff8b31a1befc56ff3f8d4de2fb89",
+      "bytes": 5068
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/trajectory.csv",
+      "sha256": "73e70c0576553f6085934e1dbf78d1c5b569a276b824f532ae021ebb846070c9",
+      "bytes": 1453
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/ready.json",
+      "sha256": "f2a84d11fc9d0f923bceae0b649fcb232e1f149717cd80e302c5a41b6d89f75e",
+      "bytes": 741
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/feedback.json",
+      "sha256": "7512fe481afc67df70f81a6845eb067229e485b9b8215c43359bc67c4eff0673",
+      "bytes": 839
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/owned_processes.json",
+      "sha256": "a0f9a5206c2e1fd07d4a4c5213bdd5c611e3ac7435db52757ffda20a7d1f0d0a",
+      "bytes": 1711
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/MOOSLog_30_10_2026_____23_36_02/MOOSLog_30_10_2026_____23_36_02.alog",
+      "sha256": "7d51d5597ddac842b508423e86de7a3727ce8639d06b399fba5ac98ae2ed34df",
+      "bytes": 122040
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/queries/ready/command.json",
+      "sha256": "21775ca807307f9f81b614d7d4b755353ffb41102ed7dec4b802dc8f86573986",
+      "bytes": 470
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人V01_保存日志复核_V01/timeout/queries/feedback/command.json",
+      "sha256": "222171d01fa425f7e382c95d22ff6f37944df48040035efbbfecffdf78841fc9",
+      "bytes": 481
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_pair_teacher_V01_独立核查_V01/摘要.md",
+      "sha256": "0c12a841f56f1b9e8c0a91919bea640ffc4570292be5a59f62504bb695631fca",
+      "bytes": 689
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_pair_teacher_V01_独立核查_V01/metrics.csv",
+      "sha256": "7419bc34473e56a7099cb2d073f87418d38c9416bdb0b09263cd4704dd71810e",
+      "bytes": 146
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_pair_teacher_V01_独立核查_V01/checks.json",
+      "sha256": "69695b85a245283de21d90c8993e0b44653460d5de145b97a2ab1cbbd5426745",
+      "bytes": 10032
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_original_teacher_V03_独立核查_V01/摘要.md",
+      "sha256": "225e8ac2b54e89ae90e7938188b22b65c341b5c40392764710f185b7bab1188c",
+      "bytes": 598
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_original_teacher_V03_独立核查_V01/checks.json",
+      "sha256": "7b109eec5e62617b82a0042f4bf4171a520409bcbb974a5d28f3e9460fdf5207",
+      "bytes": 10028
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_原例独立核查_V01/摘要.md",
+      "sha256": "ace01e51ea8bea540d8b5a7fbbb4c9ac8da8a2c26d42a05d5b176add99e0d88a",
+      "bytes": 598
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_原例独立核查_V01/checks.json",
+      "sha256": "ca264ff01c27146bfa3fdb4b94539a9d6320b2661103e56c4f6eaeb3499454af",
+      "bytes": 10023
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_对照独立核查_V01/摘要.md",
+      "sha256": "8bb559869af7eb7960847fa5e1686a4ae6e6baa16af456842cdb98c83277c5a3",
+      "bytes": 689
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_对照独立核查_V01/metrics.csv",
+      "sha256": "2b740697c1fbf3fcfbbc845f8000430641d667ede000464661ac123281d2e676",
+      "bytes": 144
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/checks/P5_本人VRX_V01_对照独立核查_V01/checks.json",
+      "sha256": "1232125fa393850d9c6d7e3034d7f866751ca53f356c839582e4a1413642d424",
+      "bytes": 10030
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/来源.json",
+      "sha256": "6b826fcead6e88055307fa6c3a8fc5de815b5d536efa5cc57e5c7cd505d7b1b3",
+      "bytes": 2279
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/摘要.md",
+      "sha256": "f417f0605843b92b487e8f457d33bf64c783c431ba376d28a5b05e4a4c20865e",
+      "bytes": 1609
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/VRX_progress_error.pdf",
+      "sha256": "ab345f782da7bdf3fc583444df645980cf1dd523ef9969d88eaa2745fcd07c2f",
+      "bytes": 23711
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/VRX_progress_error.png",
+      "sha256": "cbb50c5f3bc98029d22dfd94c58386f29965df3b292a28faeb47d48f1d2bb882",
+      "bytes": 368384
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/2D_VRX_same_task.png",
+      "sha256": "7b7ce0fb1a43b530120ef75de7f9cb5def8a307ab1db60836919e48681d8a92e",
+      "bytes": 256909
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/视觉核查_V01.json",
+      "sha256": "304483625ee0c1486e5052f849c02642c1f5a48eb4079b2aaa4344708ae03fd6",
+      "bytes": 1198
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/2D_VRX_same_task.pdf",
+      "sha256": "d209538686692e0220b14833b9afb33fadc463c133b728e0529ac54e40122be2",
+      "bytes": 24671
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/原例相机来源.json",
+      "sha256": "e47b18a6e6d501e725bf374b70109d5531737c9cbe677061311f3165030cad66",
+      "bytes": 824
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/original_first_camera_frame.png",
+      "sha256": "981220fd583cce7b9c011bcd0e7fb1ff0eca67585ab5035964c1e4e524878141",
+      "bytes": 445639
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/showcase/摘要.md",
+      "sha256": "e27535618a0ba62507d03e806d74d486f9803bbae1014737f5adf292cce5dcfb",
+      "bytes": 1703
+    },
+    {
+      "path": "课时资料/P5/源码/复核P5_VRX原例保存日志_V01.py",
+      "sha256": "3a60fe4b4cee0487a7145cc3ee8deeed2ed1c8b0d55f4dea87966fd9d77d543b",
+      "bytes": 14576
+    },
+    {
+      "path": "输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_source_identity_accelerated_V02.json",
+      "sha256": "02f70f0b4607ff9e1a3e92d2337bae62bac76d50e154787168722cbc8b620d8a",
+      "bytes": 1125
+    }
+  ]
 }

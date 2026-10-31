@@ -1,0 +1,16 @@
+{
+  "wall_elapsed_s": 1.0267834160476923,
+  "phase": "zero_baseline",
+  "clock_s": 1.1480000000000001,
+  "stamp_sec": 1,
+  "stamp_nanosec": 124000000,
+  "frame_id": "wamv/wamv/base_link/front_left_camera_sensor",
+  "encoding": "rgb8",
+  "width": 1280,
+  "height": 720,
+  "step": 3840,
+  "is_bigendian": 0,
+  "data_bytes": 2764800,
+  "data_sha256": "203929367519fb15e46218203e34583b00773d7d5e2c1e0bb4d4835510127eff",
+  "data_file": "first_image.data.bin"
+}

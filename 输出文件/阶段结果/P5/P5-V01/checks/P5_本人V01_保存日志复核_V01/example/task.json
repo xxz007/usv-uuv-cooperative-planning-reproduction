@@ -1,0 +1,13 @@
+{
+  "task": {
+    "id": "P5-EXAMPLE",
+    "goal_m": [
+      60,
+      -40
+    ]
+  },
+  "example": true,
+  "timeout_case": false,
+  "port": 59441,
+  "frame": "local ENU: x east, y north, metres; MOOS heading degrees clockwise from north"
+}

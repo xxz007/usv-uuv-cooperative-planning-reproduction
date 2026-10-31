@@ -1,6 +1,6 @@
 {
-  "framework": "FRAMEWORK-V18",
-  "date": "2026-10-30",
+  "framework": "FRAMEWORK-V20",
+  "date": "2026-10-31",
   "stages": {
     "P0": {
       "title": "环境与研究路线",
@@ -53,8 +53,7 @@
       "parent": "P3-V01",
       "assets": [
         "输出文件/阶段结果/P4/P4-V01/showcase/STATIC_FROZEN.gif",
-        "输出文件/阶段结果/P4/P4-V01/showcase/DYNAMIC_REPLAN.gif",
-        "输出文件/阶段结果/P4/P4-V01/showcase/摘要.md"
+        "输出文件/阶段结果/P4/P4-V01/showcase/DYNAMIC_REPLAN.gif"
       ],
       "integrated_execution_status": "VERIFIED",
       "course_passed": 4,
@@ -62,20 +61,21 @@
       "execution_summary": "输出文件/阶段结果/P4/P4-V01/runs/20261011_comparison_V01/摘要.md"
     },
     "P5": {
-      "title": "真实仿真平台接口",
-      "course_status": "IN_PROGRESS",
+      "title": "MOOS闭环、VRX原例与同任务对照完整阶段",
+      "course_status": "PASSED",
       "framework_version": "P5-V01",
-      "visual_status": "MOOS_RENDERED_VERIFIED_VRX_PENDING",
-      "new_capability": "MOOS原例与任务闭环实施；VRX保留，用户计划租云主机后经SSH运行",
+      "source_framework": "FRAMEWORK-V20",
+      "visual_status": "RENDERED_VERIFIED",
+      "integrated_execution_status": "PLATFORM_RUNS_VERIFIED_SEPARATELY",
+      "learner_acceptance": "EXECUTION_AND_EXPLANATION_PASSED",
       "parent": "P4-V01",
+      "new_capability": "Separate actual MOOS and VRX platform execution; one same-task VRX/ideal2D comparison",
+      "execution_summary": "输出文件/阶段结果/P5/P5-V01/摘要.md",
       "assets": [
-        "输出文件/阶段结果/P5/P5-V01/showcase/P5_教师V02_保存日志复核_V01/2D_MOOS_same_task.png"
-      ],
-      "learning_status": "LEARNER_EXECUTION_AND_EXPLANATION_PENDING",
-      "scope_decision": "ORIGINAL_MOOS_AND_VRX_RETAINED",
-      "record": "课时资料/P5/P5_完整阶段学习记录.md",
-      "integrated_execution_status": "MOOS_VERIFIED_VRX_PENDING",
-      "execution_summary": "输出文件/阶段结果/P5/P5-V01/checks/P5_教师V02_保存日志复核_V01/摘要.md"
+        "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/2D_VRX_same_task.png",
+        "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/VRX_progress_error.png",
+        "输出文件/阶段结果/P5/P5-V01/showcase/P5_本人VRX_V01/original_first_camera_frame.png"
+      ]
     },
     "P6": {
       "title": "复现实验包与研究问题",
@@ -94,23 +94,9 @@
       "new_capability": "All four X1 lessons passed: safe adjacency, execution, static cost propagation, same-P4 dynamic integration and saved-log display",
       "parent": "P4-V01",
       "assets": [
-        "输出文件/阶段结果/X1/X1-V01/runs/X1-L1_本人V01/路径叠图.png",
-        "输出文件/阶段结果/X1/X1-V01/runs/X1-L1_本人V01/摘要.md",
-        "课时资料/X1/X1-L1/验收/X1-L1_最终摘要.md",
-        "输出文件/阶段结果/X1/X1-V01/runs/X1-L2_本人V01/摘要.md",
-        "课时资料/X1/X1-L2/验收/X1-L2_最终摘要.md",
-        "课时资料/X1/X1-L3/验收/X1-L3_最终摘要.md",
-        "输出文件/阶段结果/X1/X1-V01/runs/X1-L3_重新分配_本人V01/摘要.md",
-        "输出文件/阶段结果/X1/X1-V01/showcase/X1-L4_本人V01/摘要.md",
         "输出文件/阶段结果/X1/X1-V01/showcase/X1-L4_本人V01/四八邻接_同帧并排.gif",
         "输出文件/阶段结果/X1/X1-V01/showcase/X1-L4_本人V01/四八邻接_实际路径叠图.png",
-        "课时资料/X1/X1-L4/验收/X1-L4_最终摘要.md",
-        "课时资料/X1/X1-L4/验收/X1-L4_最终验收摘要.json",
-        "课时资料/X1/X1-L4/验收/X1-L4_验收恢复点_V01.zip",
-        "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/算法效果_数据对比.png",
-        "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/摘要.md",
-        "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/算法效果_数据对比.png",
-        "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/摘要.md"
+        "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/算法效果_数据对比.png"
       ],
       "current_lesson": null,
       "dynamic_execution_status": "VERIFIED",
@@ -227,21 +213,8 @@
       "learning_status": "COMPLETE",
       "new_capability": "Completed X2: static and incremental route search, scan task ordering, bounded waypoint PSO and six-group saved-log common-clock showcase",
       "assets": [
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2-L1_本人V01/V02/Astar_效果图.png",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2-L1_本人V01/V02/Dijkstra_效果图.png",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2-L1_本人V01/V02/摘要.md",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2-L2_本人V01/DstarLite_效果图.png",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2-L2_本人V01/摘要.md",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_Dstar_本人V01/Dstar_效果图.png",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_Dstar_本人V01/摘要.md",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_Scan_本人V01/网格扫描任务遍历_效果图.png",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_Scan_本人V01/摘要.md",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_PSO_本人V01/PSO_效果图.png",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/算法效果_数据对比.png",
         "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/任务执行_同帧对比.gif",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/摘要.md",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/V02/算法效果_数据对比.png",
-        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/V02/摘要.md"
+        "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/V02/算法效果_数据对比.png"
       ],
       "teacher_micro_validation": "PASS",
       "teacher_main_runs": 0,
@@ -387,5 +360,6 @@
   "path_base": "project_root",
   "artifacts_root": "输出文件",
   "change": "X2-L2 genuine DstarLite per-owner/goal incremental state, offline Astar checks, one full fleet group and saved-log figure",
-  "learning_state_note": "V08 immutable snapshot keeps preparation-time state; all four X1 lessons passed per final summaries and current active index"
+  "learning_state_note": "V08 immutable snapshot keeps preparation-time state; all four X1 lessons passed per final summaries and current active index",
+  "publication_scope": "Curated reproducible source/inputs and real saved platform evidence; private classroom records excluded"
 }

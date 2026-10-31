@@ -1,0 +1,146 @@
+{
+  "role": "learner",
+  "framework_version": "FRAMEWORK-V20",
+  "vrx_workspace": "/root/autodl-tmp/P5_VRX_20261030_V01/vrx_ws_accelerated",
+  "upstream_commit": "7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "upstream_clean": true,
+  "upstream_porcelain": "",
+  "declared_source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "expected_commit": "7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "upstream_tracked_clean": true,
+  "build_identity": "Git identity alone does not prove installed binaries correspond to this checkout",
+  "fuel_cache": "/root/autodl-tmp/P5_VRX_20261030_V01/fuel-cache-V04",
+  "asset_requirement": "All world and secondary assets must already be prefetched; directory existence is not completeness verification",
+  "tools_sha256": {
+    "p5_vrx.py": "3d3d5bc04bee2b076ba2d365afdb33b06013a4c5819e8586f15607adc6ff2ccf",
+    "P5-VRX-V01.json": "8eadad5d933ab7e813946e0384306f56755512ccaf3093abae01a3d10f2a333c",
+    "VRX_官方原例记录器_V02.py": "a30c7c11f0721bf3b7ec291e0cc4415c90e154869fa09f7d839a6b0f8289994c"
+  },
+  "urdf": "/root/autodl-tmp/P5_VRX_20261030_V01/derived_full_model_V01/with_ground_truth.urdf",
+  "urdf_sha256": "d304ff2b264c6c6ee4f40dcff3e1a84e07c235a163ff0a091345552d13e9ae45",
+  "platform_script_sha256": "0518a4bc05d74910812ea36d1fb9689cf39b5b33974463176c8e3537cb893fac",
+  "mode": "pair",
+  "started_utc": "2026-10-31T04:25:47Z",
+  "ros_domain_id": "147",
+  "gz_partition": "p5_712865e1e170409bb8e6bf0bde058548",
+  "commands": [
+    {
+      "label": "launch",
+      "argv": [
+        "ros2",
+        "launch",
+        "vrx_gz",
+        "competition.launch.py",
+        "world:=sydney_regatta",
+        "headless:=true",
+        "paused:=false",
+        "extra_gz_args:=--headless-rendering",
+        "urdf:=/root/autodl-tmp/P5_VRX_20261030_V01/derived_full_model_V01/with_ground_truth.urdf"
+      ],
+      "pid": 33884
+    },
+    {
+      "label": "readiness",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/root/autodl-tmp/P5_VRX_20261030_V01/platform_runs/P5_本人VRX_V01/pair/readiness.py",
+        "pair",
+        "/root/autodl-tmp/P5_VRX_20261030_V01/platform_runs/P5_本人VRX_V01/pair/readiness.json",
+        "/clock",
+        "/wamv/sensors/position/ground_truth_odometry"
+      ],
+      "pid": 33885
+    },
+    {
+      "label": "controller",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/root/autodl-tmp/P5_VRX_20261030_V01/framework_v20/p5_vrx.py",
+        "--out",
+        "/root/autodl-tmp/P5_VRX_20261030_V01/platform_runs/P5_本人VRX_V01/pair/observations",
+        "--role",
+        "learner",
+        "--config",
+        "/root/autodl-tmp/P5_VRX_20261030_V01/framework_v20/P5-VRX-V01.json",
+        "--framework-version",
+        "FRAMEWORK-V20"
+      ],
+      "pid": 34314
+    }
+  ],
+  "observed_readiness": {
+    "clock_samples": 22,
+    "clock_s": 0.1,
+    "feedback": {
+      "parent": "map",
+      "child": "wamv/base_link",
+      "x": -531.9999717885005,
+      "y": 162.00005424110503,
+      "z": -0.04667124619173706,
+      "stamp_sec": 0,
+      "stamp_nanosec": 100000000
+    },
+    "image": null,
+    "ready": true,
+    "image_topics": []
+  },
+  "child_returncode": 0,
+  "child_summary": {
+    "status": "COMPLETED",
+    "task_completed": true,
+    "role": "learner",
+    "framework_version": "FRAMEWORK-V20",
+    "source_id": "osrf/vrx:jazzy:7609d1bd90ce7edb29d040a082f949e8b089c864",
+    "error": null,
+    "stop_publication_error": null,
+    "wall_elapsed_s": 27.17041385360062,
+    "received_or_published_rows": {
+      "clock": 4142,
+      "odometry": 168,
+      "commands": 164,
+      "reference_2d": 128
+    },
+    "common_inputs_obtained": true,
+    "metrics": [
+      {
+        "system": "VRX",
+        "status": "COMPLETED",
+        "completion_time_s": 15.7,
+        "maximum_cross_track_m": 0.00868237339575284,
+        "boundary_violation_events": 0
+      },
+      {
+        "system": "ideal_2D",
+        "status": "COMPLETED",
+        "completion_time_s": 12.7,
+        "maximum_cross_track_m": 5.46229728115577e-13,
+        "boundary_violation_events": 0
+      }
+    ],
+    "course_acceptance": "NOT_AUTOMATICALLY_ASSESSED",
+    "scope": "One actual ROS/VRX task plus a separately executed ideal 2D model; sampled coordinate envelope only; no collision, energy or hardware-validation claim"
+  },
+  "status": "COMPLETED",
+  "owned_process_cleanup": [
+    {
+      "label": "controller",
+      "pid": 34314,
+      "returncode": 0,
+      "process_group_remaining": false
+    },
+    {
+      "label": "readiness",
+      "pid": 33885,
+      "returncode": 0,
+      "process_group_remaining": false
+    },
+    {
+      "label": "launch",
+      "pid": 33884,
+      "returncode": 0,
+      "process_group_remaining": false
+    }
+  ]
+}

@@ -1,28 +1,37 @@
 {
   "status": "PASS",
-  "framework": "FRAMEWORK-V18",
-  "source_guard_records": 99,
-  "selection_files_before_validation_report": 181,
-  "checks": [
-    "release file SHA/source guard",
-    "CLI list",
-    "selected P5 saved-log reanalysis from publication root",
-    "new relative documentation links",
-    "private/cache/third-party directories excluded",
-    "token/private-key pattern scan",
-    "no platform stdout or queries published"
+  "framework": "FRAMEWORK-V20",
+  "source_guard_records": 106,
+  "new_simulation_runs": 0,
+  "new_moos_launches": 0,
+  "roles": "Original and paired learner evidence verified separately; teacher logs remain provenance",
+  "P1_P2_behaviour_smokes": "Earlier verified checks reused; those implementations and inputs unchanged",
+  "full_stage_acceptance": "P5 PASSED; learner operations/explanations and mechanical/visual/source restore checks complete; P6 NOT_STARTED",
+  "publication_scope": "Selected reproducible code, runtime inputs and real saved evidence; no private SSH/course dialogue or external source/models/venvs",
+  "saved_evidence_rechecks": [
+    {
+      "checker": "-c",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "checker": "课时资料/P5/源码/复核P5_VRX原例保存日志_V01.py",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "checker": "课时资料/P5/源码/复核P5_VRX保存日志_V01.py",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "checker": "课时资料/P5/源码/复核P5保存日志_V01.py",
+      "status": "PASS",
+      "returncode": 0
+    }
   ],
-  "p5_saved_log_reanalysis": {
-    "engineering_status": "PASS",
-    "selected_source_files_sha_verified": 39,
-    "source_all_bytes_unchanged": true,
-    "new_simulation_runs": 0,
-    "new_moos_launches": 0,
-    "operator_role": "teacher"
-  },
-  "P1_P2_behavior_smokes": "Reused V15 checks; no changed P1/P2 behavior code",
+  "relative_document_links_verified": 90,
+  "broken_links": 0,
   "new_environment_install": false,
-  "full_stage_acceptance": "P5 IN_PROGRESS; learner execution/explanation and VRX pending; P6 not started",
-  "remote_mutations": 0,
-  "git_initializations": 0
+  "validation_scope": "Published source SHA guard and saved MOOS/VRX original/VRX pair arithmetic; no live platform rerun"
 }
