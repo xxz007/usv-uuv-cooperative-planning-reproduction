@@ -11,8 +11,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 13560,
-      "sha256": "271f27a3695c3dbdde210ba14c333c74f5510a3a7c047c0246a688482f2ce50d"
+      "bytes": 17159,
+      "sha256": "b3652dcccf663ece595aa079b5d84432d4bf9972c5b007a6ffffc9d90e83b160"
     },
     {
       "path": "data/inputs/p2_case.json",
@@ -56,8 +56,8 @@
     },
     {
       "path": "data/provenance/sources.json",
-      "bytes": 23889,
-      "sha256": "32c8bad15f2561a764c9dcbfe423810f1be7055d5d3fb4e582be607f6af354a3"
+      "bytes": 25013,
+      "sha256": "af70ca1e59dbb5ff57256d4e69c7ef9142c685c65b90f091ea814ccc3a919057"
     },
     {
       "path": "data/provenance/stages.json",
@@ -136,8 +136,8 @@
     },
     {
       "path": "docs/sources.md",
-      "bytes": 2865,
-      "sha256": "e91dd58e6870ac6156c64c3ae8febd88a0d38211f58622c9ad18fed01921f273"
+      "bytes": 2753,
+      "sha256": "e9ebf1c4ed66634080196ceeb15e9d0ba23a91ee4e7a6e925e0103f89b38d99f"
     },
     {
       "path": "docs/vrx_environment.md",
@@ -283,6 +283,11 @@
       "path": "results/p5_platforms/figures/2D_VRX_same_task.png",
       "bytes": 256909,
       "sha256": "7b7ce0fb1a43b530120ef75de7f9cb5def8a307ab1db60836919e48681d8a92e"
+    },
+    {
+      "path": "results/p5_platforms/figures/MOOS_learner_same_task.png",
+      "bytes": 178344,
+      "sha256": "ce7953a3150b258a9e177fdf2d41c0a6c76b2f6dc9c298194317f2441f9a343a"
     },
     {
       "path": "results/p5_platforms/figures/VRX_progress_error.png",
@@ -506,13 +511,18 @@
     },
     {
       "path": "results/x2_algorithms/README.md",
-      "bytes": 770,
-      "sha256": "53a1decfac6a5bf17a4661d38208ebf6f6df343c9e1b3cac7fe9f2aa18a5a01d"
+      "bytes": 973,
+      "sha256": "b2c9085dfac3cc9c0e036961665b851d0bbe4b75353ca70656480a056600244e"
     },
     {
       "path": "results/x2_algorithms/figures/comparison.png",
       "bytes": 494297,
       "sha256": "2e061f9001b9c70701b53e42bef0cd3779e15c27aacab0bc9438cf3e144e87d5"
+    },
+    {
+      "path": "results/x2_algorithms/figures/six_algorithms_execution.gif",
+      "bytes": 26708600,
+      "sha256": "b77154401519c85eedfd2a488562b421c27c1e3edc5d04649429da0c28acb16b"
     },
     {
       "path": "results/x2_algorithms/metrics.json",

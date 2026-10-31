@@ -218,6 +218,24 @@
       "path": "requirements/macos-lock.txt",
       "sha256": "33b2617907db1376ba97637b2f3df617c24fe4dba022a7aabec10fa74e463933",
       "baseline_path": "requirements-reproduced-macos.txt"
+    },
+    {
+      "path": "results/x2_algorithms/figures/six_algorithms_execution.gif",
+      "baseline_path": "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/任务执行_同帧对比.gif",
+      "sha256": "b77154401519c85eedfd2a488562b421c27c1e3edc5d04649429da0c28acb16b",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "results/p5_platforms/figures/MOOS_learner_same_task.png",
+      "derived_from": "results/p5_platforms/raw/moos",
+      "derivation": "Saved learner alog independent checker -> NAV CSV -> existing p5_moos renderer; no simulation",
+      "intermediate_source_hashes": {
+        "example/trajectory.csv": "4895a017c2b6f295bd6e07dfa17e6cd12c3ed22c00b4b6e6fac9d6b7f98f11c2",
+        "success/trajectory.csv": "8bb3c23ed3ceff40e1a2ff6f5e57ec31137157f25c0265359617c2ff068646a1",
+        "reference_2d.csv": "bb109700df790770eee04bc3545c02fa2300e71a3c09f792030d8639f20348a7",
+        "paired_metrics.json": "a379acbcec1a2d77d0e8773064a0b4fda1ce99c464316113ba06d9c53312f2cb"
+      },
+      "sha256": "ce7953a3150b258a9e177fdf2d41c0a6c76b2f6dc9c298194317f2441f9a343a"
     }
   ],
   "platform_files": [

@@ -22,7 +22,7 @@ FRAMEWORK-V21是目录预览版；原课程FRAMEWORK-V20和验收原件保留。
 
 [P6交付基线：6b2c7b2](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/tree/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934)保留整理前的全部已发布材料，包括较长动画、完整发布记录及多版恢复证明。原课程的私人课堂回答、本地完整恢复包及其余四种算法的完整历史日志没有加入GitHub；当前GitHub归档包含已发布的指标／图／动画，重绘全算法动画须取得本地完整日志或先产生六组新运行。
 
-- [六算法完整同帧动画](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/任务执行_同帧对比.gif)
+- [当前直接展示的六算法同帧动画](../results/x2_algorithms/figures/six_algorithms_execution.gif)：与交付基线字节一致。
 - [原导师要求逐项评估](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/docs/project_assessment.md)
 - [一页候选研究问题卡](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/docs/research_question.md)
 
