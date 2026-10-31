@@ -6,7 +6,7 @@ from pathlib import Path
 
 def main():
     root = Path(__file__).resolve().parents[1]
-    report = json.loads((root / 'RELEASE_CONTENTS.json').read_text())
+    report = json.loads((root / 'data/provenance/release.json').read_text())
     for row in report['files']:
         path = root / row['path']
         data = path.read_bytes()

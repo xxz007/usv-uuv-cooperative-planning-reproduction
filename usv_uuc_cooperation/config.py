@@ -5,14 +5,16 @@ import re
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = PACKAGE_ROOT.parent
-OUTPUT_ROOT = PROJECT_ROOT / "输出文件"
-RESULTS_ROOT = OUTPUT_ROOT / "阶段结果"
-DOCS_ROOT = OUTPUT_ROOT / "说明文档"
-VERSIONS_ROOT = OUTPUT_ROOT / "版本快照"
-FRAMEWORK_VERSION = "FRAMEWORK-V20"
+OUTPUT_ROOT = PROJECT_ROOT
+RESULTS_ROOT = PROJECT_ROOT / "results"
+DOCS_ROOT = PROJECT_ROOT / "docs"
+VERSIONS_ROOT = PROJECT_ROOT / "data/provenance"
+FRAMEWORK_VERSION = "FRAMEWORK-V21"
 PROFILES = {
     "P1": "P1-V01", "P2": "P2-V01", "P3": "P3-V01", "P4": "P4-V01", "X1": "X1-V01", "X2": "X2-V01", "P5": "P5-V01"
 }
+
+STAGE_DIRS = {'P1': 'p1_pathfinding', 'P2': 'p2_assignment', 'P3': 'p3_baseline', 'P4': 'p4_dynamic', 'X1': 'x1_adjacency', 'X2': 'x2_algorithms', 'P5': 'p5_platforms'}
 
 
 def read_json(path):
@@ -20,28 +22,13 @@ def read_json(path):
 
 
 def stage_catalog():
-    return read_json(VERSIONS_ROOT / "阶段版本索引.json")["stages"]
+    return read_json(VERSIONS_ROOT / "stages.json")["stages"]
 
 
 def artifact_path(reference):
-    """Resolve current project paths and recorded pre-migration artifact paths."""
+    """Resolve catalog references relative to this portable checkout."""
     path = Path(reference)
-    if path.is_absolute():
-        roots = ((PROJECT_ROOT, PROJECT_ROOT),
-                 (Path("/Users/omo/Downloads/Project/Pyomo"), PROJECT_ROOT),
-                 (Path("/Users/omo/Downloads/Project/VScode-Project/moos-ivp"), PROJECT_ROOT / "moos-ivp"))
-        for previous, current in roots:
-            if path.is_relative_to(previous):
-                path = (current / path.relative_to(previous)).relative_to(PROJECT_ROOT)
-                break
-        else:
-            return path
-    for old_name, directory in (("outputs", RESULTS_ROOT), ("docs", DOCS_ROOT),
-                                ("versions", VERSIONS_ROOT)):
-        for prefix in (Path("usv_uuc_cooperation") / old_name, Path(old_name)):
-            if path.is_relative_to(prefix):
-                return directory / path.relative_to(prefix)
-    return PROJECT_ROOT / path
+    return path if path.is_absolute() else PROJECT_ROOT / path
 
 
 def new_run_directory(stage, run_id):
@@ -49,6 +36,6 @@ def new_run_directory(stage, run_id):
         raise ValueError(f"No runnable profile for {stage}")
     if not re.fullmatch(r"[\w\-]+", run_id):
         raise ValueError("run-id must be a single name containing letters, numbers, underscores or hyphens")
-    path = RESULTS_ROOT / stage / PROFILES[stage] / "runs" / run_id
+    path = RESULTS_ROOT / STAGE_DIRS[stage] / "runs" / run_id
     path.mkdir(parents=True, exist_ok=False)
     return path

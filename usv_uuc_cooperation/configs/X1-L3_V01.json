@@ -1,7 +1,7 @@
 {
   "version": "X1-L3_V01",
   "source": {
-    "path": "课时资料/P2/P2-L4/配置/P2-L4_案例.json",
+    "path": "data/inputs/p2_case.json",
     "sha256": "653bedb3ab8441485c77f001d170f33bc1e43c076fd7b369748ab81583926c54"
   },
   "boats": [

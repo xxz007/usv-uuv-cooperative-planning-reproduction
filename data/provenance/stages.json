@@ -1,0 +1,363 @@
+{
+  "framework": "FRAMEWORK-V21",
+  "date": "2026-10-31",
+  "stages": {
+    "P0": {
+      "title": "环境与研究路线",
+      "course_status": "PASSED",
+      "framework_version": null,
+      "visual_status": "SUMMARY_ONLY",
+      "new_capability": "环境及复现记录，不虚构运动效果",
+      "assets": []
+    },
+    "P1": {
+      "title": "地图、安全缓冲与A*",
+      "course_status": "PASSED",
+      "framework_version": "P1-V01",
+      "visual_status": "REUSED_STATIC",
+      "new_capability": "三场景路径/不可达验证",
+      "parent": null,
+      "assets": [
+        "results/p1_pathfinding/README.md"
+      ]
+    },
+    "P2": {
+      "title": "任务分配与多任务路径",
+      "course_status": "PASSED",
+      "framework_version": "P2-V01",
+      "visual_status": "REUSED_STATIC",
+      "new_capability": "贪心、枚举、CP-SAT、路线成本分列",
+      "parent": "P1-V01",
+      "assets": [
+        "results/p2_assignment/README.md"
+      ]
+    },
+    "P3": {
+      "title": "通信、中继与移动能耗联合基线",
+      "course_status": "PASSED",
+      "framework_version": "P3-V01",
+      "visual_status": "REUSED_GIF",
+      "new_capability": "1 USV + 5 UUV + 20任务成功/受限失败",
+      "parent": "P2-V01",
+      "assets": [
+        "results/p3_baseline/README.md"
+      ]
+    },
+    "P4": {
+      "title": "公平实验、洋流、动态任务、Pyomo",
+      "course_status": "PASSED",
+      "framework_version": "P4-V01",
+      "visual_status": "RENDERED_VERIFIED",
+      "new_capability": "同一时间轴：初始5×20 Pyomo/A*、时变洋流、中继、到达、故障服务重启与当前状态接手",
+      "parent": "P3-V01",
+      "assets": [
+        "results/p4_dynamic/README.md"
+      ],
+      "integrated_execution_status": "VERIFIED",
+      "course_passed": 4,
+      "course_total": 4
+    },
+    "P5": {
+      "title": "MOOS闭环、VRX原例与同任务对照完整阶段",
+      "course_status": "PASSED",
+      "framework_version": "P5-V01",
+      "source_framework": "FRAMEWORK-V20",
+      "visual_status": "RENDERED_VERIFIED",
+      "integrated_execution_status": "PLATFORM_RUNS_VERIFIED_SEPARATELY",
+      "learner_acceptance": "EXECUTION_AND_EXPLANATION_PASSED",
+      "parent": "P4-V01",
+      "new_capability": "Separate actual MOOS and VRX platform execution; one same-task VRX/ideal2D comparison",
+      "assets": [
+        "results/p5_platforms/README.md"
+      ]
+    },
+    "P6": {
+      "title": "打包整合交付与导师要求评估",
+      "course_status": "PASSED",
+      "completion_mode": "ENGINEERING_DELIVERY",
+      "framework_version": "P6-V01",
+      "source_framework": "FRAMEWORK-V20",
+      "visual_status": "RENDERED_VERIFIED",
+      "integrated_execution_status": "CORE_COMPARISON_VERIFIED",
+      "new_capability": "真实远端新副本／新venv核心对比、成功失败证据、整合包独立恢复、导师要求逐项评估与候选研究问题卡",
+      "parent": "P5-V01",
+      "assets": [
+        "results/p6_reproduction/README.md"
+      ],
+      "learner_new_execution_count": 0,
+      "research_status": "CANDIDATE_CARD_DELIVERED_NO_NEW_RESEARCH_EXPERIMENT"
+    },
+    "X1": {
+      "title": "路径规划与任务执行融合完整扩展课程",
+      "course_status": "PASSED",
+      "framework_version": "X1-V01",
+      "visual_status": "RENDERED_VERIFIED",
+      "new_capability": "All four X1 lessons passed: safe adjacency, execution, static cost propagation, same-P4 dynamic integration and saved-log display",
+      "parent": "P4-V01",
+      "assets": [
+        "results/x1_adjacency/README.md"
+      ],
+      "current_lesson": null,
+      "dynamic_execution_status": "VERIFIED",
+      "learner_run_count": 5,
+      "learner_gates": {
+        "cost_heuristic": "PASS",
+        "corner_and_segment_safety": "PASS",
+        "independent_length_explanation": "PASS"
+      },
+      "next_lesson": null,
+      "lesson_status": {
+        "X1-L1": "PASSED",
+        "X1-L2": "PASSED",
+        "X1-L3": "PASSED",
+        "X1-L4": "PASSED"
+      },
+      "L1_final_summary": "课时资料/X1/X1-L1/验收/X1-L1_最终摘要.md",
+      "L2_learner_run_count": 1,
+      "L2_execution_summary": "输出文件/阶段结果/X1/X1-V01/runs/X1-L2_本人V01/摘要.md",
+      "L2_learner_gates": {
+        "diagonal_actual_speed": "PASS",
+        "actual_distance_energy_ledger": "PASS",
+        "discrete_arrival_and_service": "PASS"
+      },
+      "L2_final_summary": "课时资料/X1/X1-L2/验收/X1-L2_最终摘要.md",
+      "L3_learner_run_count": 2,
+      "L3_fixed_summary": "输出文件/阶段结果/X1/X1-V01/runs/X1-L3_固定队列_本人V01/摘要.md",
+      "L3_final_summary": "课时资料/X1/X1-L3/验收/X1-L3_最终摘要.md",
+      "L3_reassign_summary": "输出文件/阶段结果/X1/X1-V01/runs/X1-L3_重新分配_本人V01/摘要.md",
+      "L3_learner_gates": {
+        "same_adjacency_chain": "PASS",
+        "transparent_scaling_float_recheck": "PASS",
+        "fixed_vs_reassign_distinction": "PASS"
+      },
+      "L4_learner_run_count": 1,
+      "L4_learner_gates": {
+        "paired_actual_execution": "PASS",
+        "new_safety_and_ledgers": "PASS_WITH_REUSED_LEARNER_AND_TEACHER_CHECK",
+        "three_readouts_and_display_explanation": "PASS"
+      },
+      "L4_record": "课时资料/X1/X1-L4/X1-L4_P4融合案例与展示记录.md",
+      "L4_run_guide": "课时资料/X1/X1-L4/X1-L4_运行指引_V01.md",
+      "L4_execution_summary": "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/摘要.md",
+      "L4_display_summary": "输出文件/阶段结果/X1/X1-V01/showcase/X1-L4_本人V01/摘要.md",
+      "L4_display_check": "课时资料/X1/X1-L4/验收/X1-L4_展示视觉核查_V01.json",
+      "L4_final_summary": "课时资料/X1/X1-L4/验收/X1-L4_最终摘要.md",
+      "L4_statistics": {
+        "major_interaction_rounds": 2,
+        "learner_answers": 2,
+        "learner_main_runs": 1,
+        "actual_main_execution_groups": 2,
+        "learner_initial_HiGHS_solves": 2,
+        "local_corrections": 0,
+        "no_new_mechanism_repeat_rounds": 0,
+        "teacher_short_simulations": 4,
+        "teacher_HiGHS_micro_solves": 2,
+        "teacher_full_case_runs": 0,
+        "acceptance_simulation_or_solver_reruns": 0
+      },
+      "L4_recovery_instructions": "课时资料/X1/X1-L4/验收/X1-L4_恢复说明_V01.md",
+      "L4_final_zip_restore_check": "课时资料/X1/X1-L4/验收/X1-L4_独立恢复核查_V01.json",
+      "organization": "COMPLETE_EXTENSION_COURSE",
+      "progress_basis": "completed_topics_and_saved_evidence",
+      "historical_lesson_counts": {
+        "passed": 4,
+        "total": 4
+      },
+      "supplemental_bar_comparison": {
+        "status": "RENDERED_VERIFIED",
+        "version": "V01",
+        "source_framework": "FRAMEWORK-V08",
+        "shared_framework_unchanged": "FRAMEWORK-V15",
+        "summary": "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/摘要.md",
+        "figure": "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/算法效果_数据对比.png",
+        "source_visual_validation": "课时资料/X1/验收/X1_图表补充_来源与视觉核查_V01.json",
+        "source_script": "课时资料/X1/源码/X1_成果柱状对比_V01.py",
+        "simulation_reruns": 0,
+        "solver_runs": 0,
+        "new_learner_acceptance": false,
+        "latest_revision": {
+          "status": "RENDERED_VERIFIED",
+          "revision": "V02",
+          "title": "X1扩展｜四邻接与八邻接实际效果对比",
+          "figure": "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/算法效果_数据对比.png",
+          "summary": "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/摘要.md",
+          "previous_versions_preserved": true,
+          "metrics_and_below_title_pixels_unchanged": true,
+          "source_validation": "课时资料/X2/验收/组会_对比图标题修订核查_V01.json"
+        }
+      },
+      "comparison_title_revision": {
+        "status": "RENDERED_VERIFIED",
+        "revision": "V02",
+        "title": "X1扩展｜四邻接与八邻接实际效果对比",
+        "figure": "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/算法效果_数据对比.png",
+        "summary": "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/摘要.md",
+        "previous_versions_preserved": true,
+        "metrics_and_below_title_pixels_unchanged": true,
+        "source_validation": "课时资料/X2/验收/组会_对比图标题修订核查_V01.json"
+      },
+      "third_meeting_delivery": {
+        "status": "COPIED_SHA_VERIFIED",
+        "target": "/Users/omo/Desktop/组会/第三次组会报告材料/05_X1_四八邻接对照",
+        "verification": "输出文件/说明文档/第三次组会补充_20261026_V01/交付后独立核查.json"
+      }
+    },
+    "X2": {
+      "title": "路径算法对照与综合实践完整扩展课程",
+      "parent": "X1-V01",
+      "course_status": "PASSED",
+      "framework_version": "X2-V01",
+      "visual_status": "SIX_GROUPS_RENDERED_VERIFIED",
+      "current_lesson": null,
+      "learning_status": "COMPLETE",
+      "new_capability": "Completed X2: static and incremental route search, scan task ordering, bounded waypoint PSO and six-group saved-log common-clock showcase",
+      "assets": [
+        "results/x2_algorithms/README.md"
+      ],
+      "teacher_micro_validation": "PASS",
+      "teacher_main_runs": 0,
+      "learner_runs": 5,
+      "lesson_record": "课时资料/X2/X2_完整扩展课程学习记录.md",
+      "input_version": "X2-V01",
+      "integrated_execution_status": "SIX_GROUPS_VERIFIED",
+      "execution_framework": "MIXED_VERIFIED_SAVED_FRAMEWORKS",
+      "render_framework": "FRAMEWORK-V15",
+      "last_completed_lesson": "X2-L2",
+      "last_lesson_status": "PASSED",
+      "last_lesson_summary": "课时资料/X2/X2-L2/验收/X2-L2_最终摘要.md",
+      "L2_learner_runs": 1,
+      "L2_teacher_micro_validation": "PASS",
+      "L2_execution_status": "VERIFIED",
+      "L2_visual_status": "RENDERED_VERIFIED",
+      "L2_validation": "课时资料/X2/X2-L2/验收/X2-L2_教师小例核查_V02.json",
+      "L2_run_guide": "课时资料/X2/X2-L2/X2-L2_运行指引_V01.md",
+      "L2_teacher_short_8s_runs": 2,
+      "L2_teacher_full_runs": 0,
+      "L2_execution_summary": "输出文件/阶段结果/X2/X2-V01/runs/X2-L2_本人V01/摘要.md",
+      "L2_display_summary": "输出文件/阶段结果/X2/X2-V01/showcase/X2-L2_本人V01/摘要.md",
+      "L2_gate_status": {
+        "g_rhs_repair": "PASS",
+        "current_observation_move_goal_reset": "PASS",
+        "safety_cost_display": "PASS"
+      },
+      "L2_status": "PASSED",
+      "L2_final_summary": "课时资料/X2/X2-L2/验收/X2-L2_最终摘要.md",
+      "L2_final_acceptance": "课时资料/X2/X2-L2/验收/X2-L2_最终验收摘要.json",
+      "L2_recovery_archive": "课时资料/X2/X2-L2/验收/X2-L2_验收恢复点_V01.zip",
+      "organization": "COMPLETE_EXTENSION_COURSE",
+      "progress_basis": "completed_topics_and_saved_evidence",
+      "historical_lesson_counts": {
+        "passed": 2,
+        "total": 6
+      },
+      "current_topic": null,
+      "existing_baseline_visual_status": "RENDERED_VERIFIED",
+      "implementation_framework": "FRAMEWORK-V15",
+      "original_dstar": {
+        "source_status": "TOPIC_EVIDENCE_COMPLETE",
+        "learner_runs": 1,
+        "learner_dependency_explanation": "PASS",
+        "teacher_short_8s_runs": 1,
+        "teacher_full_120s_runs": 0,
+        "visual_status": "RENDERED_VERIFIED",
+        "validation": "课时资料/X2/验收/原始Dstar_教师核查_V02/核查摘要.json",
+        "run_guide": "课时资料/X2/原始Dstar_运行指引_V01.md",
+        "execution_status": "VERIFIED",
+        "summary": "输出文件/阶段结果/X2/X2-V01/runs/X2_完整扩展_Dstar_本人V01/摘要.md",
+        "topic_evidence": "课时资料/X2/验收/原始Dstar_主题证据登记_V01.json"
+      },
+      "grid_scan": {
+        "source_status": "TOPIC_EVIDENCE_COMPLETE",
+        "learner_layer_explanation": "PASS",
+        "learner_replies": 2,
+        "learner_runs": 1,
+        "teacher_scan_short_26s_runs": 1,
+        "default_path_regression_8s_runs": 1,
+        "teacher_full_120s_runs": 0,
+        "source_logging_fix_simulation_reruns": 0,
+        "visual_status": "RENDERED_VERIFIED",
+        "ordering_policy": "X2-Scan-V01",
+        "validation": "课时资料/X2/验收/扫描遍历_教师核查_V02/核查摘要.json",
+        "run_guide": "课时资料/X2/扫描遍历_运行指引_V01.md",
+        "execution_status": "VERIFIED",
+        "learner_completion_scope": "reported initial U4 six as completed; corrected by teacher to team22 and U4actual0",
+        "topic_evidence": "课时资料/X2/验收/扫描遍历_主题证据登记_V01.json",
+        "summary": "输出文件/阶段结果/X2/X2-V01/runs/X2_完整扩展_Scan_本人V01/摘要.md"
+      },
+      "pso": {
+        "learning_status": "TOPIC_EVIDENCE_COMPLETE",
+        "learner_replies": 4,
+        "learner_runs": 1,
+        "source_status": "TOPIC_EVIDENCE_COMPLETE",
+        "source_framework": "FRAMEWORK-V14",
+        "policy": "X2-PSO-V01",
+        "validation": "课时资料/X2/验收/PSO_教师核查_V02/核查摘要.json",
+        "implementation_notes": "课时资料/X2/验收/PSO_实现与核查说明_V01.md",
+        "run_guide": "课时资料/X2/PSO_运行指引_V01.md",
+        "teacher_short_26s_runs": 1,
+        "default_regression_8s_runs": 1,
+        "teacher_full_120s_runs": 0,
+        "visual_status": "RENDERED_VERIFIED",
+        "execution_status": "VERIFIED",
+        "summary": "输出文件/阶段结果/X2/X2-V01/runs/X2_完整扩展_PSO_本人V01/摘要.md",
+        "run_validation": "课时资料/X2/验收/PSO_本人保存产物核查_V01.json",
+        "visual_validation": "课时资料/X2/验收/PSO_展示来源与视觉核查_V01.json",
+        "result_scope_explanation": "PASS",
+        "completed_tasks": 22,
+        "actual_total_distance_m": 122.48106855025884,
+        "team_completion_time_s": 55
+      },
+      "learner_run_scope": "main CLI invocations: paired Astar/Dijkstra=1, DstarLite=1, Dstar=1, scan=1",
+      "learner_algorithm_groups_completed": 6,
+      "execution_frameworks": {
+        "Astar": "FRAMEWORK-V09",
+        "Dijkstra": "FRAMEWORK-V09",
+        "DstarLite": "FRAMEWORK-V11",
+        "Dstar": "FRAMEWORK-V12",
+        "GridScanAstar": "FRAMEWORK-V13",
+        "PSO": "FRAMEWORK-V14"
+      },
+      "unified_showcase": {
+        "status": "RENDERED_VERIFIED",
+        "summary": "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/摘要.md",
+        "source_visual_validation": "课时资料/X2/验收/统一六组_来源与视觉核查_V01.json",
+        "gif_frames": 121,
+        "simulation_reruns": 0
+      },
+      "completed_date": "2026-10-26",
+      "final_summary": "课时资料/X2/验收/X2_完整扩展课程最终摘要.md",
+      "final_recovery_archive": "课时资料/X2/验收/X2_完整扩展课程验收恢复点_V01.zip",
+      "final_recovery_validation": "课时资料/X2/验收/X2_完整扩展课程恢复核查_V01.json",
+      "final_gate_status": {
+        "mechanism": "PASS",
+        "execution_and_failure": "PASS",
+        "result_scope_visuals_recovery": "PASS"
+      },
+      "historical_L2_execution_framework": "FRAMEWORK-V11",
+      "comparison_title_revision": {
+        "status": "RENDERED_VERIFIED",
+        "revision": "V02",
+        "title": "X2扩展｜六种路径算法实际效果对比",
+        "figure": "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/V02/算法效果_数据对比.png",
+        "summary": "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/V02/摘要.md",
+        "previous_versions_preserved": true,
+        "metrics_and_below_title_pixels_unchanged": true,
+        "source_validation": "课时资料/X2/验收/组会_对比图标题修订核查_V01.json"
+      },
+      "third_meeting_delivery": {
+        "status": "COPIED_SHA_VERIFIED",
+        "target": "/Users/omo/Desktop/组会/第三次组会报告材料/06_X2_六路径算法对照",
+        "verification": "输出文件/说明文档/第三次组会补充_20261026_V01/交付后独立核查.json"
+      }
+    }
+  },
+  "version_rule": "cumulative capabilities; P4 executed jointly in one timeline, without joint dynamic optimum claim",
+  "parent_framework": "FRAMEWORK-V10",
+  "path_base": "project_root",
+  "artifacts_root": "输出文件",
+  "change": "X2-L2 genuine DstarLite per-owner/goal incremental state, offline Astar checks, one full fleet group and saved-log figure",
+  "learning_state_note": "V08 immutable snapshot keeps preparation-time state; all four X1 lessons passed per final summaries and current active index",
+  "publication_scope": "Curated reproducible source/inputs and real saved platform evidence; private classroom records excluded",
+  "layout": "preview/learning-layout-v1",
+  "baseline": "6b2c7b2476f63fb07875afecf2bdc6bd6fadf934"
+}

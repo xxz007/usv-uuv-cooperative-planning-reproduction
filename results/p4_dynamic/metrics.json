@@ -1,0 +1,20 @@
+[
+  {
+    "strategy": "STATIC_FROZEN",
+    "status": "TASKS_INCOMPLETE",
+    "completed": 16,
+    "known_tasks": 22,
+    "team_completion_time_s": null,
+    "total_energy_NEU": 212.86476420606078,
+    "cutoff_time_s": 120
+  },
+  {
+    "strategy": "DYNAMIC_REPLAN",
+    "status": "SUCCESS",
+    "completed": 22,
+    "known_tasks": 22,
+    "team_completion_time_s": 65,
+    "total_energy_NEU": 312.8647642060608,
+    "cutoff_time_s": 120
+  }
+]

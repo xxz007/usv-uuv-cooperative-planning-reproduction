@@ -1,19 +1,29 @@
-# 软件、平台与资产来源
+# 来源、版本与完整材料
 
-| 组件 | 来源与版本身份 | 本仓库处理 |
-|---|---|---|
-| PythonRobotics | [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)，原参考检出 `cdd0cc888802b584c2d654ca85e3c5460973487d`，MIT | 记录参考，不包含完整第三方检出 |
-| MOOS-IvP | [moos-ivp/moos-ivp](https://github.com/moos-ivp/moos-ivp)，源码检出 `dd7030bdba1ea2d01524f0ff2364a3ed0d2c56a6`，组件许可见上游 COPYING | 外部构建；实际二进制 SHA 已保存，binary build commit 为 UNKNOWN，不能用源码 HEAD 代替 |
-| Pyomo | [官方文档](https://pyomo.readthedocs.io/)，原隔离环境 6.10.1 | 声明依赖，调用真实求解接口 |
-| HiGHS | [官方项目](https://highs.dev/)，原环境 highspy 1.15.1 | 独立求解依赖 |
-| OR-Tools | [官方文档](https://developers.google.com/optimization)，原环境 9.15.6755 | CP-SAT 分配；整数缩放目标与浮点路线分列 |
-| VRX | [固定提交](https://github.com/osrf/vrx/tree/7609d1bd90ce7edb29d040a082f949e8b089c864)，jazzy | 官方默认原例实际运行；对照完整船体只加 GT Odometry，URDF／SDF 结构比较 PASS；第三方检出不发布 |
-| ROS／Gazebo | [ROS Jazzy](https://docs.ros.org/en/jazzy/)、[Gazebo Harmonic](https://gazebosim.org/docs/harmonic/)；实测 gz-sim 8.15.0、ros_gz 1.0.24 | Linux 外部运行环境；[详细包版本](vrx_runtime_versions.json) |
-| 原生接收 | [gz-transport13](https://github.com/gazebosim/gz-transport/tree/gz-transport13)、[gz-msgs10](https://github.com/gazebosim/gz-msgs/tree/gz-msgs10) | 原例按 Pose.name／id 接收世界 Pose_V；ROS 另收时钟和图像，发布左右推力 |
-| Fuel 模型 | [官方 Fuel](https://app.gazebosim.org/)、fuel-tools9 9.1.1；13 个实际版本见[环境说明](vrx_environment.md) | 保存[117 文件 SHA 身份](../输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/fuel_cache_identity_V04.json)，不随仓库发布大型模型；模型许可见各自 metadata |
+项目依据作者收到的导师研究路线整理，采用USV／UUV正式称谓；代码包及少量原始字段中的UUC为历史名称。本文记录方法和数据来源，不把其他人的实验室记录当作本项目执行证据。
 
-VRX Git pin 与 Fuel 资产身份分别记录。未指定版本的 Fuel URL／tip 会随服务端变化；模型目录名或 model.config 的版本字段不能独自证明服务端资源身份。Sydney3／chair3 使用已记录官方响应版本及 ZIP SHA 的原始 archive 导入，其他模型保存解析目录及文件 SHA；不把代码 pin 说成资产也已固定。
+## 软件与方法
 
-原始 D* 按 Stentz 原算法 h／p／k、OPEN 与回指针机制适配，保留实现说明差异，不声称逐字复制伪代码或实现 Focussed D*。扫描作用于任务访问顺序，单段使用 A*，不是区域全格覆盖。PSO 保留随机预算、路径表示和失败状态，不用精确搜索自动修补结果。
+- [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)：路径规划学习来源，具体实现边界见各主题笔记。
+- [OR-Tools](https://developers.google.com/optimization/)与[Pyomo](https://www.pyomo.org/)：分配建模及求解；[NetworkX](https://networkx.org/)：几何通信图。
+- [MOOS-IvP](https://oceanai.mit.edu/moos-ivp/)：独立构建的平台；[VRX](https://github.com/osrf/vrx)：WAM-V平台，实际pin和模型身份见[环境说明](vrx_environment.md)。
 
-本项目尚未选择独立的开源许可证。第三方软件与模型分别受其许可约束，上表不为本项目授予新的公开使用许可。仓库保持 PRIVATE；私人课堂回答、连接信息、完整恢复包和第三方大型资产不在交付范围。P5 的实际证据和适用边界见 [P5 平台页](p5_platform.md)。
+第三方软件保留各自许可。本项目代码的公开许可证待作者选择；第三方许可不自动决定本项目许可。
+
+## 当前精选数据
+
+[来源索引](../data/provenance/sources.json)记录输入／代表图／指标的源路径与SHA。六份运行输入原字节保留；P3成功／失败、X2两组、P5本人主运行保留足以核查或重绘的数据。P4静态图是原GIF的t65帧，未改轨迹或任务状态。
+
+[版本与源码输入校验](../data/provenance/FRAMEWORK-V21/version.json) · [当前文件清单](../data/provenance/release.json)
+
+FRAMEWORK-V21是目录预览版；原课程FRAMEWORK-V20和验收原件保留。新运行输出与保存参考分开，工程验证不增加学员执行或理解通过记录。
+
+## 已发布旧材料与本地原件
+
+[P6交付基线：6b2c7b2](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/tree/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934)保留整理前的全部已发布材料，包括较长动画、完整发布记录及多版恢复证明。原课程的私人课堂回答、本地完整恢复包及其余四种算法的完整历史日志没有加入GitHub；当前GitHub归档包含已发布的指标／图／动画，重绘全算法动画须取得本地完整日志或先产生六组新运行。
+
+- [六算法完整同帧动画](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/任务执行_同帧对比.gif)
+- [原导师要求逐项评估](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/docs/project_assessment.md)
+- [一页候选研究问题卡](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/docs/research_question.md)
+
+本次通过独立预览分支试做，main和完整历史保持。以后采用精简布局时，可将完整材料另作版本附件；当前不重写Git历史。

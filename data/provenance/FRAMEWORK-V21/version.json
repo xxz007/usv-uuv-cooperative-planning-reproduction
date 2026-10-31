@@ -1,0 +1,9 @@
+{
+  "version": "FRAMEWORK-V21",
+  "parent": "FRAMEWORK-V20",
+  "scope": "Preview-only portable directory/input/solver/renderer paths; no planning or control algorithm changes",
+  "source_and_input_records": 100,
+  "baseline_commit": "6b2c7b2476f63fb07875afecf2bdc6bd6fadf934",
+  "original_course_framework_unchanged": true,
+  "status": "FROZEN_BEFORE_PREVIEW_CORE_RUN"
+}

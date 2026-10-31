@@ -94,7 +94,7 @@ def render(run, revision=None):
     from usv_uuc_cooperation.main import save, assert_frozen_core
     assert_frozen_core()
     run = Path(run).resolve()
-    root = RESULTS_ROOT / 'X2/X2-V01'
+    root = RESULTS_ROOT / 'x2_algorithms'
     if not run.is_relative_to(root / 'runs'):
         raise ValueError('D* Lite renderer requires a saved X2-V01 run')
     verify_manifest(run)

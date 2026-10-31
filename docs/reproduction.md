@@ -1,70 +1,68 @@
-# 复现步骤与验证范围
+# 复现说明
 
-## 两个 Python 环境
+先在仓库根运行所有命令。Python主环境与Pyomo求解环境分别安装；MOOS／VRX为外部平台，不随仓库提供。下列运行名应按实际尝试更换。
 
-主环境用于路径、OR-Tools 分配、二维执行和绘图：
+## 主环境与已保存结果
 
 ```bash
 python3.13 -m venv .venv
-.venv/bin/python -m pip install -r requirements-core.txt
-```
-
-Pyomo／HiGHS 使用独立环境；X1 完整融合入口目前按以下仓库相对路径寻找解释器：
-
-```bash
-python3.13 -m venv 课时资料/P4/P4-L4/.venv
-课时资料/P4/P4-L4/.venv/bin/python -m pip install -r requirements-solver.txt
-.venv/bin/python -B -m usv_uuc_cooperation.main integrate --case X1-L4 --run-id replay_x1_full_01
-```
-
-P4 可先求解初始分配，再由主环境执行两个响应策略：
-
-```bash
-课时资料/P4/P4-L4/.venv/bin/python -B -m usv_uuc_cooperation.main solve --stage P4 --run-id replay_p4_initial_01
-.venv/bin/python -B -m usv_uuc_cooperation.main run --stage P4 --case ALL --run-id replay_p4_pair_01 --initial-result 输出文件/阶段结果/P4/P4-V01/runs/replay_p4_initial_01/初始分配.json
-```
-
-两个 requirements 文件记录直接依赖版本。P6已从远端固定提交新克隆，在现有macOS主机用新隔离venv重新安装主环境依赖，真实执行A*／Dijkstra核心对比并制图，确定性数据与原基线一致；19项解析依赖另存requirements-reproduced-macos.txt。独立求解环境本轮没有重装，跨系统与完整平台性能需要另行核对。[实际P6复跑与原始记录](p6_delivery.md)
-
-## 可选的新运行
-
-```bash
-.venv/bin/python -B -m usv_uuc_cooperation.main run --stage P3 --case ALL --run-id replay_p3_pair_01
-.venv/bin/python -B -m usv_uuc_cooperation.main plan --case X1-L1 --run-id replay_x1_path_01
-.venv/bin/python -B -m usv_uuc_cooperation.main execute --case X1-L2 --run-id replay_x1_execute_01
-.venv/bin/python -B -m usv_uuc_cooperation.main assign --case X1-L3 --phase reassign --run-id replay_x1_assign_01
-.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-Dstar --run-id replay_x2_original_dstar_01
-.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-Scan --run-id replay_x2_scan_01
-.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-PSO --run-id replay_x2_pso_01
-```
-
-以上是当前命令入口，不表示发布准备时又执行了全部完整实验。已保存的展示图沿用原运行，重新运行输出使用新目录。每次先看运行目录的 `摘要.md` 与核查 JSON，再按需要查看原始日志。
-
-## P5：平台新执行与保存日志复核
-
-P5 已完整通过，当前交付 FRAMEWORK-V20；本人原始运行与教师工程证据分别保存。MOOS 需要外部编译的 MOOS-IvP，以下路径应调整为实际安装位置：
-
-```bash
-.venv/bin/python -B -m usv_uuc_cooperation.experiments.p5_moos --run-id replay_p5_moos_01 --moos-root ../moos-ivp --role learner
-```
-
-Linux VRX 使用系统 Python 3.12、ROS 2 Jazzy、Gazebo Harmonic 和固定上游 pin；按 [VRX 环境说明](vrx_environment.md)预取 13 个模型、生成完整传感器 GT URDF，并准备四个工具文件后，用统一入口 `--mode all --role learner` 执行。原例与同任务对照分别启动／关停、隔离域和日志，不拼接轨迹；未就绪不发任务推力，失败保留原始输出。
-
-只核查发布的本人保存数据，无需 MOOS／ROS／Gazebo，可使用 [P5 平台页的三条保存核查命令](p5_platform.md#只重查保存日志)。其原始 CSV、RGB、启动元数据和独立核查均已发布。重新绘制配对图同样只读保存数据，使用新的输出目录：
-
-```bash
-.venv/bin/python -B -m usv_uuc_cooperation.visualization.p5_vrx --source-run "$PWD/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_本人VRX_V01/pair/observations" --output "$PWD/输出文件/阶段结果/P5/P5-V01/showcase/replay_p5_saved_plot_01"
-```
-
-实际运行数值受平台、离散采样和执行时序影响。冻结代码、输入和资产身份可核对，不等于保证不同机器逐数值／逐字节一致。`--role` 只是运行来源；脚本不会自动判定本人理解或整阶段课程通过。[已完成阶段验收](p5_acceptance.json)
-
-## 校验与搬迁
-
-```bash
+.venv/bin/python -m pip install -r requirements/core.txt
 .venv/bin/python -B tools/verify_release.py
-.venv/bin/python -B -c 'from usv_uuc_cooperation.main import assert_frozen_core; assert_frozen_core(); print("source guard PASS")'
+.venv/bin/python -B tools/verify_saved_results.py
+.venv/bin/python -B -m usv_uuc_cooperation.main list
 ```
 
-当前 FRAMEWORK-V20 含 106 项源码／配置和 4 项输入依赖。`RELEASE_CONTENTS.json` 记录本次交付文件大小和 SHA256；`源码配置_SHA256.txt` 约束当前源码、配置和少量核查脚本。修改生产代码后应创建新版本，保留旧清单。源文件校验通过只说明身份一致，不等同于所有算法或平台正确性证明。
+前两项核查分别检查当前文件身份与已保存X2／P3数据，不启动模拟。`requirements/macos-lock.txt`保存P6在macOS／Python3.13.15解析的依赖；主环境直接依赖见core.txt。其他系统的wheel与字体需另行核对。
 
-本仓库保留 X2 依赖的四份 X1 输入、X1-L2 依赖的路径结果和 X1-L3 的小案例配置，不要求获取完整个人课程工作区。历史课堂审计器需要更多原始记录，本次发布没有提供其全套输入。P5 完整阶段恢复包已在原工作区完成独立恢复及保存日志核查，但包含私人课程资料，不随本仓库发布；仓库范围使用上述发布清单与保存核查入口。
+## 从小案例到完整动态对比
+
+| 主题 | 命令中`main`之后的参数 | 输出目录 |
+|---|---|---|
+| P1三场景 | `run --stage P1 --run-id learn_p1_01` | `results/p1_pathfinding/runs/learn_p1_01/` |
+| P2分配 | `run --stage P2 --run-id learn_p2_01` | `results/p2_assignment/runs/learn_p2_01/` |
+| P3成功／受限 | `run --stage P3 --case ALL --run-id learn_p3_01` | `results/p3_baseline/runs/learn_p3_01/` |
+| X1四八邻接 | `plan --case X1-L1 --run-id learn_paths_01` | `results/x1_adjacency/runs/learn_paths_01/` |
+| X1原路径执行 | `execute --case X1-L2 --run-id learn_execute_01` | `results/x1_adjacency/runs/learn_execute_01/` |
+| X1重新分配 | `assign --case X1-L3 --phase reassign --run-id learn_assign_01` | `results/x1_adjacency/runs/learn_assign_01/` |
+
+完整命令前缀为`.venv/bin/python -B -m usv_uuc_cooperation.main`。先打开输出中的`摘要.md`，再按需要检查原始数据；每次只关注完成数、实际航程、团队完成时间等当前问题所需读数。
+
+## X2六种路径方法
+
+```bash
+.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-L1 --run-id learn_astar_dijkstra_01
+.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-L2 --run-id learn_dstar_lite_01
+.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-Dstar --run-id learn_dstar_01
+.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-Scan --run-id learn_scan_01
+.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-PSO --run-id learn_pso_01
+```
+
+输出统一在`results/x2_algorithms/runs/<运行名>/`。A*／Dijkstra的已保存精选数据可独立复核；六算法已有对比表与图。当前精选包没有包含其余四种方法的全部历史原始日志，完整重绘六组动画需作者本地课堂完整日志，或先产生六组新运行；[来源说明](sources.md)中区分了已发布旧材料和本地原件。
+
+仅从新A*／Dijkstra保存数据制图：
+
+```bash
+.venv/bin/python -B -m usv_uuc_cooperation.main render --stage X2 --run "$PWD/results/x2_algorithms/runs/learn_astar_dijkstra_01" --revision V01
+```
+
+输出为`results/x2_algorithms/showcase/learn_astar_dijkstra_01/V01/`，不重新模拟。其他单算法运行也使用对应的X2制图入口；已有图不覆盖。
+
+## 独立Pyomo／HiGHS环境
+
+```bash
+python3.13 -m venv .venv-solver
+.venv-solver/bin/python -m pip install -r requirements/solver.txt
+.venv-solver/bin/python -B -m usv_uuc_cooperation.main solve --stage P4 --run-id learn_initial_01
+.venv/bin/python -B -m usv_uuc_cooperation.main run --stage P4 --case ALL --run-id learn_dynamic_01 --initial-result "$PWD/results/p4_dynamic/runs/learn_initial_01/初始分配.json"
+.venv/bin/python -B -m usv_uuc_cooperation.main integrate --case X1-L4 --run-id learn_x1_full_01
+```
+
+P4比较固定归属和动态响应；X1完整比较分别在四／八邻接下求初始分配，再执行相同动态策略。X2复用六份固定输入中的既有来源，不依赖启动求解器。
+
+## 路径与版本
+
+六份历史输入迁入`data/inputs/`，原始字节／SHA保持，源码仅更新真实读取路径。预览FRAMEWORK-V21保存当前源码／输入身份，V20仍由原课程与[基线提交](sources.md)保留。框架校验通过表示身份一致，不能代替算法正确性与物理验证。
+
+P6曾验证真实远端副本＋新venv的A*／Dijkstra；本次目录预览复用已安装依赖，另做输入加载、核心完整运行、制图与保存日志核查。实际验证结果见[迁移与整合验证](../results/p6_reproduction/README.md)，不把工程运行登记为本人课堂操作。
+
+MOOS／VRX的外部依赖、保存日志复核和平台启动见[平台说明](platforms.md)。

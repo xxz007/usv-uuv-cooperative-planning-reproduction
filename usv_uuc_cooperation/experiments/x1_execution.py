@@ -3,7 +3,7 @@ import copy
 import sys
 
 from usv_uuc_cooperation.config import (PACKAGE_ROOT, PROJECT_ROOT, FRAMEWORK_VERSION,
-                                       new_run_directory, read_json)
+                                       new_run_directory, read_json, VERSIONS_ROOT)
 from usv_uuc_cooperation.control.current_executor import simulate
 from usv_uuc_cooperation.control.integrated_executor import current_at
 from usv_uuc_cooperation.env.obstacle import forbidden_nodes
@@ -101,7 +101,7 @@ def run(run_id):
         save(folder / "运行元数据.json", {"framework": FRAMEWORK_VERSION, "lesson": "X1-L2",
             "command": sys.argv, "python": sys.executable, "output": str(folder), "status": "COMPLETE",
             "config_sha256": digest(PACKAGE_ROOT / "configs/X1-L2_V01.json"), "sources": spec["sources"],
-            "source_manifest": f"输出文件/版本快照/{FRAMEWORK_VERSION}/源码配置_SHA256.txt"})
+            "source_manifest": str((VERSIONS_ROOT / FRAMEWORK_VERSION / "源码配置_SHA256.txt").relative_to(PROJECT_ROOT))})
         (folder / "SHA256.txt").write_text("\n".join(
             f"{digest(p)}  {p.relative_to(folder).as_posix()}" for p in sorted(folder.rglob("*")) if p.is_file()) + "\n")
     except Exception as exc:

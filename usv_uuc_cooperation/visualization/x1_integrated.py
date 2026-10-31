@@ -153,7 +153,7 @@ def render_pair(run_folder):
     from usv_uuc_cooperation.metrics.x1_integrated_check import check_result, check_pair
     assert_frozen_core()
     run_folder = Path(run_folder).resolve()
-    expected = RESULTS_ROOT / 'X1/X1-V01/runs'
+    expected = RESULTS_ROOT / 'x1_adjacency/runs'
     if not run_folder.is_relative_to(expected):
         raise ValueError('X1 rendering requires an X1 run directory')
     verify_manifest(run_folder)
@@ -162,7 +162,7 @@ def render_pair(run_folder):
     for mode, result in groups.items():
         verify_manifest(run_folder / f'邻接{mode}')
         check_result(result)
-    destination = RESULTS_ROOT / 'X1/X1-V01/showcase' / run_folder.name
+    destination = RESULTS_ROOT / 'x1_adjacency/showcase' / run_folder.name
     destination.mkdir(parents=True, exist_ok=False)
     reps = destination / '代表帧'; reps.mkdir()
     blocked = forbidden_nodes(groups['4']['config'])

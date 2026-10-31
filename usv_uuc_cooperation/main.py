@@ -8,7 +8,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from usv_uuc_cooperation.config import (PACKAGE_ROOT, PROJECT_ROOT, DOCS_ROOT, VERSIONS_ROOT,
-    PROFILES, FRAMEWORK_VERSION, artifact_path, stage_catalog, new_run_directory)
+    PROFILES, STAGE_DIRS, FRAMEWORK_VERSION, artifact_path, stage_catalog, new_run_directory)
 from usv_uuc_cooperation.metrics.logger import digest, write_csv
 
 
@@ -31,7 +31,7 @@ def run_stage(stage, case, run_id, render=False, initial_result=None):
         from usv_uuc_cooperation.experiments.p4_integrated import run_pair
         return run_pair(run_id, initial_result, render)
     if stage not in ("P1", "P2", "P3"):
-        raise ValueError(f"P4 showcase is reserved for the P4-L4 chat; use {DOCS_ROOT / 'P4阶段效果展示_续会话提示词.md'}")
+        raise ValueError(f"Unsupported stage; see {DOCS_ROOT / 'reproduction.md'}")
     if render and stage != "P3":
         raise ValueError("Only the verified P3 snapshot renderer is connected; P1/P2 use existing static figures")
     allowed = {"P1": {"ALL"}, "P2": {"ALL", "baseline", "counterexample"},
@@ -137,9 +137,9 @@ def main():
             print(f"{args.stage}: {row['visual_status']}")
             for path in row["assets"]:
                 print(artifact_path(path))
-            print(DOCS_ROOT / "阶段成果总览.md")
+            print(DOCS_ROOT / "results.md")
             if args.stage == "P4":
-                print(DOCS_ROOT / "P4统一案例实现与展示_V01.md")
+                print(DOCS_ROOT / "reproduction.md")
         elif args.action == "plan":
             from usv_uuc_cooperation.experiments.x1_paths import run as run_paths
             folder = run_paths(args.run_id)
@@ -163,7 +163,7 @@ def main():
             if not re.fullmatch(r"[\w\-]+", args.run_id):
                 raise ValueError("run-id must be a single name")
             folder = solve_initial(PACKAGE_ROOT / "configs/P4-integrated-V01.json",
-                                   RESULTS_ROOT / "P4" / PROFILES["P4"] / "runs" / args.run_id)
+                                   RESULTS_ROOT / STAGE_DIRS["P4"] / "runs" / args.run_id)
             print(f"摘要：{folder / '摘要.md'}")
         elif args.action == 'compare':
             if args.case == 'X2-PSO':
