@@ -1245,8 +1245,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5728,
-      "sha256": "ae8313aed2ef89f0de491b707249b70e34092587621f5d3dff0e3cd530cc1e2d"
+      "bytes": 6130,
+      "sha256": "0cddcb89277a49cfeafcbcbc658ea844e7665ed2cbae66440f586a3fedf3e212"
     },
     {
       "path": "docs/p5_acceptance.json",
@@ -1259,19 +1259,54 @@
       "sha256": "50e8d81924dc7903b0b61e8bdd740862bfe1b9d48652ce1e3989b52a759ecb06"
     },
     {
+      "path": "docs/p6_acceptance.json",
+      "bytes": 1219,
+      "sha256": "8872b19cece417da36ddb609206db87e101dfc7441dd831344e094fe49aebc15"
+    },
+    {
+      "path": "docs/p6_delivery.md",
+      "bytes": 4340,
+      "sha256": "eb36f0b5835495fe49e4d9900eaa88232c1e6dbffa9d4588c77a2e876af2a3ad"
+    },
+    {
+      "path": "docs/p6_reproduction_check.json",
+      "bytes": 5289,
+      "sha256": "17651cad09b88d11fb65fa980e1990276fd0e5355e18332ae57decf1f889163e"
+    },
+    {
+      "path": "docs/p6_restore_report.json",
+      "bytes": 1094,
+      "sha256": "dc08ca64a84d79d64670e72b8497f54543cb5845ff632f611bd2baa0dcb46c72"
+    },
+    {
+      "path": "docs/p6_restore_report_v02.json",
+      "bytes": 1094,
+      "sha256": "2b6680360f20442fc3ac5cd289f961c0d98bdee63830a46b55308d8b716a3a23"
+    },
+    {
+      "path": "docs/project_assessment.md",
+      "bytes": 7837,
+      "sha256": "0832881f023b5f652483cd5cfea6d7a4740370caddd79cf7fd09cfde82838348"
+    },
+    {
       "path": "docs/publication_validation.json",
       "bytes": 1392,
       "sha256": "55fd047313841eaaa2d7ddab79ab0bb835d7d888bf270fd0d2fab81f1aafff5e"
     },
     {
       "path": "docs/reproduction.md",
-      "bytes": 4908,
-      "sha256": "20cd3dfb2ce0602cefe66c3eb72aeddcfe6a37667fd5eca8f7945178a83e0e33"
+      "bytes": 5098,
+      "sha256": "d5155225942d117c7ed33ac77513e98ee8d90388897a3819a087a82d81182c60"
+    },
+    {
+      "path": "docs/research_question.md",
+      "bytes": 3030,
+      "sha256": "7de9132ad0e8ef6d76395a744044397af64c13e1525ff14e97f75c39b6b55894"
     },
     {
       "path": "docs/results.md",
-      "bytes": 4396,
-      "sha256": "2fb7f5d7ae5091bdaa48dea211c54267b1de8918a29b1e639d11dc678436203f"
+      "bytes": 4743,
+      "sha256": "b90ab622ee4950f9ca704a4648a1b2470ecb9e1d7f869db89d7d6cbe5d470a82"
     },
     {
       "path": "docs/sources.md",
@@ -1294,9 +1329,19 @@
       "sha256": "b5282cd64be8a7ecab8cf9177116040cd64144fa09a8ec76aa4fa550a55dfaca"
     },
     {
+      "path": "requirements-reproduced-macos.txt",
+      "bytes": 324,
+      "sha256": "33b2617907db1376ba97637b2f3df617c24fe4dba022a7aabec10fa74e463933"
+    },
+    {
       "path": "requirements-solver.txt",
       "bytes": 43,
       "sha256": "9e11415da708d3d213646adcd1d4b378e58042c3138227366075f28fdf68e222"
+    },
+    {
+      "path": "tools/verify_p6_saved.py",
+      "bytes": 1971,
+      "sha256": "1cdece2d88365250bc7d511ed7e43058373c87cc8f698bf28b714f95f6692006"
     },
     {
       "path": "tools/verify_release.py",
@@ -1789,6 +1834,16 @@
       "sha256": "653bedb3ab8441485c77f001d170f33bc1e43c076fd7b369748ab81583926c54"
     },
     {
+      "path": "课时资料/P4/P4-L1/结果/P4-L1_批量学员/NORMAL_20261008_G3_结果.json",
+      "bytes": 128715,
+      "sha256": "8ab7360d074cdbe4e99f2f3531e37bf9eb7ba5ff7f0a17fcfd91a83a914efd1d"
+    },
+    {
+      "path": "课时资料/P4/P4-L1/结果/P4-L1_批量学员/独立核对.json",
+      "bytes": 635,
+      "sha256": "4858f212bdb898aa493f8b6c69861239beab2b9dd644ad0a300c6af994a00207"
+    },
+    {
       "path": "课时资料/P5/源码/VRX_官方原例记录器_V01.py",
       "bytes": 17557,
       "sha256": "7ee39aa5643a9ce1ad8e9f1d752888310e05949c65142a97b821c71231d38d38"
@@ -1902,6 +1957,66 @@
       "path": "输出文件/阶段结果/P2/P2-V01/showcase/AStar_多任务路线.png",
       "bytes": 37767,
       "sha256": "8af80fd34ce076dd97b14b7c259172c46155c0912b052066a6020ab38fe54be7"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/RESTRICTED_任务状态.csv",
+      "bytes": 908,
+      "sha256": "7a66251733e3e106ed5a396541f9f438c781b4f12e1c05cbfd8dbf2e791e47b1"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/RESTRICTED_结果.json",
+      "bytes": 145261,
+      "sha256": "53e5396dff78162501c913617e02dd1d178ce6930b9936144e9d41fd8f6faf2b"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/RESTRICTED_逐时通信.csv",
+      "bytes": 47622,
+      "sha256": "736921ee164bffbdc773ef7a35e7976700fd0867264244bcf30857d590394a78"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/RESTRICTED_逐步任务能量.csv",
+      "bytes": 85633,
+      "sha256": "ea590dd48284a18f0f70371c98a63c3eee1b40a461710eb3072bf914a9ac2964"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/SHA256.txt",
+      "bytes": 983,
+      "sha256": "a66087954780e6d77cddcae4d20849819aab00892306a372d1d97e6667001765"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/SUCCESS_任务状态.csv",
+      "bytes": 819,
+      "sha256": "6e3f0618c42a53f6a5c9d635a94bdbeca5ee8d1f84dfeb21c02bc55579464968"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/SUCCESS_结果.json",
+      "bytes": 150930,
+      "sha256": "a2f27b0106cc4b12208a73a7b1eca0faf88cd97c98e4ef12c6afbd37524094d6"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/SUCCESS_逐时通信.csv",
+      "bytes": 47733,
+      "sha256": "6458d8565b058317344be79e90eb419cc6b690d735b0ad7dfb224fb57034fb0a"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/SUCCESS_逐步任务能量.csv",
+      "bytes": 86414,
+      "sha256": "a12396c0a6ecb4e8c56b0432deeac042ddfc508c532137039ef1f837a86daa3e"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/指标.json",
+      "bytes": 367,
+      "sha256": "bc00916245aebeec9e1dfa33b94597b3079cad83bc793a383b3568f7722dbae3"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/摘要.md",
+      "bytes": 487,
+      "sha256": "6f31087ef04da59dc2ade3d7277123d9bd67053406df3cc8d92e5c934ecba713"
+    },
+    {
+      "path": "输出文件/阶段结果/P3/P3-V01/runs/框架迁移核查_教师V01/运行元数据.json",
+      "bytes": 525,
+      "sha256": "26fb428d6d56e0203a9a47b0cbbb6c1dd26b7727ad7546c96b26aea64f47785b"
     },
     {
       "path": "输出文件/阶段结果/P3/P3-V01/showcase/RESTRICTED.gif",
@@ -2704,6 +2819,36 @@
       "sha256": "b332d3dcdbe083c11d7fb937803ae01b79ca9cc9a9436a6d4171fbec6233bf9c"
     },
     {
+      "path": "输出文件/阶段结果/P6/P6-V01/reproduction/clone_identity.json",
+      "bytes": 440,
+      "sha256": "6075648e66a5771934ff52f8b02ac883918fcac2b925c72a6f1443d655e2c8a0"
+    },
+    {
+      "path": "输出文件/阶段结果/P6/P6-V01/reproduction/commands.json",
+      "bytes": 2015,
+      "sha256": "94028d7d76659f9515db6afb28398fb9d0c1b4246ed87e53d48ce2369ba98c0a"
+    },
+    {
+      "path": "输出文件/阶段结果/P6/P6-V01/reproduction/environment.json",
+      "bytes": 1393,
+      "sha256": "d31144a064582e497160d993af9adc4e2a26bc294f8a6e1e4013e1e687f1cf9e"
+    },
+    {
+      "path": "输出文件/阶段结果/P6/P6-V01/reproduction/step_02.log",
+      "bytes": 39,
+      "sha256": "46120ae17d471d621158647c55e1a7cda1b1e43d183062ff6b77ddf8bcb72abf"
+    },
+    {
+      "path": "输出文件/阶段结果/P6/P6-V01/reproduction/step_03.log",
+      "bytes": 386,
+      "sha256": "405bb51af56ff6e216dab9aea2816e531af6c206b7beb888380f59bcb19b3e65"
+    },
+    {
+      "path": "输出文件/阶段结果/P6/P6-V01/reproduction/step_04.log",
+      "bytes": 460,
+      "sha256": "70505ebf94c202d7bd4672cb4be1e0a653bd562d5b2d36681ab65e7e2e51e47c"
+    },
+    {
       "path": "输出文件/阶段结果/X1/X1-V01/runs/X1-L1_本人V01/路径.json",
       "bytes": 6768,
       "sha256": "eaef4804df6fefa5bfa25e01b0d8ae7386363f7bbb84a88147fbde3ea1be2377"
@@ -2747,6 +2892,161 @@
       "path": "输出文件/阶段结果/X1/X1-V01/showcase/X1_完整扩展_数据对比_V01/V02/算法效果_数据对比.png",
       "bytes": 450971,
       "sha256": "9849ef96b59f1b0d13c53886ff58d0bd8895c354e93f7114585bfc58e9a888ec"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/SHA256.txt",
+      "bytes": 666,
+      "sha256": "6e088b0f95af356d4e3334e9b842a1a05b00d75628c58cf709abf8a1c186d8f7"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/事件与重规划.json",
+      "bytes": 241629,
+      "sha256": "8be0460fe9169f70b78399111c31d1f395b3793b9fd6018d10d8066fe2a6734f"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/图版本.json",
+      "bytes": 11592,
+      "sha256": "4ec1e84f7c7be4d4ca5a74febcdfc64247ca16d11f8657ac8ebecabbbe2816ac"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/实际控制与能量.jsonl",
+      "bytes": 527061,
+      "sha256": "df03e91c94e0d36a67f71f7bf88f246edeb23b60cdafd01b60f4adc814d88b87"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/指标.json",
+      "bytes": 5588,
+      "sha256": "abc85a5b91e583b511f00cdc4b6143fa2f696c13a4cddf84fa47c6992b389fa9"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/搜索记录.json",
+      "bytes": 692807,
+      "sha256": "5ebcdb2ee554b2f24eb69f0889010eb1aa0a5438028dde21c7363c45230b7360"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/核查.json",
+      "bytes": 1463,
+      "sha256": "fc1f83fd580f51e8ba4593a37de822a158b04907bc389ef887643a95d641de80"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/结果.json",
+      "bytes": 3411576,
+      "sha256": "d1be03010b6229cd418fface9e719159c0de88ba78cd9c7dadeafc839fea7621"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Astar/逐时通信.csv",
+      "bytes": 22187,
+      "sha256": "1bb2c5c6525342ca26b8f6028ba2561e0cc2f8faed03ffe4ba512d6a811c9827"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/SHA256.txt",
+      "bytes": 666,
+      "sha256": "7e93d8e8f319965d7d8c04352ffd21b15049d64aace3d8793ae5317610c2bd7a"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/事件与重规划.json",
+      "bytes": 241319,
+      "sha256": "a2bc166ab63c9a8bd39bcc0a3f8bf7d2628c93c3262800cac6a358eaa282b7e6"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/图版本.json",
+      "bytes": 11592,
+      "sha256": "7518143e10f084c90ead2c00a9c1d1df145196c3249b1b4ba286cfdfa312e26e"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/实际控制与能量.jsonl",
+      "bytes": 526891,
+      "sha256": "4003be5d3c780032265b12c884b8dcf75e0c65fc0db6f8ec6a76a71182754ed6"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/指标.json",
+      "bytes": 5588,
+      "sha256": "abc85a5b91e583b511f00cdc4b6143fa2f696c13a4cddf84fa47c6992b389fa9"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/搜索记录.json",
+      "bytes": 2437524,
+      "sha256": "a6fa25a21da9fb4a911bcacc7595b90be447bd2f71be60f1bd57d431521364fd"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/核查.json",
+      "bytes": 1463,
+      "sha256": "85accbb9f4a38c7523f1eda33ad3000215e6c38a3a962a62dcf16631f692e36c"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/结果.json",
+      "bytes": 3409421,
+      "sha256": "a146f6015056172725a974cb52a96749523a368d976f62eeb5fc9f9b006a5fa5"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/Dijkstra/逐时通信.csv",
+      "bytes": 22187,
+      "sha256": "92cc2ac676f215964b99524a015a24f9da35d6fd6c5b0f48638ef69d7567dd98"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/SHA256.txt",
+      "bytes": 2204,
+      "sha256": "90d306304f83f30a60530b645bc5605b480af3990f7a2b2f61944a804834305a"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/局部搜索对照.json",
+      "bytes": 81645,
+      "sha256": "fea568b83ac5268447f43ddf951e51fd36393fa143d9049e02ac4093bdfb6e8a"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/指标.json",
+      "bytes": 12142,
+      "sha256": "5ab1f6b51d4c7c2673158d3f35d385b5c409de74ea90dc1114a89af8b1bec469"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/搜索费用.json",
+      "bytes": 460,
+      "sha256": "a74971a381b79a94b26e6b10d8b53d0a0fef139be618612124032e1770068e07"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/摘要.md",
+      "bytes": 2213,
+      "sha256": "e471a575f5e6ed39fa57fdd630d0a2f3af7be3bd077b09ef5c13570bcdeee0e2"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/统一核查.json",
+      "bytes": 3651,
+      "sha256": "8990c9edfe0f336dca058dff226419c816feadf8ce3208c1f62f594d13e81177"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/统一配置.json",
+      "bytes": 10217,
+      "sha256": "a249e681734e8d42f0c979bb925b99bb2f8c022cd9682b3b435ebef66ab012c8"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01/运行元数据.json",
+      "bytes": 1128,
+      "sha256": "2e313368fdd946742d1bf6bb911a102af917f44b4f2825e3916604508a3dc8f3"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/showcase/P6_clean_X2_Astar_Dijkstra_V01/V01/Astar_效果图.png",
+      "bytes": 684795,
+      "sha256": "7b060cde637536dd3111e4d8368e6b91cbad5522b4dcecc3b6ab45ff2aa48ad4"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/showcase/P6_clean_X2_Astar_Dijkstra_V01/V01/Dijkstra_效果图.png",
+      "bytes": 695261,
+      "sha256": "6b2e8a426822cd2a7a6a9aabf2ba0501cd59a4b44586d5207f8f6f99d5509fdd"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/showcase/P6_clean_X2_Astar_Dijkstra_V01/V01/SHA256.txt",
+      "bytes": 344,
+      "sha256": "871156171b35c04a243e1cf050fb0c33679d34c47d05d134c179dc3ed326e6a0"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/showcase/P6_clean_X2_Astar_Dijkstra_V01/V01/摘要.md",
+      "bytes": 850,
+      "sha256": "9b9baefad65b414c45392ebe5d56d12b399287a7855d754ac6bbd3cd24fb9382"
+    },
+    {
+      "path": "输出文件/阶段结果/X2/X2-V01/showcase/P6_clean_X2_Astar_Dijkstra_V01/V01/绘图来源与核查.json",
+      "bytes": 2382,
+      "sha256": "2eb75f6d3c768dae0a011db0c9eefce2fb09ce76170d4bc5850dfb92e6ccdc09"
     },
     {
       "path": "输出文件/阶段结果/X2/X2-V01/showcase/X2_完整扩展_六组对比_V01/V02/对比指标.json",

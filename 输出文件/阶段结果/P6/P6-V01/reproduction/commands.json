@@ -1,0 +1,85 @@
+[
+  {
+    "argv": [
+      "<course-workspace>/.venv/bin/python",
+      "-B",
+      "-m",
+      "venv",
+      "<isolated-venv>"
+    ],
+    "cwd": "<checkout>",
+    "exit_code": 0,
+    "wall_seconds": 1.3086064170347527,
+    "log": "step_00.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "<isolated-venv>/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "install",
+      "--no-cache-dir",
+      "--index-url",
+      "https://pypi.org/simple",
+      "-r",
+      "<checkout>/requirements-core.txt"
+    ],
+    "cwd": "<checkout>",
+    "exit_code": 0,
+    "wall_seconds": 112.4730695830076,
+    "log": "step_01.log",
+    "log_sha256": "41f9519d3050b53daf321bfe6a655932d6be7af0e6a981129742f1b6455aaea9"
+  },
+  {
+    "argv": [
+      "<isolated-venv>/bin/python",
+      "-B",
+      "tools/verify_release.py"
+    ],
+    "cwd": "<checkout>",
+    "exit_code": 0,
+    "wall_seconds": 0.1306772080133669,
+    "log": "step_02.log",
+    "log_sha256": "46120ae17d471d621158647c55e1a7cda1b1e43d183062ff6b77ddf8bcb72abf"
+  },
+  {
+    "argv": [
+      "<isolated-venv>/bin/python",
+      "-B",
+      "-m",
+      "usv_uuc_cooperation.main",
+      "compare",
+      "--case",
+      "X2-L1",
+      "--run-id",
+      "P6_clean_X2_Astar_Dijkstra_V01"
+    ],
+    "cwd": "<checkout>",
+    "exit_code": 0,
+    "wall_seconds": 2.818444249976892,
+    "log": "step_03.log",
+    "log_sha256": "6044742cdf699bd719b1aea5aa20397012c899f0efdc8028fdd912dd71dca67a"
+  },
+  {
+    "argv": [
+      "<isolated-venv>/bin/python",
+      "-B",
+      "-m",
+      "usv_uuc_cooperation.main",
+      "render",
+      "--stage",
+      "X2",
+      "--run",
+      "<checkout>/输出文件/阶段结果/X2/X2-V01/runs/P6_clean_X2_Astar_Dijkstra_V01",
+      "--revision",
+      "V01"
+    ],
+    "cwd": "<checkout>",
+    "exit_code": 0,
+    "wall_seconds": 20.20460441702744,
+    "log": "step_04.log",
+    "log_sha256": "bf2ec295aa915114334e593b82392cef5ddb7c35680875298a08b07755bcba20"
+  }
+]

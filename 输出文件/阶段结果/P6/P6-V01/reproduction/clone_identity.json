@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "source_commit": "897252495be37690a93439921c1aa6bc12cb2065",
+  "tracked_clean_before_run": true,
+  "source_records_sha_verified": 106,
+  "wall_seconds": 34.57019337499514,
+  "clone_origin": "Authenticated remote GitHub HTTPS; not a local filesystem clone",
+  "script_sha256": "de5c5f6d39dc582c320d7fec9b5162cf859256c172f39cf452a4804493e62cb3",
+  "operator": "Codex engineering reproduction, not learner execution"
+}

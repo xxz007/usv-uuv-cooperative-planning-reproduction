@@ -1,0 +1,16 @@
+[
+  {
+    "case": "SUCCESS",
+    "completed": "20/20",
+    "team_completion_time_s": 48,
+    "total_energy_NEU": 380.0,
+    "communication_retention_rate": 0.09333333333333334
+  },
+  {
+    "case": "RESTRICTED",
+    "completed": "16/20",
+    "team_completion_time_s": null,
+    "total_energy_NEU": 314.0,
+    "communication_retention_rate": 0.058333333333333334
+  }
+]

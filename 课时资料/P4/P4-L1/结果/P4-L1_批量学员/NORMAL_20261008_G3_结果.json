@@ -1,0 +1,8234 @@
+{
+  "experiment_version": "P4-L1-BATCH-V01",
+  "seed": 20261008,
+  "condition": "NORMAL",
+  "arm": {
+    "arm": "G3",
+    "path": "astar",
+    "relay": "centroid"
+  },
+  "config": {
+    "config_version": "P3-L4-V01",
+    "parameter_status": "frozen teaching settings; learner map checks pending; not real vehicle calibration",
+    "random_seed": 20261008,
+    "dt_s": 1,
+    "observation_duration_s": 120,
+    "cutoff_time_s": 120,
+    "map": {
+      "x_range": [
+        0,
+        24
+      ],
+      "y_range": [
+        0,
+        18
+      ],
+      "spacing_m": 1,
+      "movement": "four-neighbor",
+      "circles": [
+        {
+          "center_m": [
+            8,
+            6
+          ],
+          "radius_m": 2
+        },
+        {
+          "center_m": [
+            16,
+            11
+          ],
+          "radius_m": 2.5
+        }
+      ],
+      "safety_buffer_m": 1,
+      "raster_rule": "closed 1m square intersects radius+buffer disk => forbidden node; touching forbidden",
+      "execution_safety_rule": "entire closed segment must stay in bounds and avoid all forbidden closed squares"
+    },
+    "uuc_ids": [
+      "U1",
+      "U2",
+      "U3",
+      "U4",
+      "U5"
+    ],
+    "starts_m": {
+      "U1": [
+        2,
+        2
+      ],
+      "U2": [
+        2,
+        5
+      ],
+      "U3": [
+        2,
+        8
+      ],
+      "U4": [
+        2,
+        11
+      ],
+      "U5": [
+        2,
+        14
+      ],
+      "USV": [
+        12,
+        17
+      ]
+    },
+    "task_generation": {
+      "fixed_first_points_m": [
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "candidate_x_range": [
+        4,
+        22
+      ],
+      "candidate_y_range": [
+        2,
+        17
+      ],
+      "method": "fixed first two; local Python Random(seed).sample from x-then-y sorted safe unique pool; explicit coordinates saved"
+    },
+    "capacity_per_uuc": 4,
+    "coverage_rule": "each task exactly once; at most four total assigned tasks per UUC",
+    "speed_m_per_s": {
+      "U1": 1,
+      "U2": 1,
+      "U3": 1,
+      "U4": 1,
+      "U5": 1,
+      "USV": 1
+    },
+    "service_s_per_task": 2,
+    "deadline_s_per_task": 120,
+    "communication": {
+      "radius_m": 6,
+      "rule": "direct USV-UUC horizontal distance <= radius; ignore depth; no multihop",
+      "role": "evaluation only; no communication hard constraint or loss-triggered UUC hold",
+      "sampling": "left endpoint t represents [t,t+1); all five completed/failed/active UUC observed; denominator=600 boat-seconds; t120 terminal only"
+    },
+    "energy": {
+      "unit": "NEU, normalized teaching unit",
+      "uuc_coefficient_NEU_per_m": 2,
+      "usv_coefficient_NEU_per_m": 3,
+      "uuc_budget_NEU": 200,
+      "usv_budget_NEU": 365,
+      "scope": "actual movement only; no stationary service/wait/communication/sensor/depth consumption",
+      "rule": "check before move; equality allowed; whole step rejection, failed boat holds to cutoff; no borrowing"
+    },
+    "scheduling": {
+      "identity": "DETERMINISTIC_HEURISTIC",
+      "rule": "four rounds; U1..U5 turn order, each selects closest reachable unassigned task from its planned tail by A* distance, ties task ID; append; no reassignment",
+      "claim": "no global optimality guarantee; heuristic failure does not prove infeasibility"
+    },
+    "relay": {
+      "strategy": "centroid",
+      "tie_break": "longest current outage age, nearest distance, boat ID",
+      "information": "ideal current true UUC states including failed holds",
+      "motion": "same1m/s cap; whole candidate segment safety/budget; unsafe waits; no detour"
+    },
+    "boat_collision_modeled": false,
+    "other_omissions": [
+      "acceleration",
+      "turn rate",
+      "depth",
+      "water currents",
+      "real acoustic transmission"
+    ],
+    "warmup": {
+      "uuc_ids": [
+        "U1"
+      ],
+      "task_ids": [
+        "T01",
+        "T02"
+      ],
+      "sequence": [
+        "T01",
+        "T02"
+      ],
+      "note": "same map/speeds/service/energy/radius/seed; warmup communication denominator uses one UUC; integration code pending"
+    },
+    "tasks_m": {
+      "T01": [
+        4,
+        2
+      ],
+      "T02": [
+        4,
+        4
+      ],
+      "T03": [
+        11,
+        11
+      ],
+      "T04": [
+        4,
+        15
+      ],
+      "T05": [
+        14,
+        15
+      ],
+      "T06": [
+        10,
+        2
+      ],
+      "T07": [
+        7,
+        14
+      ],
+      "T08": [
+        11,
+        3
+      ],
+      "T09": [
+        5,
+        15
+      ],
+      "T10": [
+        21,
+        10
+      ],
+      "T11": [
+        9,
+        11
+      ],
+      "T12": [
+        11,
+        16
+      ],
+      "T13": [
+        22,
+        11
+      ],
+      "T14": [
+        20,
+        15
+      ],
+      "T15": [
+        21,
+        8
+      ],
+      "T16": [
+        9,
+        12
+      ],
+      "T17": [
+        13,
+        16
+      ],
+      "T18": [
+        6,
+        15
+      ],
+      "T19": [
+        18,
+        7
+      ],
+      "T20": [
+        22,
+        2
+      ]
+    }
+  },
+  "effective_budgets_NEU": {
+    "U1": 200,
+    "U2": 200,
+    "U3": 200,
+    "U4": 200,
+    "U5": 200,
+    "USV": 365
+  },
+  "sequences": {
+    "U1": [
+      "T01",
+      "T06",
+      "T03",
+      "T14"
+    ],
+    "U2": [
+      "T02",
+      "T08",
+      "T19",
+      "T15"
+    ],
+    "U3": [
+      "T04",
+      "T18",
+      "T11",
+      "T10"
+    ],
+    "U4": [
+      "T09",
+      "T12",
+      "T17",
+      "T13"
+    ],
+    "U5": [
+      "T07",
+      "T16",
+      "T05",
+      "T20"
+    ]
+  },
+  "legs": {
+    "U1": [
+      {
+        "task": "T01",
+        "path": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "distance_m": 2
+      },
+      {
+        "task": "T06",
+        "path": [
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            10,
+            2
+          ]
+        ],
+        "distance_m": 6
+      },
+      {
+        "task": "T03",
+        "path": [
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            11,
+            9
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            11,
+            11
+          ]
+        ],
+        "distance_m": 12
+      },
+      {
+        "task": "T14",
+        "path": [
+          [
+            11,
+            11
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            11,
+            14
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            13,
+            15
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            16
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            18,
+            15
+          ],
+          [
+            19,
+            15
+          ],
+          [
+            20,
+            15
+          ]
+        ],
+        "distance_m": 15
+      }
+    ],
+    "U2": [
+      {
+        "task": "T02",
+        "path": [
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "distance_m": 3
+      },
+      {
+        "task": "T08",
+        "path": [
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            11,
+            3
+          ]
+        ],
+        "distance_m": 10
+      },
+      {
+        "task": "T19",
+        "path": [
+          [
+            11,
+            3
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            13,
+            6
+          ],
+          [
+            14,
+            6
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            16,
+            6
+          ],
+          [
+            17,
+            6
+          ],
+          [
+            17,
+            7
+          ],
+          [
+            18,
+            7
+          ]
+        ],
+        "distance_m": 11
+      },
+      {
+        "task": "T15",
+        "path": [
+          [
+            18,
+            7
+          ],
+          [
+            19,
+            7
+          ],
+          [
+            19,
+            8
+          ],
+          [
+            20,
+            8
+          ],
+          [
+            21,
+            8
+          ]
+        ],
+        "distance_m": 4
+      }
+    ],
+    "U3": [
+      {
+        "task": "T04",
+        "path": [
+          [
+            2,
+            8
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            2,
+            15
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            4,
+            15
+          ]
+        ],
+        "distance_m": 9
+      },
+      {
+        "task": "T18",
+        "path": [
+          [
+            4,
+            15
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            6,
+            15
+          ]
+        ],
+        "distance_m": 2
+      },
+      {
+        "task": "T11",
+        "path": [
+          [
+            6,
+            15
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "distance_m": 7
+      },
+      {
+        "task": "T10",
+        "path": [
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            14,
+            7
+          ],
+          [
+            15,
+            7
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            16,
+            6
+          ],
+          [
+            17,
+            6
+          ],
+          [
+            17,
+            7
+          ],
+          [
+            18,
+            7
+          ],
+          [
+            19,
+            7
+          ],
+          [
+            19,
+            8
+          ],
+          [
+            20,
+            8
+          ],
+          [
+            20,
+            9
+          ],
+          [
+            20,
+            10
+          ],
+          [
+            21,
+            10
+          ]
+        ],
+        "distance_m": 21
+      }
+    ],
+    "U4": [
+      {
+        "task": "T09",
+        "path": [
+          [
+            2,
+            11
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            2,
+            15
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            4,
+            15
+          ],
+          [
+            5,
+            15
+          ]
+        ],
+        "distance_m": 7
+      },
+      {
+        "task": "T12",
+        "path": [
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            16
+          ],
+          [
+            6,
+            16
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            11,
+            16
+          ]
+        ],
+        "distance_m": 7
+      },
+      {
+        "task": "T17",
+        "path": [
+          [
+            11,
+            16
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            13,
+            16
+          ]
+        ],
+        "distance_m": 2
+      },
+      {
+        "task": "T13",
+        "path": [
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            16
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            16
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            18,
+            15
+          ],
+          [
+            19,
+            15
+          ],
+          [
+            19,
+            14
+          ],
+          [
+            20,
+            14
+          ],
+          [
+            20,
+            13
+          ],
+          [
+            20,
+            12
+          ],
+          [
+            21,
+            12
+          ],
+          [
+            21,
+            11
+          ],
+          [
+            22,
+            11
+          ]
+        ],
+        "distance_m": 14
+      }
+    ],
+    "U5": [
+      {
+        "task": "T07",
+        "path": [
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            14
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            7,
+            14
+          ]
+        ],
+        "distance_m": 5
+      },
+      {
+        "task": "T16",
+        "path": [
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            12
+          ]
+        ],
+        "distance_m": 4
+      },
+      {
+        "task": "T05",
+        "path": [
+          [
+            9,
+            12
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            13,
+            15
+          ],
+          [
+            14,
+            15
+          ]
+        ],
+        "distance_m": 8
+      },
+      {
+        "task": "T20",
+        "path": [
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            16
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            18,
+            15
+          ],
+          [
+            19,
+            15
+          ],
+          [
+            19,
+            14
+          ],
+          [
+            20,
+            14
+          ],
+          [
+            20,
+            13
+          ],
+          [
+            20,
+            12
+          ],
+          [
+            21,
+            12
+          ],
+          [
+            21,
+            11
+          ],
+          [
+            21,
+            10
+          ],
+          [
+            21,
+            9
+          ],
+          [
+            21,
+            8
+          ],
+          [
+            21,
+            7
+          ],
+          [
+            21,
+            6
+          ],
+          [
+            21,
+            5
+          ],
+          [
+            21,
+            4
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            2
+          ],
+          [
+            22,
+            2
+          ]
+        ],
+        "distance_m": 23
+      }
+    ]
+  },
+  "planning_failure_legs": [],
+  "global_infeasibility_proved": false,
+  "scene_sha256": "0fbb4b4375ccd03f372d0c2e45359e95c257dcff058556d8fd29074875ea4cd9",
+  "input_sha256": {
+    "p4_l1_batch.py": "8567a2f5c6db6a57c65c4bd62121f3432d92e56c4d9b6396df67f768e32c657d",
+    "p4_l1_batch_sim.py": "643a409e992625b43cfa91a1e2d930505e09315a2dff71679db2f454ef11eee0",
+    "p4_l1_sim.py": "7c404bd9d1cdd06c44182adaf9c5762d59df51dd0d58d6210abe3b03cae5564a",
+    "P4-L1_批量实验配置.json": "bdc8363f35cd1e23f135c5bb5638016c751db0adef831453e981535deb9c8cd2",
+    "P4-L1_场景与种子清单.json": "9f7764b75e6a58644f713ee703f380a245340fa313bf9a0a1b67b89cbe185043",
+    "p3_l4_map.py": "b141b1933617609ee375e7c63a5826f32c44a0333ac359a96698ce087f4e3d1f",
+    "p2_l4_routes.py": "4b861d44604b76ee043fd27c9d9cf58825e8ee7803bc8dc49417855e445519f8",
+    "p3_l1_communication.py": "c3fc2fa44eb94197c7ef3acd0fd46c4c776ae2ff2984ca77ebe50646f54663b5"
+  },
+  "summary": {
+    "task_count": 20,
+    "completed_task_count": 20,
+    "completion_rate": 1.0,
+    "team_completion_time_s": 48,
+    "cutoff_time_s": 120,
+    "deadline_met_task_count": 20,
+    "boat_totals": {
+      "U1": {
+        "position_m": [
+          20,
+          15
+        ],
+        "distance_m": 35.0,
+        "energy_NEU": 70.0,
+        "failure": null,
+        "budget_NEU": 200,
+        "remaining_NEU": 130.0
+      },
+      "U2": {
+        "position_m": [
+          21,
+          8
+        ],
+        "distance_m": 28.0,
+        "energy_NEU": 56.0,
+        "failure": null,
+        "budget_NEU": 200,
+        "remaining_NEU": 144.0
+      },
+      "U3": {
+        "position_m": [
+          21,
+          10
+        ],
+        "distance_m": 39.0,
+        "energy_NEU": 78.0,
+        "failure": null,
+        "budget_NEU": 200,
+        "remaining_NEU": 122.0
+      },
+      "U4": {
+        "position_m": [
+          22,
+          11
+        ],
+        "distance_m": 30.0,
+        "energy_NEU": 60.0,
+        "failure": null,
+        "budget_NEU": 200,
+        "remaining_NEU": 140.0
+      },
+      "U5": {
+        "position_m": [
+          22,
+          2
+        ],
+        "distance_m": 40.0,
+        "energy_NEU": 80.0,
+        "failure": null,
+        "budget_NEU": 200,
+        "remaining_NEU": 120.0
+      },
+      "USV": {
+        "position_m": [
+          11.4,
+          11.0
+        ],
+        "distance_m": 15.177328926995393,
+        "energy_NEU": 45.53198678098619,
+        "failure": null,
+        "budget_NEU": 365,
+        "remaining_NEU": 319.4680132190138
+      }
+    },
+    "communication": {
+      "observed_boat_seconds": 600,
+      "connected_boat_seconds": 86,
+      "retention_rate": 0.14333333333333334,
+      "outage_event_sum": 11,
+      "longest_single_boat_outage_s": 96,
+      "per_boat": {
+        "U1": {
+          "sample_count": 120,
+          "connected_sample_count": 18,
+          "observed_boat_seconds": 120,
+          "connected_boat_seconds": 18,
+          "retention_rate": 0.15,
+          "outage_event_count": 2,
+          "longest_outage_s": 85,
+          "outage_intervals": [
+            {
+              "start_s": 0,
+              "end_s": 17,
+              "duration_s": 17,
+              "starts_at_window_boundary": true,
+              "continues_to_window_end": false
+            },
+            {
+              "start_s": 35,
+              "end_s": 120,
+              "duration_s": 85,
+              "starts_at_window_boundary": false,
+              "continues_to_window_end": true
+            }
+          ]
+        },
+        "U2": {
+          "sample_count": 120,
+          "connected_sample_count": 4,
+          "observed_boat_seconds": 120,
+          "connected_boat_seconds": 4,
+          "retention_rate": 0.03333333333333333,
+          "outage_event_count": 2,
+          "longest_outage_s": 96,
+          "outage_intervals": [
+            {
+              "start_s": 0,
+              "end_s": 20,
+              "duration_s": 20,
+              "starts_at_window_boundary": true,
+              "continues_to_window_end": false
+            },
+            {
+              "start_s": 24,
+              "end_s": 120,
+              "duration_s": 96,
+              "starts_at_window_boundary": false,
+              "continues_to_window_end": true
+            }
+          ]
+        },
+        "U3": {
+          "sample_count": 120,
+          "connected_sample_count": 29,
+          "observed_boat_seconds": 120,
+          "connected_boat_seconds": 29,
+          "retention_rate": 0.24166666666666667,
+          "outage_event_count": 2,
+          "longest_outage_s": 85,
+          "outage_intervals": [
+            {
+              "start_s": 0,
+              "end_s": 6,
+              "duration_s": 6,
+              "starts_at_window_boundary": true,
+              "continues_to_window_end": false
+            },
+            {
+              "start_s": 35,
+              "end_s": 120,
+              "duration_s": 85,
+              "starts_at_window_boundary": false,
+              "continues_to_window_end": true
+            }
+          ]
+        },
+        "U4": {
+          "sample_count": 120,
+          "connected_sample_count": 13,
+          "observed_boat_seconds": 120,
+          "connected_boat_seconds": 13,
+          "retention_rate": 0.10833333333333334,
+          "outage_event_count": 3,
+          "longest_outage_s": 96,
+          "outage_intervals": [
+            {
+              "start_s": 0,
+              "end_s": 5,
+              "duration_s": 5,
+              "starts_at_window_boundary": true,
+              "continues_to_window_end": false
+            },
+            {
+              "start_s": 11,
+              "end_s": 17,
+              "duration_s": 6,
+              "starts_at_window_boundary": false,
+              "continues_to_window_end": false
+            },
+            {
+              "start_s": 24,
+              "end_s": 120,
+              "duration_s": 96,
+              "starts_at_window_boundary": false,
+              "continues_to_window_end": true
+            }
+          ]
+        },
+        "U5": {
+          "sample_count": 120,
+          "connected_sample_count": 22,
+          "observed_boat_seconds": 120,
+          "connected_boat_seconds": 22,
+          "retention_rate": 0.18333333333333332,
+          "outage_event_count": 2,
+          "longest_outage_s": 95,
+          "outage_intervals": [
+            {
+              "start_s": 0,
+              "end_s": 3,
+              "duration_s": 3,
+              "starts_at_window_boundary": true,
+              "continues_to_window_end": false
+            },
+            {
+              "start_s": 25,
+              "end_s": 120,
+              "duration_s": 95,
+              "starts_at_window_boundary": false,
+              "continues_to_window_end": true
+            }
+          ]
+        }
+      }
+    },
+    "constraint_violations": {
+      "assignment": 0,
+      "capacity": 0,
+      "actual_obstacle_collision": 0,
+      "speed": 0,
+      "actual_budget_exceedance": 0,
+      "deadline_missed_or_unfinished": 0
+    },
+    "rejected_safety_candidates": 102,
+    "rejected_budget_candidates": 0,
+    "boat_collision_modeled": false,
+    "status": "TASKS_COMPLETED"
+  },
+  "snapshots": [
+    {
+      "time_s": 0,
+      "positions_m": {
+        "U1": [
+          2,
+          2
+        ],
+        "U2": [
+          2,
+          5
+        ],
+        "U3": [
+          2,
+          8
+        ],
+        "U4": [
+          2,
+          11
+        ],
+        "U5": [
+          2,
+          14
+        ],
+        "USV": [
+          12,
+          17
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": []
+    },
+    {
+      "time_s": 1,
+      "positions_m": {
+        "U1": [
+          3,
+          2
+        ],
+        "U2": [
+          2,
+          4
+        ],
+        "U3": [
+          2,
+          9
+        ],
+        "U4": [
+          2,
+          12
+        ],
+        "U5": [
+          3,
+          14
+        ],
+        "USV": [
+          11.256705853752834,
+          16.33103526837755
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": []
+    },
+    {
+      "time_s": 2,
+      "positions_m": {
+        "U1": [
+          4,
+          2
+        ],
+        "U2": [
+          3,
+          4
+        ],
+        "U3": [
+          2,
+          10
+        ],
+        "U4": [
+          2,
+          13
+        ],
+        "U5": [
+          4,
+          14
+        ],
+        "USV": [
+          10.52006516678142,
+          15.654750935941642
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": []
+    },
+    {
+      "time_s": 3,
+      "positions_m": {
+        "U1": [
+          4,
+          2
+        ],
+        "U2": [
+          4,
+          4
+        ],
+        "U3": [
+          2,
+          11
+        ],
+        "U4": [
+          2,
+          14
+        ],
+        "U5": [
+          5,
+          14
+        ],
+        "USV": [
+          9.790754944909136,
+          14.970567773131712
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": []
+    },
+    {
+      "time_s": 4,
+      "positions_m": {
+        "U1": [
+          4,
+          2
+        ],
+        "U2": [
+          4,
+          4
+        ],
+        "U3": [
+          2,
+          12
+        ],
+        "U4": [
+          2,
+          15
+        ],
+        "U5": [
+          6,
+          14
+        ],
+        "USV": [
+          9.06003416585881,
+          14.287891317507173
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01"
+      ]
+    },
+    {
+      "time_s": 5,
+      "positions_m": {
+        "U1": [
+          5,
+          2
+        ],
+        "U2": [
+          4,
+          4
+        ],
+        "U3": [
+          2,
+          13
+        ],
+        "U4": [
+          3,
+          15
+        ],
+        "U5": [
+          7,
+          14
+        ],
+        "USV": [
+          8.31496901861604,
+          13.620899618635208
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "time_s": 6,
+      "positions_m": {
+        "U1": [
+          6,
+          2
+        ],
+        "U2": [
+          4,
+          3
+        ],
+        "U3": [
+          2,
+          14
+        ],
+        "U4": [
+          4,
+          15
+        ],
+        "U5": [
+          7,
+          14
+        ],
+        "USV": [
+          7.599734259857688,
+          12.92201533646549
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "time_s": 7,
+      "positions_m": {
+        "U1": [
+          7,
+          2
+        ],
+        "U2": [
+          5,
+          3
+        ],
+        "U3": [
+          2,
+          15
+        ],
+        "U4": [
+          5,
+          15
+        ],
+        "U5": [
+          7,
+          14
+        ],
+        "USV": [
+          6.9295459123271925,
+          12.17982427020671
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T07"
+      ]
+    },
+    {
+      "time_s": 8,
+      "positions_m": {
+        "U1": [
+          8,
+          2
+        ],
+        "U2": [
+          5,
+          2
+        ],
+        "U3": [
+          3,
+          15
+        ],
+        "U4": [
+          5,
+          15
+        ],
+        "U5": [
+          7,
+          13
+        ],
+        "USV": [
+          6.341648899858883,
+          11.370888486147905
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T07"
+      ]
+    },
+    {
+      "time_s": 9,
+      "positions_m": {
+        "U1": [
+          9,
+          2
+        ],
+        "U2": [
+          6,
+          2
+        ],
+        "U3": [
+          4,
+          15
+        ],
+        "U4": [
+          5,
+          15
+        ],
+        "U5": [
+          7,
+          12
+        ],
+        "USV": [
+          5.98945750207554,
+          10.434960487139747
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T07",
+        "T09"
+      ]
+    },
+    {
+      "time_s": 10,
+      "positions_m": {
+        "U1": [
+          10,
+          2
+        ],
+        "U2": [
+          7,
+          2
+        ],
+        "U3": [
+          4,
+          15
+        ],
+        "U4": [
+          5,
+          16
+        ],
+        "U5": [
+          8,
+          12
+        ],
+        "USV": [
+          5.98945750207554,
+          10.434960487139747
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T07",
+        "T09"
+      ]
+    },
+    {
+      "time_s": 11,
+      "positions_m": {
+        "U1": [
+          10,
+          2
+        ],
+        "U2": [
+          8,
+          2
+        ],
+        "U3": [
+          4,
+          15
+        ],
+        "U4": [
+          6,
+          16
+        ],
+        "U5": [
+          9,
+          12
+        ],
+        "USV": [
+          6.606036243408145,
+          9.647667240797126
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T07",
+        "T09"
+      ]
+    },
+    {
+      "time_s": 12,
+      "positions_m": {
+        "U1": [
+          10,
+          2
+        ],
+        "U2": [
+          9,
+          2
+        ],
+        "U3": [
+          5,
+          15
+        ],
+        "U4": [
+          7,
+          16
+        ],
+        "U5": [
+          9,
+          12
+        ],
+        "USV": [
+          6.606036243408145,
+          9.647667240797126
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T09"
+      ]
+    },
+    {
+      "time_s": 13,
+      "positions_m": {
+        "U1": [
+          11,
+          2
+        ],
+        "U2": [
+          10,
+          2
+        ],
+        "U3": [
+          6,
+          15
+        ],
+        "U4": [
+          8,
+          16
+        ],
+        "U5": [
+          9,
+          12
+        ],
+        "USV": [
+          6.606036243408145,
+          9.647667240797126
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T09",
+        "T16"
+      ]
+    },
+    {
+      "time_s": 14,
+      "positions_m": {
+        "U1": [
+          11,
+          3
+        ],
+        "U2": [
+          11,
+          2
+        ],
+        "U3": [
+          6,
+          15
+        ],
+        "U4": [
+          9,
+          16
+        ],
+        "U5": [
+          9,
+          13
+        ],
+        "USV": [
+          7.599724903614635,
+          9.53549395263532
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T09",
+        "T16"
+      ]
+    },
+    {
+      "time_s": 15,
+      "positions_m": {
+        "U1": [
+          12,
+          3
+        ],
+        "U2": [
+          11,
+          3
+        ],
+        "U3": [
+          6,
+          15
+        ],
+        "U4": [
+          10,
+          16
+        ],
+        "U5": [
+          9,
+          14
+        ],
+        "USV": [
+          8.586338536510313,
+          9.698569209447603
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T09",
+        "T16",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 16,
+      "positions_m": {
+        "U1": [
+          12,
+          4
+        ],
+        "U2": [
+          11,
+          3
+        ],
+        "U3": [
+          6,
+          14
+        ],
+        "U4": [
+          11,
+          16
+        ],
+        "U5": [
+          9,
+          15
+        ],
+        "USV": [
+          9.482667527174348,
+          10.141958812951328
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T09",
+        "T16",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 17,
+      "positions_m": {
+        "U1": [
+          12,
+          5
+        ],
+        "U2": [
+          11,
+          3
+        ],
+        "U3": [
+          6,
+          13
+        ],
+        "U4": [
+          11,
+          16
+        ],
+        "U5": [
+          10,
+          15
+        ],
+        "USV": [
+          9.8,
+          10.4
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T16",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 18,
+      "positions_m": {
+        "U1": [
+          12,
+          6
+        ],
+        "U2": [
+          12,
+          3
+        ],
+        "U3": [
+          6,
+          12
+        ],
+        "U4": [
+          11,
+          16
+        ],
+        "U5": [
+          11,
+          15
+        ],
+        "USV": [
+          10.0,
+          10.4
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T12",
+        "T16",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 19,
+      "positions_m": {
+        "U1": [
+          12,
+          7
+        ],
+        "U2": [
+          12,
+          4
+        ],
+        "U3": [
+          6,
+          11
+        ],
+        "U4": [
+          12,
+          16
+        ],
+        "U5": [
+          12,
+          15
+        ],
+        "USV": [
+          10.4,
+          10.4
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T12",
+        "T16",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 20,
+      "positions_m": {
+        "U1": [
+          12,
+          8
+        ],
+        "U2": [
+          12,
+          5
+        ],
+        "U3": [
+          7,
+          11
+        ],
+        "U4": [
+          13,
+          16
+        ],
+        "U5": [
+          13,
+          15
+        ],
+        "USV": [
+          10.8,
+          10.6
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": true,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T12",
+        "T16",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 21,
+      "positions_m": {
+        "U1": [
+          12,
+          9
+        ],
+        "U2": [
+          12,
+          6
+        ],
+        "U3": [
+          8,
+          11
+        ],
+        "U4": [
+          13,
+          16
+        ],
+        "U5": [
+          14,
+          15
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": true,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T12",
+        "T16",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 22,
+      "positions_m": {
+        "U1": [
+          11,
+          9
+        ],
+        "U2": [
+          13,
+          6
+        ],
+        "U3": [
+          9,
+          11
+        ],
+        "U4": [
+          13,
+          16
+        ],
+        "U5": [
+          14,
+          15
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": true,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 23,
+      "positions_m": {
+        "U1": [
+          11,
+          10
+        ],
+        "U2": [
+          14,
+          6
+        ],
+        "U3": [
+          9,
+          11
+        ],
+        "U4": [
+          14,
+          16
+        ],
+        "U5": [
+          14,
+          15
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": true,
+        "U3": true,
+        "U4": true,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 24,
+      "positions_m": {
+        "U1": [
+          11,
+          11
+        ],
+        "U2": [
+          15,
+          6
+        ],
+        "U3": [
+          9,
+          11
+        ],
+        "U4": [
+          15,
+          16
+        ],
+        "U5": [
+          15,
+          15
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": true
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 25,
+      "positions_m": {
+        "U1": [
+          11,
+          11
+        ],
+        "U2": [
+          16,
+          6
+        ],
+        "U3": [
+          9,
+          10
+        ],
+        "U4": [
+          16,
+          16
+        ],
+        "U5": [
+          15,
+          16
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 26,
+      "positions_m": {
+        "U1": [
+          11,
+          11
+        ],
+        "U2": [
+          17,
+          6
+        ],
+        "U3": [
+          10,
+          10
+        ],
+        "U4": [
+          17,
+          16
+        ],
+        "U5": [
+          16,
+          16
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 27,
+      "positions_m": {
+        "U1": [
+          11,
+          12
+        ],
+        "U2": [
+          17,
+          7
+        ],
+        "U3": [
+          11,
+          10
+        ],
+        "U4": [
+          17,
+          15
+        ],
+        "U5": [
+          17,
+          16
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 28,
+      "positions_m": {
+        "U1": [
+          11,
+          13
+        ],
+        "U2": [
+          18,
+          7
+        ],
+        "U3": [
+          12,
+          10
+        ],
+        "U4": [
+          18,
+          15
+        ],
+        "U5": [
+          17,
+          15
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 29,
+      "positions_m": {
+        "U1": [
+          11,
+          14
+        ],
+        "U2": [
+          18,
+          7
+        ],
+        "U3": [
+          12,
+          9
+        ],
+        "U4": [
+          19,
+          15
+        ],
+        "U5": [
+          18,
+          15
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18"
+      ]
+    },
+    {
+      "time_s": 30,
+      "positions_m": {
+        "U1": [
+          11,
+          15
+        ],
+        "U2": [
+          18,
+          7
+        ],
+        "U3": [
+          12,
+          8
+        ],
+        "U4": [
+          19,
+          14
+        ],
+        "U5": [
+          19,
+          15
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 31,
+      "positions_m": {
+        "U1": [
+          12,
+          15
+        ],
+        "U2": [
+          19,
+          7
+        ],
+        "U3": [
+          13,
+          8
+        ],
+        "U4": [
+          20,
+          14
+        ],
+        "U5": [
+          19,
+          14
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 32,
+      "positions_m": {
+        "U1": [
+          13,
+          15
+        ],
+        "U2": [
+          19,
+          8
+        ],
+        "U3": [
+          13,
+          7
+        ],
+        "U4": [
+          20,
+          13
+        ],
+        "U5": [
+          20,
+          14
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 33,
+      "positions_m": {
+        "U1": [
+          14,
+          15
+        ],
+        "U2": [
+          20,
+          8
+        ],
+        "U3": [
+          14,
+          7
+        ],
+        "U4": [
+          20,
+          12
+        ],
+        "U5": [
+          20,
+          13
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 34,
+      "positions_m": {
+        "U1": [
+          15,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          15,
+          7
+        ],
+        "U4": [
+          21,
+          12
+        ],
+        "U5": [
+          20,
+          12
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": true,
+        "U2": false,
+        "U3": true,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 35,
+      "positions_m": {
+        "U1": [
+          15,
+          16
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          15,
+          6
+        ],
+        "U4": [
+          21,
+          11
+        ],
+        "U5": [
+          21,
+          12
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 36,
+      "positions_m": {
+        "U1": [
+          16,
+          16
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          16,
+          6
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          11
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 37,
+      "positions_m": {
+        "U1": [
+          17,
+          16
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          17,
+          6
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          10
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 38,
+      "positions_m": {
+        "U1": [
+          17,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          17,
+          7
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          9
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 39,
+      "positions_m": {
+        "U1": [
+          18,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          18,
+          7
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          8
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 40,
+      "positions_m": {
+        "U1": [
+          19,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          19,
+          7
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          7
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 41,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          19,
+          8
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          6
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 42,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          20,
+          8
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          5
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 43,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          20,
+          9
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          4
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 44,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          20,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          3
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 45,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          21,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 46,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 47,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "time_s": 48,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 49,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 50,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 51,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 52,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 53,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 54,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 55,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 56,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 57,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 58,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 59,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 60,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 61,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 62,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 63,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 64,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 65,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 66,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 67,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 68,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 69,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 70,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 71,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 72,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 73,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 74,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 75,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 76,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 77,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 78,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 79,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 80,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 81,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 82,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 83,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 84,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 85,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 86,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 87,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 88,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 89,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 90,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 91,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 92,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 93,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 94,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 95,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 96,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 97,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 98,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 99,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 100,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 101,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 102,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 103,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 104,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 105,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 106,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 107,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 108,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 109,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 110,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 111,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 112,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 113,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 114,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 115,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 116,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 117,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 118,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 119,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "time_s": 120,
+      "positions_m": {
+        "U1": [
+          20,
+          15
+        ],
+        "U2": [
+          21,
+          8
+        ],
+        "U3": [
+          21,
+          10
+        ],
+        "U4": [
+          22,
+          11
+        ],
+        "U5": [
+          22,
+          2
+        ],
+        "USV": [
+          11.4,
+          11.0
+        ]
+      },
+      "connected": {
+        "U1": false,
+        "U2": false,
+        "U3": false,
+        "U4": false,
+        "U5": false
+      },
+      "completed_tasks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    }
+  ],
+  "tasks": {
+    "T01": {
+      "boat_id": "U1",
+      "status": "completed",
+      "arrival_s": 2,
+      "service_progress_s": 2,
+      "completion_s": 4,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T06": {
+      "boat_id": "U1",
+      "status": "completed",
+      "arrival_s": 10,
+      "service_progress_s": 2,
+      "completion_s": 12,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T03": {
+      "boat_id": "U1",
+      "status": "completed",
+      "arrival_s": 24,
+      "service_progress_s": 2,
+      "completion_s": 26,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T14": {
+      "boat_id": "U1",
+      "status": "completed",
+      "arrival_s": 41,
+      "service_progress_s": 2,
+      "completion_s": 43,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T02": {
+      "boat_id": "U2",
+      "status": "completed",
+      "arrival_s": 3,
+      "service_progress_s": 2,
+      "completion_s": 5,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T08": {
+      "boat_id": "U2",
+      "status": "completed",
+      "arrival_s": 15,
+      "service_progress_s": 2,
+      "completion_s": 17,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T19": {
+      "boat_id": "U2",
+      "status": "completed",
+      "arrival_s": 28,
+      "service_progress_s": 2,
+      "completion_s": 30,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T15": {
+      "boat_id": "U2",
+      "status": "completed",
+      "arrival_s": 34,
+      "service_progress_s": 2,
+      "completion_s": 36,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T04": {
+      "boat_id": "U3",
+      "status": "completed",
+      "arrival_s": 9,
+      "service_progress_s": 2,
+      "completion_s": 11,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T18": {
+      "boat_id": "U3",
+      "status": "completed",
+      "arrival_s": 13,
+      "service_progress_s": 2,
+      "completion_s": 15,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T11": {
+      "boat_id": "U3",
+      "status": "completed",
+      "arrival_s": 22,
+      "service_progress_s": 2,
+      "completion_s": 24,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T10": {
+      "boat_id": "U3",
+      "status": "completed",
+      "arrival_s": 45,
+      "service_progress_s": 2,
+      "completion_s": 47,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T09": {
+      "boat_id": "U4",
+      "status": "completed",
+      "arrival_s": 7,
+      "service_progress_s": 2,
+      "completion_s": 9,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T12": {
+      "boat_id": "U4",
+      "status": "completed",
+      "arrival_s": 16,
+      "service_progress_s": 2,
+      "completion_s": 18,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T17": {
+      "boat_id": "U4",
+      "status": "completed",
+      "arrival_s": 20,
+      "service_progress_s": 2,
+      "completion_s": 22,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T13": {
+      "boat_id": "U4",
+      "status": "completed",
+      "arrival_s": 36,
+      "service_progress_s": 2,
+      "completion_s": 38,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T07": {
+      "boat_id": "U5",
+      "status": "completed",
+      "arrival_s": 5,
+      "service_progress_s": 2,
+      "completion_s": 7,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T16": {
+      "boat_id": "U5",
+      "status": "completed",
+      "arrival_s": 11,
+      "service_progress_s": 2,
+      "completion_s": 13,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T05": {
+      "boat_id": "U5",
+      "status": "completed",
+      "arrival_s": 21,
+      "service_progress_s": 2,
+      "completion_s": 23,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    },
+    "T20": {
+      "boat_id": "U5",
+      "status": "completed",
+      "arrival_s": 46,
+      "service_progress_s": 2,
+      "completion_s": 48,
+      "deadline_s": 120,
+      "deadline_met": true,
+      "failure_reason": null
+    }
+  },
+  "row": {
+    "seed": 20261008,
+    "condition": "NORMAL",
+    "arm": "G3",
+    "path_rule": "astar",
+    "relay_rule": "centroid",
+    "run_ordinal": 3,
+    "execution_status": "EXECUTED",
+    "status": "ALL_TASKS_ON_TIME",
+    "planning_feasible": true,
+    "all_tasks_on_time": true,
+    "completed_task_count": 20,
+    "task_count": 20,
+    "completion_rate": 1.0,
+    "team_completion_time_s": 48,
+    "cutoff_time_s": 120,
+    "uuv_distance_m": 172.0,
+    "usv_distance_m": 15.177328926995393,
+    "usv_energy_NEU": 45.53198678098619,
+    "total_energy_NEU": 389.5319867809862,
+    "connected_boat_seconds": 86,
+    "observed_boat_seconds": 600,
+    "planned_observation_boat_seconds": 600,
+    "communication_retention_rate": 0.14333333333333334,
+    "longest_single_boat_outage_s": 96,
+    "outage_event_sum": 11,
+    "actual_obstacle_collisions": 0,
+    "speed_violations": 0,
+    "budget_violations": 0,
+    "capacity_violations": 0,
+    "assignment_violations": 0,
+    "deadline_missed_or_unfinished": 0,
+    "planning_wall_time_s": 0.0004735830007120967,
+    "relay_decision_wall_time_s": 0.00015475197869818658,
+    "simulation_with_evaluation_wall_time_s": 0.04858879100356717,
+    "failure_reason": ""
+  }
+}

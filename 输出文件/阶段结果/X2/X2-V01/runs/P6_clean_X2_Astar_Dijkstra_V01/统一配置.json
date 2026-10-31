@@ -1,0 +1,436 @@
+{
+  "config_version": "X2-V01",
+  "parameter_status": "explicit integrated teaching configuration; actual result not prefilled",
+  "random_seed": 20261008,
+  "dt_s": 1,
+  "observation_duration_s": 120,
+  "cutoff_time_s": 120,
+  "map": {
+    "x_range": [
+      0,
+      24
+    ],
+    "y_range": [
+      0,
+      18
+    ],
+    "spacing_m": 1,
+    "movement": "eight-neighbor",
+    "circles": [
+      {
+        "center_m": [
+          8,
+          6
+        ],
+        "radius_m": 2
+      },
+      {
+        "center_m": [
+          16,
+          11
+        ],
+        "radius_m": 2.5
+      }
+    ],
+    "safety_buffer_m": 1,
+    "raster_rule": "closed 1m square intersects radius+buffer disk => forbidden node; touching forbidden",
+    "execution_safety_rule": "entire closed segment must stay in bounds and avoid all forbidden closed squares",
+    "adjacency": 8
+  },
+  "uuc_ids": [
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5"
+  ],
+  "starts_m": {
+    "U1": [
+      2,
+      2
+    ],
+    "U2": [
+      2,
+      5
+    ],
+    "U3": [
+      2,
+      8
+    ],
+    "U4": [
+      2,
+      11
+    ],
+    "U5": [
+      2,
+      14
+    ],
+    "USV": [
+      12,
+      17
+    ]
+  },
+  "task_generation": {
+    "fixed_first_points_m": [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "candidate_x_range": [
+      4,
+      22
+    ],
+    "candidate_y_range": [
+      2,
+      17
+    ],
+    "method": "fixed first two; local Python Random(seed).sample from x-then-y sorted safe unique pool; explicit coordinates saved"
+  },
+  "capacity_per_uuc": 6,
+  "coverage_rule": "all known tasks counted; each completed once; historical accepted task IDs per UUV <=6; no refund",
+  "speed_m_per_s": {
+    "U1": 1,
+    "U2": 1,
+    "U3": 1,
+    "U4": 1,
+    "U5": 1,
+    "USV": 1
+  },
+  "service_s_per_task": 2,
+  "deadline_s_per_task": 120,
+  "communication": {
+    "radius_m": 6,
+    "rule": "direct USV-UUC horizontal distance <= radius; ignore depth; no multihop",
+    "role": "evaluation only; no communication hard constraint or loss-triggered UUC hold",
+    "sampling": "left endpoint t represents [t,t+1); all five completed/failed/active UUC observed; denominator=600 boat-seconds; t120 terminal only"
+  },
+  "energy": {
+    "unit": "NEU, normalized teaching unit",
+    "uuc_coefficient_NEU_per_m": 2,
+    "usv_coefficient_NEU_per_m": 3,
+    "uuc_budget_NEU": 200,
+    "usv_budget_NEU": 365,
+    "scope": "actual movement only; no stationary service/wait/communication/sensor/depth consumption",
+    "rule": "check before move; equality allowed; whole step rejection, failed boat holds to cutoff; no borrowing"
+  },
+  "scheduling": {
+    "initial": "Pyomo sum start-to-task A* cost; nearest-neighbor visit order; full route budget preflight separately",
+    "response": "retain healthy queues/protected service; append eligible observed new/orphan tasks by shortest safe tail route, lifetime capacity and complete remaining route budget"
+  },
+  "relay": {
+    "strategy": "outage_priority",
+    "tie_break": "longest current outage age, nearest distance, boat ID",
+    "information": "ideal current true UUC states including failed holds",
+    "motion": "speed-limited straight candidate; unsafe candidate holds; no USV detour optimization"
+  },
+  "boat_collision_modeled": false,
+  "other_omissions": [
+    "acceleration",
+    "turn rate",
+    "depth",
+    "real acoustic transmission"
+  ],
+  "warmup": {
+    "uuc_ids": [
+      "U1"
+    ],
+    "task_ids": [
+      "T01",
+      "T02"
+    ],
+    "sequence": [
+      "T01",
+      "T02"
+    ],
+    "note": "same map/speeds/service/energy/radius/seed; warmup communication denominator uses one UUC; integration code pending"
+  },
+  "tasks_m": {
+    "T01": [
+      4,
+      2
+    ],
+    "T02": [
+      4,
+      4
+    ],
+    "T03": [
+      11,
+      11
+    ],
+    "T04": [
+      4,
+      15
+    ],
+    "T05": [
+      14,
+      15
+    ],
+    "T06": [
+      10,
+      2
+    ],
+    "T07": [
+      7,
+      14
+    ],
+    "T08": [
+      11,
+      3
+    ],
+    "T09": [
+      5,
+      15
+    ],
+    "T10": [
+      21,
+      10
+    ],
+    "T11": [
+      9,
+      11
+    ],
+    "T12": [
+      11,
+      16
+    ],
+    "T13": [
+      22,
+      11
+    ],
+    "T14": [
+      20,
+      15
+    ],
+    "T15": [
+      21,
+      8
+    ],
+    "T16": [
+      9,
+      12
+    ],
+    "T17": [
+      13,
+      16
+    ],
+    "T18": [
+      6,
+      15
+    ],
+    "T19": [
+      18,
+      7
+    ],
+    "T20": [
+      22,
+      2
+    ]
+  },
+  "base_source": {
+    "path": "usv_uuc_cooperation/configs/P3-V01.json",
+    "sha256": "712aea9f862395cf10d9fa45beea3f1d0398686708c973ea28017a6ddceaecb2",
+    "preserved": [
+      "map",
+      "starts_m",
+      "tasks_m",
+      "dt_s",
+      "service_s_per_task",
+      "energy",
+      "communication"
+    ],
+    "change": "capacity4->6; initial Pyomo; current/event response"
+  },
+  "current_schedule": [
+    {
+      "start_s": 0,
+      "end_s": 8,
+      "vector_m_per_s": [
+        0,
+        0
+      ]
+    },
+    {
+      "start_s": 8,
+      "end_s": 20,
+      "vector_m_per_s": [
+        0.15,
+        0.05
+      ]
+    },
+    {
+      "start_s": 20,
+      "end_s": 40,
+      "vector_m_per_s": [
+        -0.1,
+        0.1
+      ]
+    },
+    {
+      "start_s": 40,
+      "end_s": 120,
+      "vector_m_per_s": [
+        0,
+        0
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "MAP_BLOCK_12_3",
+      "type": "MAP_UPDATE",
+      "time_s": 6,
+      "add_cells": [
+        [
+          12,
+          3
+        ]
+      ],
+      "remove_cells": []
+    },
+    {
+      "event_id": "ARRIVE_T21",
+      "time_s": 11,
+      "type": "TASK_ARRIVAL",
+      "task_id": "T21",
+      "position_m": [
+        13,
+        15
+      ]
+    },
+    {
+      "event_id": "ARRIVE_T22",
+      "time_s": 11,
+      "type": "TASK_ARRIVAL",
+      "task_id": "T22",
+      "position_m": [
+        20,
+        3
+      ]
+    },
+    {
+      "event_id": "MAP_CLEAR_12_3",
+      "type": "MAP_UPDATE",
+      "time_s": 18,
+      "add_cells": [],
+      "remove_cells": [
+        [
+          12,
+          3
+        ]
+      ]
+    },
+    {
+      "event_id": "FAULT_U4",
+      "time_s": 24,
+      "type": "UUV_FAILURE",
+      "boat_id": "U4"
+    }
+  ],
+  "event_information": "events observed only at time_s; planning receives known task/state subset, never future events or future flow table",
+  "fault_policy": "exit task work, unfinished service reset, receiver restarts full2s; ideal compensated hold retained",
+  "configuration_preparation": {
+    "design_defaults": "arrival12/faultU3 at24 were preparation only",
+    "frozen_choice": "arrival11/faultU4 at24",
+    "reason": "actual t11 U1 service progress1; t24 U4 service progress1; observe protection/reset in one real case",
+    "actual_pilot_record": "输出文件/说明文档/P4统一案例准备_V01.json",
+    "budgets_changed_from_P3": false,
+    "initial_assignment_problem_changed": false
+  },
+  "x1": {
+    "source_path": "usv_uuc_cooperation/configs/P4-integrated-V01.json",
+    "source_sha256": "f012c7bf051f6bcb585538ed3c73827255b0ca8fe1e21a26c9b858495fad2a5d",
+    "adjacency_pair": [
+      4,
+      8
+    ],
+    "strategy": "DYNAMIC_REPLAN",
+    "scale": 1000,
+    "rounding": "ROUND_HALF_UP",
+    "main_distance_scope": "all six boats over [0,120), including USV relay after task completion",
+    "changes": "adjacency and required cost/heuristic wiring; each group own initial assignment/order; same dynamic rule",
+    "frozen_events": "arrival T21/T22 at11; U4 failure at24; no tuning after result"
+  },
+  "x2": {
+    "version": "X2-V01",
+    "initial_assignment": {
+      "U1": [
+        "T01",
+        "T06",
+        "T08",
+        "T10",
+        "T15",
+        "T19"
+      ],
+      "U2": [
+        "T02",
+        "T20"
+      ],
+      "U3": [],
+      "U4": [
+        "T03",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T16"
+      ],
+      "U5": [
+        "T04",
+        "T05",
+        "T07",
+        "T09",
+        "T17",
+        "T18"
+      ]
+    },
+    "initial_queues": {
+      "U1": [
+        "T01",
+        "T06",
+        "T08",
+        "T19",
+        "T15",
+        "T10"
+      ],
+      "U2": [
+        "T02",
+        "T20"
+      ],
+      "U3": [],
+      "U4": [
+        "T11",
+        "T16",
+        "T03",
+        "T12",
+        "T14",
+        "T13"
+      ],
+      "U5": [
+        "T04",
+        "T09",
+        "T18",
+        "T07",
+        "T17",
+        "T05"
+      ]
+    },
+    "initial_assignment_policy": "Reuse frozen accepted X1-L4 eight-neighbor initial assignment and queues; no new solve",
+    "source_sha256": {
+      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/初始问题.json": "c76a74b5d9a104e50f51535d0d7f62c0b5a62f023fb982b307be6c9f31496266",
+      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/初始分配.json": "b7c08930ffeb45e5dba7bbd8857b99fbc8a5c0968007892ce8a72044034445ac",
+      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/增量核查.json": "6e0517f83f4f5b4c3dded942f1695406a3543f3baec50df38e4a8eb8306af67d",
+      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/结果.json": "e213da4f1e8a88e936f7dbfdf0858421a1c37304722282e1df2e2c04a26d5df5"
+    },
+    "map_update_policy": "Observe before planning/movement at event time; only current blocked cells reach planner. Graph versions 0,1,2; no future events or flows in planning input.",
+    "map_update_geometry": "Closed 1m temporary forbidden square, positive geometric edges unchanged; t6 block then t18 clear (12,3).",
+    "update_occupancy_precondition": "All six starting points have distance to the closed updated square > 6*(1+0.2)m. Update does not newly occupy any boat under shared speed/current bound.",
+    "main_distance_scope": "All six boats actual movement in [0,120), including pre-fault movement and post-completion relay.",
+    "search_work_definition": "Effective non-stale pops including goal; unique nodes/pops/pushes/edge checks also saved.",
+    "interface": "SearchSession(start_grid, goal_grid, current_physical_config, current_blocked) -> safe shortest grid path or None; same continuous connector and rebuild; graph observation and time context explicit."
+  }
+}

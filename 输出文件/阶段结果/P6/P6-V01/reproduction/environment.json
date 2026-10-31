@@ -1,0 +1,31 @@
+{
+  "python": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "prefix": "<isolated-venv>",
+  "base_prefix": "/opt/homebrew/opt/python@3.13/Frameworks/Python.framework/Versions/3.13",
+  "enable_user_site": false,
+  "dependencies": {
+    "networkx": {
+      "version": "3.7",
+      "module": "<isolated-venv>/lib/python3.13/site-packages/networkx/__init__.py"
+    },
+    "matplotlib": {
+      "version": "3.11.2",
+      "module": "<isolated-venv>/lib/python3.13/site-packages/matplotlib/__init__.py"
+    },
+    "Pillow": {
+      "version": "12.3.0",
+      "module": "<isolated-venv>/lib/python3.13/site-packages/PIL/__init__.py"
+    },
+    "numpy": {
+      "version": "2.3.5",
+      "module": "<isolated-venv>/lib/python3.13/site-packages/numpy/__init__.py"
+    },
+    "ortools": {
+      "version": "9.15.6755",
+      "module": "<isolated-venv>/lib/python3.13/site-packages/ortools/__init__.py"
+    }
+  },
+  "project_module": "<checkout>/usv_uuc_cooperation/__init__.py",
+  "pyvenv_config": "home = /opt/homebrew/Cellar/python@3.13/3.13.15/Frameworks/Python.framework/Versions/3.13/bin\ninclude-system-site-packages = false\nversion = 3.13.15\nexecutable = /opt/homebrew/Cellar/python@3.13/3.13.15/Frameworks/Python.framework/Versions/3.13/bin/python3.13\ncommand = <course-workspace>/.venv/bin/python -m venv <isolated-venv>\n",
+  "tracked_status_after_run": ""
+}

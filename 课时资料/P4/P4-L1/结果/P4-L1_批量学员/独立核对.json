@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "records_checked": 55,
+  "executed_records": 33,
+  "checks": [
+    "frozen scenes/shared allocation/budgets",
+    "independent square geometry/BFS paths",
+    "stepwise actual positions/energy/limits",
+    "services/null completion",
+    "centroid/priority target from actual states",
+    "600-interval communication/outages",
+    "nonexecution null metrics and failed leg reasons",
+    "all attempt counts and paired valid/excluded samples",
+    "original P3 success and restricted regression",
+    "source/artifact hashes"
+  ],
+  "scope": "saved-output audit; not real acoustic/battery/platform validation"
+}

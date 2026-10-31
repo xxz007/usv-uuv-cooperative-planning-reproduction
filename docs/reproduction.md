@@ -24,7 +24,7 @@ P4 可先求解初始分配，再由主环境执行两个响应策略：
 .venv/bin/python -B -m usv_uuc_cooperation.main run --stage P4 --case ALL --run-id replay_p4_pair_01 --initial-result 输出文件/阶段结果/P4/P4-V01/runs/replay_p4_initial_01/初始分配.json
 ```
 
-两个 requirements 文件记录原工作区观察到的直接依赖版本。发布准备阶段复用了已有环境做搬迁冒烟，未在全新系统重新安装这两个环境；不同系统上的安装和完整性能复现需要单独核对。
+两个 requirements 文件记录直接依赖版本。P6已从远端固定提交新克隆，在现有macOS主机用新隔离venv重新安装主环境依赖，真实执行A*／Dijkstra核心对比并制图，确定性数据与原基线一致；19项解析依赖另存requirements-reproduced-macos.txt。独立求解环境本轮没有重装，跨系统与完整平台性能需要另行核对。[实际P6复跑与原始记录](p6_delivery.md)
 
 ## 可选的新运行
 

@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "framework": "FRAMEWORK-V20",
+  "archive": "P6_整合交付恢复点_V02.zip",
+  "archive_bytes": 62440545,
+  "archive_sha256": "29521cb1884c323ca70db2caa73b9c28f842cf7fef1edef45a848724e4bcc77a",
+  "zip_crc": "PASS",
+  "archive_files": 390,
+  "sha_verified_files": 389,
+  "manifest_self_reference_excluded": true,
+  "independent_restore": "<independently-extracted-package>",
+  "restore_checks": [
+    {
+      "tool": "verify_release.py",
+      "exit_code": 0,
+      "output": "release PASS: 364 files; FRAMEWORK-V20"
+    },
+    {
+      "tool": "verify_p6_saved.py",
+      "exit_code": 0,
+      "output": "P6 saved data PASS: 2 X2 groups; original P3 success/failure; no new simulations"
+    }
+  ],
+  "new_simulations_for_restore": 0,
+  "publication_snapshot_files": 365,
+  "publication_snapshot_inventory_sha256": "b98b7d626cb3fe9f21fcc75fc2258d42cc2bf2e0d09e81d3dc43183c0781afbd",
+  "scope": "Published source/input/evidence snapshot plus P6 tools and pre-package records. External restore/delivery reports are added afterward; not a full private classroom backup."
+}

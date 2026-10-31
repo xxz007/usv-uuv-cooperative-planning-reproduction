@@ -1,0 +1,19 @@
+{
+  "framework": "FRAMEWORK-V01",
+  "stage": "P3",
+  "stage_version": "P3-V01",
+  "command": [
+    "/Users/omo/Downloads/Project/Pyomo/usv_uuc_cooperation/main.py",
+    "run",
+    "--stage",
+    "P3",
+    "--case",
+    "ALL",
+    "--run-id",
+    "框架迁移核查_教师V01"
+  ],
+  "python": "/Users/omo/Downloads/Project/Pyomo/.venv/bin/python",
+  "output": "/Users/omo/Downloads/Project/Pyomo/usv_uuc_cooperation/outputs/P3/P3-V01/runs/框架迁移核查_教师V01",
+  "render_requested": false,
+  "status": "COMPLETE"
+}

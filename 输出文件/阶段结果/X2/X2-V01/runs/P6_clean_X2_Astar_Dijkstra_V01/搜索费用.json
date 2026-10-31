@@ -1,0 +1,14 @@
+{
+  "Astar": {
+    "queries": 100,
+    "expanded_nodes": 1142,
+    "search_ns": 1861297,
+    "scope": "all execution-planning queries, including candidate connectors and dispatch/budget checks; local demonstration excluded"
+  },
+  "Dijkstra": {
+    "queries": 100,
+    "expanded_nodes": 6917,
+    "search_ns": 7287707,
+    "scope": "all execution-planning queries, including candidate connectors and dispatch/budget checks; local demonstration excluded"
+  }
+}
