@@ -1,0 +1,22 @@
+{
+  "version": "X2-PSO-V01",
+  "waypoints": 8,
+  "swarm_size": 40,
+  "max_iterations": 60,
+  "max_evaluations": 2440,
+  "inertia": 0.72,
+  "cognitive": 1.49,
+  "social": 1.49,
+  "velocity_fraction": 0.2,
+  "restart_every": 15,
+  "restart_fraction": 0.2,
+  "seeds": [20261026, 20261027, 20261028, 20261029, 20261030],
+  "main_seed": 20261026,
+  "decoder": "round half up to grid, diagonal-first eight-neighbor anchor segments, loop erasure, check every graph edge",
+  "initialization": "direct, axis-corner and fixed map-rim templates, remaining particles uniform random; no graph search",
+  "memory": "legal pbest and gbest update only for strictly shorter feasible paths; infeasible guide stored separately",
+  "early_stop": "feasible path reaches octile analytic lower bound",
+  "cache": "exact observed graph identity and integer start/goal only",
+  "failure": "keep executable retained prefix, hold unplanned tail without reassignment or Astar fallback, retry only on normal replanning events",
+  "bounds": "clip positions to map ranges, clamp each velocity component, fixed worst-current-particle restarts preserve feasible pbest"
+}

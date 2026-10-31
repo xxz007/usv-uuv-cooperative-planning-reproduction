@@ -1,0 +1,59 @@
+{
+  "config_version": "X1-L1_V01",
+  "scope": "paired geometric paths only; same P4 forbidden squares and safety buffer",
+  "source": {
+    "path": "usv_uuc_cooperation/configs/P4-integrated-V01.json",
+    "sha256": "f012c7bf051f6bcb585538ed3c73827255b0ca8fe1e21a26c9b858495fad2a5d"
+  },
+  "map": {
+    "x_range": [
+      0,
+      24
+    ],
+    "y_range": [
+      0,
+      18
+    ],
+    "spacing_m": 1,
+    "movement": "four-neighbor",
+    "circles": [
+      {
+        "center_m": [
+          8,
+          6
+        ],
+        "radius_m": 2
+      },
+      {
+        "center_m": [
+          16,
+          11
+        ],
+        "radius_m": 2.5
+      }
+    ],
+    "safety_buffer_m": 1,
+    "raster_rule": "closed 1m square intersects radius+buffer disk => forbidden node; touching forbidden",
+    "execution_safety_rule": "entire closed segment must stay in bounds and avoid all forbidden closed squares"
+  },
+  "start_m": [
+    2,
+    2
+  ],
+  "goal_m": [
+    11,
+    11
+  ],
+  "endpoint_labels": {
+    "start": "U1",
+    "goal": "T03"
+  },
+  "adjacency_modes": [
+    4,
+    8
+  ],
+  "default_adjacency": 4,
+  "distance_rule": "sum Euclidean lengths of successive path points; steps recorded separately",
+  "safety_rule": "diagonal side orthogonal nodes free AND entire closed segment avoids forbidden closed squares",
+  "coordinate_convention": "physical metre coordinates on frozen integer 1m grid; other spacing rejected by plan()"
+}

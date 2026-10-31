@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/Users/omo/Desktop/复现/项目复现/Pyomo/moos-ivp/bin/uPokeDB",
+    "/Users/omo/Desktop/复现/项目复现/Pyomo/输出文件/阶段结果/P5/P5-V01/runs/P5_教师V02/example/alpha.moos",
+    "P5_TASK_ID:=P5-EXAMPLE",
+    "P5_DISPATCH:=P5-EXAMPLE",
+    "RETURN=false",
+    "DEPLOY=true",
+    "MOOS_MANUAL_OVERRIDE=false"
+  ],
+  "returncode": 0
+}

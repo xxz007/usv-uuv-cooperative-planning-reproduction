@@ -1,0 +1,5 @@
+networkx==3.7
+matplotlib==3.11.2
+Pillow==12.3.0
+numpy==2.3.5
+ortools==9.15.6755

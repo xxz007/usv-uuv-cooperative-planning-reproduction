@@ -1,0 +1,16 @@
+{
+  "version": "X2-Scan-V01",
+  "scope": "ordering policy only; shared physical input remains X2-V01",
+  "row_axis": "y",
+  "row_order": "ascending",
+  "row_index_origin": "map.y_range[0]",
+  "even_grid_row": "x_ascending",
+  "odd_grid_row": "x_descending",
+  "tie_break": "task_id_ascending",
+  "protected_head": "healthy arrived or servicing task remains first",
+  "dispatch": "existing greedy tail-distance, capacity and append-budget checks on scan-ordered retained queues",
+  "post_dispatch": "resort accepted pending tasks, preserve protected head, replan from actual positions and check complete route budget again",
+  "infeasible_post_sort": "fail explicitly; no hidden order or planner fallback",
+  "connector": "same observed eight-neighbor Astar and safe continuous connector",
+  "future_tasks": "not visible before release"
+}

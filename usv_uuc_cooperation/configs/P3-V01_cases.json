@@ -1,0 +1,26 @@
+{
+  "suite_version": "P3-L4-JOINT-V01",
+  "random_seed": 20261008,
+  "base_input_sha256": {
+    "P3-L4_配置.json": "712aea9f862395cf10d9fa45beea3f1d0398686708c973ea28017a6ddceaecb2",
+    "p3_l4_sim.py": "c57c7eba26de9f267e37a5aa5f44c2a409e40ea082a855dac25cc4c75d7bc135",
+    "p3_l4_map.py": "b141b1933617609ee375e7c63a5826f32c44a0333ac359a96698ce087f4e3d1f",
+    "p2_l4_routes.py": "4b861d44604b76ee043fd27c9d9cf58825e8ee7803bc8dc49417855e445519f8",
+    "p3_l1_communication.py": "c3fc2fa44eb94197c7ef3acd0fd46c4c776ae2ff2984ca77ebe50646f54663b5"
+  },
+  "case_comparison": "same map/seed/scheduling/path/controller/horizon; only explicit independent budget overrides differ; no reassignment",
+  "cases": [
+    {
+      "case_id": "SUCCESS",
+      "budget_overrides_NEU": {},
+      "purpose": "baseline with sufficient independent movement budgets"
+    },
+    {
+      "case_id": "RESTRICTED",
+      "budget_overrides_NEU": {
+        "U3": 12
+      },
+      "purpose": "pre-step whole-move rejection; preserved completed tasks and recomputed relay from failed actual UUC state"
+    }
+  ]
+}

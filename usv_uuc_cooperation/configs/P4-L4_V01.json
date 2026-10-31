@@ -1,0 +1,120 @@
+{
+  "version": "P4-L4-MODEL-V01",
+  "source_summary": "/Users/omo/Downloads/Project/Pyomo/课时资料/P2/P2-L3/结果/P2-L3_V01_结果.json",
+  "source_summary_sha256": "1109985095a852b2554cbcbabee0a8b82b642a60e595f04352457f4cc5818cb2",
+  "case": {
+    "version": "P2-L1 V01",
+    "boats": [
+      "U1",
+      "U2"
+    ],
+    "tasks": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "starts": [
+      [
+        0,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "points": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        8,
+        6
+      ]
+    ],
+    "capacity": [
+      2,
+      2
+    ],
+    "cost_m": [
+      [
+        1,
+        2,
+        3,
+        10
+      ],
+      [
+        7,
+        6,
+        5,
+        6
+      ]
+    ],
+    "reachable": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ]
+    ],
+    "cost_definition": "固定起点到任务的欧氏距离；无障碍；总分配距离成本，单位 m"
+  },
+  "scaling": {
+    "scale": 1000,
+    "rule": "Decimal(str(cost_m))*1000; ROUND_HALF_UP",
+    "unit_m": 0.001,
+    "cost_int": [
+      [
+        1000,
+        2000,
+        3000,
+        10000
+      ],
+      [
+        7000,
+        6000,
+        5000,
+        6000
+      ]
+    ]
+  },
+  "configurations": {
+    "normal": {
+      "capacity": [
+        2,
+        2
+      ]
+    },
+    "capacity_insufficient": {
+      "capacity": [
+        1,
+        2
+      ]
+    }
+  },
+  "changes": "共享全部艇/任务/成本/可达性/缩放，容量不足配置仅改U1容量2→1；不同于旧P2 IF01不可达案例",
+  "saved_P2_reference": {
+    "status": "OPTIMAL",
+    "objective_int": 14000,
+    "objective_m": 14.0,
+    "candidate_count": 16,
+    "feasible_count": 6
+  }
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "adjacency": 4,
+    "label": "四邻接",
+    "completed": 22,
+    "known": 22,
+    "actual_total_distance_m": 150.62158806868692,
+    "team_completion_time_s": 65,
+    "total_energy_NEU": 312.8647642060608,
+    "communication_retention_rate": 0.375,
+    "connected_boat_seconds": 225,
+    "observed_boat_seconds": 600,
+    "framework": "FRAMEWORK-V08"
+  },
+  {
+    "adjacency": 8,
+    "label": "八邻接",
+    "completed": 22,
+    "known": 22,
+    "actual_total_distance_m": 120.97390719904374,
+    "team_completion_time_s": 54,
+    "total_energy_NEU": 258.56638253780386,
+    "communication_retention_rate": 0.20666666666666667,
+    "connected_boat_seconds": 124,
+    "observed_boat_seconds": 600,
+    "framework": "FRAMEWORK-V08"
+  }
+]

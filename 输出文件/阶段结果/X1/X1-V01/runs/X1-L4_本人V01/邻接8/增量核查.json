@@ -1,0 +1,35 @@
+{
+  "initial": {
+    "status": "PASS",
+    "adjacency": 8,
+    "independent_Dijkstra_pairs": 100,
+    "binary_coverage_capacity_reach_scaled_and_float_objective": "PASS",
+    "float_start_task_sum_m": 225.29646455628165,
+    "rounding_error_m": -0.0024645562816374422,
+    "scope": "integer proxy model only; no full-route or dynamic optimality claim"
+  },
+  "execution": {
+    "status": "PASS",
+    "actual_step_rows": 720,
+    "nonzero_current_rows": 192,
+    "partial_moves_with_no_plan_pop": 36,
+    "safe_connector_legs": 1,
+    "known_tasks": 22,
+    "completed": 22,
+    "scope": "combined actual state/velocity/segment/ledger/quota/event/service checks; no prior lesson retest",
+    "adjacency": 8,
+    "planned_grid_diagonals_across_replans": 48,
+    "actual_total_distance_m": 120.97390719904375,
+    "actual_per_boat_distance_m": {
+      "U1": 24.07106781186547,
+      "U2": 24.242640687119287,
+      "U3": 26.556349186104054,
+      "U4": 15.414213562373094,
+      "U5": 14.071067811865476,
+      "USV": 16.618568139716366
+    },
+    "water_speed_peak_m_per_s": 1.0000000000000016,
+    "full_remaining_route_budget_actual_origin_and_communication": "PASS",
+    "note": "planned diagonal count includes replanned legs; not an executed-edge count"
+  }
+}

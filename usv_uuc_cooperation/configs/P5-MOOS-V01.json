@@ -1,0 +1,21 @@
+{
+  "config_version": "P5-MOOS-V01",
+  "platform": "MOOS-IvP uSimMarineV22 simulated surface vessel",
+  "coordinate_frame": "local ENU: x east, y north, metres; MOOS heading degrees clockwise from north",
+  "time_warp": 5,
+  "initial_pose": {"x_m": 0.0, "y_m": -20.0, "heading_deg": 0.0, "speed_mps": 0.0},
+  "target_speed_mps": 2.0,
+  "arrival_tolerance_m": 2.5,
+  "sample_dt_s": 0.25,
+  "success_feedback_wait_sim_s": 90.0,
+  "example_observation_sim_s": 20.0,
+  "timeout_feedback_wait_sim_s": 3.0,
+  "operating_envelope_m": {"x": [-50.0, 200.0], "y": [-200.0, 50.0]},
+  "boats": ["alpha"],
+  "tasks": [{"id": "P5-T01", "goal_m": [30.0, -20.0]}],
+  "timeout_task": {"id": "P5-TIMEOUT", "goal_m": [100.0, -20.0]},
+  "invalid_task": {"id": "P5-INVALID", "goal_m": [10000.0, -20.0]},
+  "core_apps": ["MOOSDB", "uSimMarineV22", "pMarinePIDV22", "pHelmIvP", "pLogger"],
+  "completion_rule": "Matching behavior endflag plus recorded WPT_STAT completion and actual NAV pose within arrival tolerance; target acceptance alone is not completion",
+  "comparison_boundary": "Same start, heading metadata, goal, nominal speed and arrival radius; 2D is a direct kinematic reference without MOOS turning/thrust dynamics; not a VRX or hardware result"
+}

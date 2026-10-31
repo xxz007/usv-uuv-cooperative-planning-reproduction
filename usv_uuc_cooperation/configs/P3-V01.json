@@ -1,0 +1,235 @@
+{
+  "config_version": "P3-L4-V01",
+  "parameter_status": "frozen teaching settings; learner map checks pending; not real vehicle calibration",
+  "random_seed": 20261008,
+  "dt_s": 1,
+  "observation_duration_s": 120,
+  "cutoff_time_s": 120,
+  "map": {
+    "x_range": [
+      0,
+      24
+    ],
+    "y_range": [
+      0,
+      18
+    ],
+    "spacing_m": 1,
+    "movement": "four-neighbor",
+    "circles": [
+      {
+        "center_m": [
+          8,
+          6
+        ],
+        "radius_m": 2
+      },
+      {
+        "center_m": [
+          16,
+          11
+        ],
+        "radius_m": 2.5
+      }
+    ],
+    "safety_buffer_m": 1,
+    "raster_rule": "closed 1m square intersects radius+buffer disk => forbidden node; touching forbidden",
+    "execution_safety_rule": "entire closed segment must stay in bounds and avoid all forbidden closed squares"
+  },
+  "uuc_ids": [
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5"
+  ],
+  "starts_m": {
+    "U1": [
+      2,
+      2
+    ],
+    "U2": [
+      2,
+      5
+    ],
+    "U3": [
+      2,
+      8
+    ],
+    "U4": [
+      2,
+      11
+    ],
+    "U5": [
+      2,
+      14
+    ],
+    "USV": [
+      12,
+      17
+    ]
+  },
+  "task_generation": {
+    "fixed_first_points_m": [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "candidate_x_range": [
+      4,
+      22
+    ],
+    "candidate_y_range": [
+      2,
+      17
+    ],
+    "method": "fixed first two; local Python Random(seed).sample from x-then-y sorted safe unique pool; explicit coordinates saved"
+  },
+  "capacity_per_uuc": 4,
+  "coverage_rule": "each task exactly once; at most four total assigned tasks per UUC",
+  "speed_m_per_s": {
+    "U1": 1,
+    "U2": 1,
+    "U3": 1,
+    "U4": 1,
+    "U5": 1,
+    "USV": 1
+  },
+  "service_s_per_task": 2,
+  "deadline_s_per_task": 120,
+  "communication": {
+    "radius_m": 6,
+    "rule": "direct USV-UUC horizontal distance <= radius; ignore depth; no multihop",
+    "role": "evaluation only; no communication hard constraint or loss-triggered UUC hold",
+    "sampling": "left endpoint t represents [t,t+1); all five completed/failed/active UUC observed; denominator=600 boat-seconds; t120 terminal only"
+  },
+  "energy": {
+    "unit": "NEU, normalized teaching unit",
+    "uuc_coefficient_NEU_per_m": 2,
+    "usv_coefficient_NEU_per_m": 3,
+    "uuc_budget_NEU": 200,
+    "usv_budget_NEU": 365,
+    "scope": "actual movement only; no stationary service/wait/communication/sensor/depth consumption",
+    "rule": "check before move; equality allowed; whole step rejection, failed boat holds to cutoff; no borrowing"
+  },
+  "scheduling": {
+    "identity": "DETERMINISTIC_HEURISTIC",
+    "rule": "four rounds; U1..U5 turn order, each selects closest reachable unassigned task from its planned tail by A* distance, ties task ID; append; no reassignment",
+    "claim": "no global optimality guarantee; heuristic failure does not prove infeasibility"
+  },
+  "relay": {
+    "strategy": "outage_priority",
+    "tie_break": "longest current outage age, nearest distance, boat ID",
+    "information": "ideal current true UUC states including failed holds",
+    "motion": "speed-limited straight candidate; unsafe candidate holds; no USV detour optimization"
+  },
+  "boat_collision_modeled": false,
+  "other_omissions": [
+    "acceleration",
+    "turn rate",
+    "depth",
+    "water currents",
+    "real acoustic transmission"
+  ],
+  "warmup": {
+    "uuc_ids": [
+      "U1"
+    ],
+    "task_ids": [
+      "T01",
+      "T02"
+    ],
+    "sequence": [
+      "T01",
+      "T02"
+    ],
+    "note": "same map/speeds/service/energy/radius/seed; warmup communication denominator uses one UUC; integration code pending"
+  },
+  "tasks_m": {
+    "T01": [
+      4,
+      2
+    ],
+    "T02": [
+      4,
+      4
+    ],
+    "T03": [
+      11,
+      11
+    ],
+    "T04": [
+      4,
+      15
+    ],
+    "T05": [
+      14,
+      15
+    ],
+    "T06": [
+      10,
+      2
+    ],
+    "T07": [
+      7,
+      14
+    ],
+    "T08": [
+      11,
+      3
+    ],
+    "T09": [
+      5,
+      15
+    ],
+    "T10": [
+      21,
+      10
+    ],
+    "T11": [
+      9,
+      11
+    ],
+    "T12": [
+      11,
+      16
+    ],
+    "T13": [
+      22,
+      11
+    ],
+    "T14": [
+      20,
+      15
+    ],
+    "T15": [
+      21,
+      8
+    ],
+    "T16": [
+      9,
+      12
+    ],
+    "T17": [
+      13,
+      16
+    ],
+    "T18": [
+      6,
+      15
+    ],
+    "T19": [
+      18,
+      7
+    ],
+    "T20": [
+      22,
+      2
+    ]
+  }
+}

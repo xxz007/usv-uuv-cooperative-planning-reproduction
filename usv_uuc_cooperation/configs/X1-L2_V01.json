@@ -1,0 +1,21 @@
+{
+  "config_version": "X1-L2_V01",
+  "scope": "fixed U1 to T03 learner L1 paths; paired NO_FLOW then original P4_FLOW; no dynamic events or reassignment",
+  "sources": {
+    "p4_config": {
+      "path": "usv_uuc_cooperation/configs/P4-integrated-V01.json",
+      "sha256": "f012c7bf051f6bcb585538ed3c73827255b0ca8fe1e21a26c9b858495fad2a5d"
+    },
+    "l1_config": {
+      "path": "usv_uuc_cooperation/configs/X1-L1_V01.json",
+      "sha256": "af73b24e643c9681a6f1434494df54647d1c0d6167bc70efbfb63533ed3cdf94"
+    },
+    "l1_paths": {
+      "path": "输出文件/阶段结果/X1/X1-V01/runs/X1-L1_本人V01/路径.json",
+      "sha256": "eaef4804df6fefa5bfa25e01b0d8ae7386363f7bbb84a88147fbde3ea1be2377"
+    }
+  },
+  "waypoint_rule": "one waypoint maximum per dt; no cross-waypoint leftover time; identical for both modes",
+  "readout_scope": "U1 actual movement only; USV auxiliary logged separately",
+  "service_rule": "actual arrival at interval end; full service starts next interval"
+}

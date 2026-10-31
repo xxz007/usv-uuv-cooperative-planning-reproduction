@@ -1,0 +1,93 @@
+{
+  "version": "X1-L3_V01",
+  "source": {
+    "path": "课时资料/P2/P2-L4/配置/P2-L4_案例.json",
+    "sha256": "653bedb3ab8441485c77f001d170f33bc1e43c076fd7b369748ab81583926c54"
+  },
+  "boats": [
+    "U1",
+    "U2"
+  ],
+  "tasks": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "starts_m": {
+    "U1": [
+      0,
+      0
+    ],
+    "U2": [
+      8,
+      0
+    ]
+  },
+  "tasks_m": {
+    "A": [
+      1,
+      0
+    ],
+    "B": [
+      2,
+      0
+    ],
+    "C": [
+      3,
+      0
+    ],
+    "D": [
+      8,
+      6
+    ]
+  },
+  "capacity": [
+    2,
+    2
+  ],
+  "map": {
+    "x_range": [
+      0,
+      8
+    ],
+    "y_range": [
+      0,
+      6
+    ],
+    "spacing_m": 1,
+    "circles": [
+      {
+        "center_m": [
+          5,
+          0
+        ],
+        "radius_m": 0
+      }
+    ],
+    "safety_buffer_m": 1
+  },
+  "map_adapter": "Circle radius 0 plus 1m buffer yields the same forbidden closed squares as this frozen P2 Chebyshev case; checked on load",
+  "fixed_queues": {
+    "U1": [
+      "A",
+      "B"
+    ],
+    "U2": [
+      "D",
+      "C"
+    ]
+  },
+  "fixed_queue_source": "P2-L4 accepted shortest full-route order (19m four-neighbor); does not assume optimal start-task objective implies route optimum",
+  "scale": 1000,
+  "rounding": "ROUND_HALF_UP",
+  "energy_coefficient_NEU_per_m": 2,
+  "budget_NEU": {
+    "U1": 40,
+    "U2": 40
+  },
+  "budget_scope": "L3 declared geometric prediction budget; checked after assignment, not a CP-SAT constraint",
+  "assignment_objective": "minimum sum of start-to-task costs",
+  "ordering_rule": "nearest-next by float shortest route, task ID tie-break",
+  "scope": "static no-return route and energy prediction; no current/velocity/time simulation, dynamic events, or L4"
+}

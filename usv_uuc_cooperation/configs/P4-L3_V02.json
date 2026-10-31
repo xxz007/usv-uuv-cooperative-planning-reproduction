@@ -1,0 +1,139 @@
+{
+  "version": "FAULT_V02",
+  "config_overrides": {
+    "uuc_ids": [
+      "U1",
+      "U2"
+    ],
+    "starts_m": {
+      "U1": [
+        1,
+        2
+      ],
+      "U2": [
+        9,
+        2
+      ],
+      "USV": [
+        12,
+        17
+      ]
+    },
+    "tasks_m": {
+      "A": [
+        3,
+        2
+      ],
+      "B": [
+        7,
+        2
+      ]
+    },
+    "capacity_per_uuc": 3,
+    "cutoff_time_s": 20,
+    "observation_duration_s": 20
+  },
+  "uuv_budget_NEU": 30,
+  "initial_sequences": {
+    "U1": [
+      "A"
+    ],
+    "U2": [
+      "B"
+    ]
+  },
+  "groups": {
+    "arrival": [
+      {
+        "case_id": "NO_EVENT",
+        "events": []
+      },
+      {
+        "case_id": "ARRIVAL",
+        "events": [
+          {
+            "event_id": "ARRIVE_C",
+            "type": "TASK_ARRIVAL",
+            "time_s": 3,
+            "task_id": "C",
+            "position_m": [
+              5,
+              2
+            ]
+          }
+        ]
+      }
+    ],
+    "fault": [
+      {
+        "case_id": "FAULT_SUCCESS",
+        "events": [
+          {
+            "event_id": "ARRIVE_C",
+            "type": "TASK_ARRIVAL",
+            "time_s": 3,
+            "task_id": "C",
+            "position_m": [
+              5,
+              2
+            ]
+          },
+          {
+            "event_id": "FAIL_U1",
+            "type": "UUV_FAILURE",
+            "time_s": 7,
+            "boat_id": "U1"
+          }
+        ]
+      },
+      {
+        "case_id": "CAPACITY_LIMIT",
+        "config_overrides": {
+          "capacity_per_uuc": 1
+        },
+        "events": [
+          {
+            "event_id": "ARRIVE_C",
+            "type": "TASK_ARRIVAL",
+            "time_s": 3,
+            "task_id": "C",
+            "position_m": [
+              5,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "BUDGET_LIMIT",
+        "budget_overrides_NEU": {
+          "U2": 6
+        },
+        "events": [
+          {
+            "event_id": "ARRIVE_C",
+            "type": "TASK_ARRIVAL",
+            "time_s": 3,
+            "task_id": "C",
+            "position_m": [
+              5,
+              2
+            ]
+          },
+          {
+            "event_id": "FAIL_U1",
+            "type": "UUV_FAILURE",
+            "time_s": 7,
+            "boat_id": "U1"
+          }
+        ]
+      }
+    ]
+  },
+  "event_order": "commit previous interval; observe/process events at t; replan once per event batch; execute only [t,t+1)",
+  "service_policy": "arrivals do not preempt service; UUV failure resets unfinished service to zero; receiver restarts full continuous 2s",
+  "capacity_policy": "per-boat distinct ever-accepted task IDs; no refund at completion or transfer",
+  "flow": "ZERO; inherited water-speed definition and original geometry/USV evaluator",
+  "failure_order": "faults before arrivals within one observed event batch, then one replan; no interval executed during event processing",
+  "inherited_evidence": "结果/到达_学员V01/摘要.json; no-event and arrival results reused by reference, not rerun by learner"
+}

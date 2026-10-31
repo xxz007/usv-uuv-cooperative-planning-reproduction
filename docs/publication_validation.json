@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "framework": "FRAMEWORK-V18",
+  "source_guard_records": 99,
+  "selection_files_before_validation_report": 181,
+  "checks": [
+    "release file SHA/source guard",
+    "CLI list",
+    "selected P5 saved-log reanalysis from publication root",
+    "new relative documentation links",
+    "private/cache/third-party directories excluded",
+    "token/private-key pattern scan",
+    "no platform stdout or queries published"
+  ],
+  "p5_saved_log_reanalysis": {
+    "engineering_status": "PASS",
+    "selected_source_files_sha_verified": 39,
+    "source_all_bytes_unchanged": true,
+    "new_simulation_runs": 0,
+    "new_moos_launches": 0,
+    "operator_role": "teacher"
+  },
+  "P1_P2_behavior_smokes": "Reused V15 checks; no changed P1/P2 behavior code",
+  "new_environment_install": false,
+  "full_stage_acceptance": "P5 IN_PROGRESS; learner execution/explanation and VRX pending; P6 not started",
+  "remote_mutations": 0,
+  "git_initializations": 0
+}
