@@ -236,6 +236,28 @@
         "paired_metrics.json": "a379acbcec1a2d77d0e8773064a0b4fda1ce99c464316113ba06d9c53312f2cb"
       },
       "sha256": "ce7953a3150b258a9e177fdf2d41c0a6c76b2f6dc9c298194317f2441f9a343a"
+    },
+    {
+      "path": "results/p5_platforms/figures/VRX_external_detail.png",
+      "source_kind": "new independent native Gazebo camera render",
+      "run_id": "P5_external_view_V02",
+      "source_record": "results/p5_platforms/raw/external_view/capture.json",
+      "camera": "detail",
+      "simulation_s": 4.8,
+      "sha256": "144bc99fef5c619b7fcdcf3f8c2ec5f1de0e6afbb347e0026d086aeb8c9aad1a",
+      "raw_rgb_sha256": "d98e961264f497a2c288428ec967dc50f92cb7a291abb7966db83c40b97217e7",
+      "learner_run": false
+    },
+    {
+      "path": "results/p5_platforms/figures/VRX_external_shoreline.png",
+      "source_kind": "new independent native Gazebo camera render",
+      "run_id": "P5_external_view_V02",
+      "source_record": "results/p5_platforms/raw/external_view/capture.json",
+      "camera": "shoreline",
+      "simulation_s": 4.8,
+      "sha256": "b04cfa0e8eaf6d1550df311f550182e62125878b4d38d6b22bb4bee4a6d8dd66",
+      "raw_rgb_sha256": "750f6754e8c263f4a29f2edd8f0223a06d1fe8134b12ae3c3b91832dcfc7ccf5",
+      "learner_run": false
     }
   ],
   "platform_files": [

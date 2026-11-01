@@ -11,8 +11,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 17159,
-      "sha256": "b3652dcccf663ece595aa079b5d84432d4bf9972c5b007a6ffffc9d90e83b160"
+      "bytes": 17706,
+      "sha256": "62535d4b991701c9bb39f93699f24a247dd4ddb80ad3c9c994ab55e9e827f7a0"
     },
     {
       "path": "data/inputs/p2_case.json",
@@ -56,8 +56,8 @@
     },
     {
       "path": "data/provenance/sources.json",
-      "bytes": 25013,
-      "sha256": "af70ca1e59dbb5ff57256d4e69c7ef9142c685c65b90f091ea814ccc3a919057"
+      "bytes": 26069,
+      "sha256": "8e309cf7502c1ff508c59c1d36888c5aa4b04cff6b90fcfae5ff0a323d1f25f3"
     },
     {
       "path": "data/provenance/stages.json",
@@ -136,8 +136,8 @@
     },
     {
       "path": "docs/sources.md",
-      "bytes": 2753,
-      "sha256": "e9ebf1c4ed66634080196ceeb15e9d0ba23a91ee4e7a6e925e0103f89b38d99f"
+      "bytes": 3049,
+      "sha256": "afe74f007a9861b9e802d4951727697b32bf234612afc9b6222d17b4db495b34"
     },
     {
       "path": "docs/vrx_environment.md",
@@ -276,8 +276,8 @@
     },
     {
       "path": "results/p5_platforms/README.md",
-      "bytes": 679,
-      "sha256": "7329ee5b7b49c9e60bd329d1fb0f2e9ad1a9a1e40d51a76d64d17769fd8ab283"
+      "bytes": 2203,
+      "sha256": "5cccbc70b05179e7dc65bf0ef6ae48b75582a3c7f496ec55b79390d1094ce0de"
     },
     {
       "path": "results/p5_platforms/figures/2D_VRX_same_task.png",
@@ -290,6 +290,16 @@
       "sha256": "ce7953a3150b258a9e177fdf2d41c0a6c76b2f6dc9c298194317f2441f9a343a"
     },
     {
+      "path": "results/p5_platforms/figures/VRX_external_detail.png",
+      "bytes": 944625,
+      "sha256": "144bc99fef5c619b7fcdcf3f8c2ec5f1de0e6afbb347e0026d086aeb8c9aad1a"
+    },
+    {
+      "path": "results/p5_platforms/figures/VRX_external_shoreline.png",
+      "bytes": 980715,
+      "sha256": "b04cfa0e8eaf6d1550df311f550182e62125878b4d38d6b22bb4bee4a6d8dd66"
+    },
+    {
       "path": "results/p5_platforms/figures/VRX_progress_error.png",
       "bytes": 368384,
       "sha256": "cbb50c5f3bc98029d22dfd94c58386f29965df3b292a28faeb47d48f1d2bb882"
@@ -298,6 +308,21 @@
       "path": "results/p5_platforms/figures/original_first_camera_frame.png",
       "bytes": 445639,
       "sha256": "981220fd583cce7b9c011bcd0e7fb1ff0eca67585ab5035964c1e4e524878141"
+    },
+    {
+      "path": "results/p5_platforms/raw/external_view/capture.json",
+      "bytes": 3711,
+      "sha256": "bd95082857d617146225b52a197fbc9c23f1ddd0ba9dded91165bbbffc7623b5"
+    },
+    {
+      "path": "results/p5_platforms/raw/external_view/detail_observer.sdf",
+      "bytes": 544,
+      "sha256": "26309833a8aea3f5b84f839e367b3b5e164c7ba6e6539f2362403cf84dcee585"
+    },
+    {
+      "path": "results/p5_platforms/raw/external_view/shoreline_observer.sdf",
+      "bytes": 549,
+      "sha256": "f9faae00e0c78a49b7b149ce90abc744bc912403fc6e401bce3a2a6e2c110df3"
     },
     {
       "path": "results/p5_platforms/raw/moos/config.json",
