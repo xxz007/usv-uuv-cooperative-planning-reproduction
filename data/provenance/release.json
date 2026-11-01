@@ -11,8 +11,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 17706,
-      "sha256": "62535d4b991701c9bb39f93699f24a247dd4ddb80ad3c9c994ab55e9e827f7a0"
+      "bytes": 18050,
+      "sha256": "2d3ccfb4862df2cd62daa1edaef6a66950750c7e668f657d7bb7dedab1364866"
     },
     {
       "path": "data/inputs/p2_case.json",
@@ -56,8 +56,8 @@
     },
     {
       "path": "data/provenance/sources.json",
-      "bytes": 26069,
-      "sha256": "8e309cf7502c1ff508c59c1d36888c5aa4b04cff6b90fcfae5ff0a323d1f25f3"
+      "bytes": 26613,
+      "sha256": "00a96a8007303fe95604fcb405202c3f6f9e84d9ed4e422655cb7033b2082758"
     },
     {
       "path": "data/provenance/stages.json",
@@ -136,8 +136,8 @@
     },
     {
       "path": "docs/sources.md",
-      "bytes": 3049,
-      "sha256": "afe74f007a9861b9e802d4951727697b32bf234612afc9b6222d17b4db495b34"
+      "bytes": 3118,
+      "sha256": "c7abb1b23dd60861d8dcb4421dac638952396b75ede2b334382ccd1e61d1dfdf"
     },
     {
       "path": "docs/vrx_environment.md",
@@ -276,8 +276,8 @@
     },
     {
       "path": "results/p5_platforms/README.md",
-      "bytes": 2203,
-      "sha256": "5cccbc70b05179e7dc65bf0ef6ae48b75582a3c7f496ec55b79390d1094ce0de"
+      "bytes": 2763,
+      "sha256": "d82b7fef7de2e0945ec33530f293543be9812d6e6a2dd913d6be143ea3126f46"
     },
     {
       "path": "results/p5_platforms/figures/2D_VRX_same_task.png",
@@ -288,6 +288,11 @@
       "path": "results/p5_platforms/figures/MOOS_learner_same_task.png",
       "bytes": 178344,
       "sha256": "ce7953a3150b258a9e177fdf2d41c0a6c76b2f6dc9c298194317f2441f9a343a"
+    },
+    {
+      "path": "results/p5_platforms/figures/VRX_external_bowquarter.png",
+      "bytes": 789739,
+      "sha256": "7a61b68003d9a4a3694af479c31f9501733a87932e05251eb845481ba5eabb53"
     },
     {
       "path": "results/p5_platforms/figures/VRX_external_detail.png",
@@ -310,9 +315,19 @@
       "sha256": "981220fd583cce7b9c011bcd0e7fb1ff0eca67585ab5035964c1e4e524878141"
     },
     {
+      "path": "results/p5_platforms/raw/external_view/bowquarter_observer.sdf",
+      "bytes": 553,
+      "sha256": "d49efa419f641d79f068692c6f4ce355c1efd47e1ff06e80e8720ea805b89cdf"
+    },
+    {
       "path": "results/p5_platforms/raw/external_view/capture.json",
       "bytes": 3711,
       "sha256": "bd95082857d617146225b52a197fbc9c23f1ddd0ba9dded91165bbbffc7623b5"
+    },
+    {
+      "path": "results/p5_platforms/raw/external_view/capture_bowquarter.json",
+      "bytes": 2522,
+      "sha256": "6bb38bb4f99e8e6dcf7eb7080867105f50a1235a1d577d4c8ed67cb3d97e1c5f"
     },
     {
       "path": "results/p5_platforms/raw/external_view/detail_observer.sdf",

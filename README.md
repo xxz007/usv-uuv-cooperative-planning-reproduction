@@ -164,9 +164,15 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 **第三人称场景：从艇外看完整 WAM-V 与岸线。** 下面是本次在悉尼水域场景重新取景的 1600×900 实际渲染。相机放在艇外、略高于水面的位置，让双浮筒、设备平台以及岸线同时进入画面。它便于理解仿真载体与环境，任务效果仍结合上面的航迹和时间读数判断。
 
-![VRX悉尼水域第三人称视角：完整WAM-V与岸线](results/p5_platforms/figures/VRX_external_detail.png)
+<table>
+<tr><th>侧面近景：艇体与设备平台</th><th>艇首斜侧方：双浮筒与岸边场景</th></tr>
+<tr>
+<td width="50%"><img src="results/p5_platforms/figures/VRX_external_detail.png" alt="VRX侧面近景，完整WAM-V与岸线" width="480"></td>
+<td width="50%"><img src="results/p5_platforms/figures/VRX_external_bowquarter.png" alt="VRX艇首斜侧方，双浮筒、设备平台与岸边帐篷" width="480"></td>
+</tr>
+</table>
 
-这是独立的展示运行，未发布推进指令；观察相机没有接入规划和控制。[另一构图及相机位姿、图像来源](results/p5_platforms/README.md#第三人称外部视角)。
+两图分别来自独立的展示取景，未发布推进指令；观察相机没有接入规划和控制。[另一构图及相机位姿、图像来源](results/p5_platforms/README.md#第三人称外部视角)。
 
 **相机图像通路：**下面是 VRX 官方原例实收的 1280×720 RGB8 首帧，可看到艇前方水面和浮标。它是艇载相机证据，本次图像没有参与规划与控制。
 

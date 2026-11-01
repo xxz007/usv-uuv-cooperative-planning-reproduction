@@ -258,6 +258,17 @@
       "sha256": "b04cfa0e8eaf6d1550df311f550182e62125878b4d38d6b22bb4bee4a6d8dd66",
       "raw_rgb_sha256": "750f6754e8c263f4a29f2edd8f0223a06d1fe8134b12ae3c3b91832dcfc7ccf5",
       "learner_run": false
+    },
+    {
+      "path": "results/p5_platforms/figures/VRX_external_bowquarter.png",
+      "source_kind": "new independent native Gazebo camera render",
+      "run_id": "P5_external_view_V03",
+      "source_record": "results/p5_platforms/raw/external_view/capture_bowquarter.json",
+      "camera": "bowquarter",
+      "simulation_s": 4.8,
+      "sha256": "7a61b68003d9a4a3694af479c31f9501733a87932e05251eb845481ba5eabb53",
+      "raw_rgb_sha256": "688f5b3c5215342e40a255340fe42deca11dce0c4159965b456e696e720b6619",
+      "learner_run": false
     }
   ],
   "platform_files": [
