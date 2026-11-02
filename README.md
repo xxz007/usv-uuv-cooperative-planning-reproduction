@@ -13,38 +13,47 @@
 
 ```text
 usv-uuv-cooperative-planning-reproduction/
-├── README.md                 # 项目介绍、学习路线、结果与运行命令
-├── usv_uuc_cooperation/       # 规划、分配、控制、实验与绘图源码
-│   └── configs/              # 固定场景与参数；UUC为历史包名
+├── README.md                         # 项目说明、成果与运行入口
+├── usv_uuc_cooperation/
+│   ├── main.py                       # 统一命令行入口
+│   ├── config.py                     # 路径、场景目录与输出位置
+│   ├── configs/                      # 固定场景、算法和平台参数
+│   ├── agents/                       # USV／UUV状态与参数
+│   ├── env/                          # 网格地图、障碍、洋流与几何通信
+│   ├── planning/                     # A*、Dijkstra、D*、扫描与PSO路径搜索
+│   ├── scheduling/                   # 贪心、OR-Tools、Pyomo与动态分配
+│   ├── control/                      # 移动、服务、预算及动态执行
+│   ├── experiments/                  # 各类实验与MOOS／VRX运行入口
+│   ├── metrics/                      # 指标统计、结果记录与检查
+│   └── visualization/                # 从本次运行日志生成图与动画
+├── data/
+│   ├── inputs/                       # 代码运行必需的固定输入
+│   └── provenance/                   # 源码校验、实验目录与VRX资产身份
+├── results/                          # 成果图／动画与最终指标
+│   ├── p1_pathfinding/               # 地图与A*三场景
+│   ├── p2_assignment/                # 分配与多任务路线
+│   ├── p3_baseline/                  # 协同成功／预算受限失败
+│   ├── p4_dynamic/                   # 固定归属／动态接手
+│   ├── x1_adjacency/                 # 四／八邻接比较
+│   ├── x2_algorithms/                # 六种路径方法比较
+│   └── p5_platforms/                 # MOOS／VRX指标与实际仿真图
 ├── docs/
-│   ├── learning/             # 六篇主题学习笔记
-│   ├── platforms.md          # MOOS／VRX复核与启动
-│   ├── vrx_environment.md    # Linux平台环境
-│   ├── scope.md              # 模型范围与研究缺项
-│   ├── sources.md            # 来源与历史归档
-│   └── assets/               # 流程框架图
-├── data/                     # 必要输入、来源与版本校验
-├── results/                  # P1～P6、X1／X2的图、指标和精选原始数据
-├── tools/                    # 发布内容与保存数据检查
-└── requirements/             # 主环境与求解环境依赖
+│   ├── assets/                       # 流程框架图
+│   └── vrx_environment.md            # VRX环境与运行步骤
+├── tools/                            # 文件校验与VRX运行辅助
+└── requirements/                     # Python与独立求解环境依赖
 ```
 
-新运行、图像和核查分别写入对应案例的 `runs/`、`showcase/`、`checks/`，默认不提交。旧课堂档案和完整材料保留在[历史归档](docs/sources.md)。
+UUC为历史包名，正式平台称谓为USV／UUV。GitHub保存运行代码、必要输入和最终成果；课堂记录、原始运行日志、过程核查与交付材料在本地保存。新运行的 `runs/`、`showcase/`、`checks/` 默认不提交。
 
 ## 3、学习路线
 
-按顺序阅读；每篇都包含对应案例与运行命令。
-
-| 顺序 | 学习内容 | 笔记 |
-|---|---|---|
-| 1 | 网格地图、安全缓冲、A*与四／八邻接 | [路径规划](docs/learning/01_path_planning.md) |
-| 2 | 任务归属、访问顺序与求解器 | [任务分配](docs/learning/02_task_allocation.md) |
-| 3 | 移动、服务、中继与预算约束 | [协同执行](docs/learning/03_cooperative_execution.md) |
-| 4 | 洋流、新任务、临时禁行与故障接手 | [动态重规划](docs/learning/04_dynamic_replanning.md) |
-| 5 | 六种路径方法的公平比较 | [算法对比](docs/learning/05_algorithm_comparison.md) |
-| 6 | 目标下发、实际位姿与完成反馈 | [MOOS与VRX](docs/learning/06_moos_vrx.md) |
-
-先跑P1小例，再看P2反例、P3成功／失败和P4动态案例。平台实验可以先复核保存日志；最后查看[P6复现与迁移验证](results/p6_reproduction/README.md)。
+1. **地图与安全路径：**网格建图、安全缓冲、A*及四／八邻接。
+2. **分配与访问顺序：**区分任务归属、起点分配成本与完整路线目标。
+3. **协同执行：**把移动、到达、服务、中继和预算放到同一时间轴。
+4. **动态响应：**处理洋流、新任务、临时禁行和故障后的剩余任务接手。
+5. **方法比较：**在共同案例与统计口径下比较六种路径方案。
+6. **平台运行：**检查目标发布、实际位姿和同任务完成反馈，再理解二维与VRX的时间差异。
 
 ## 4、实验拆解
 
@@ -56,9 +65,8 @@ usv-uuv-cooperative-planning-reproduction/
 | P4 动态事件 | 相同初始分配、流场和事件下，固定归属与动态接手有何差别？ | [静态／动态](results/p4_dynamic/README.md) |
 | X1／X2 方法比较 | 邻接和路径方法如何影响完整执行？ | [四／八邻接](results/x1_adjacency/README.md) · [六种方法](results/x2_algorithms/README.md) |
 | P5 平台接口 | 目标发布后能否读回位姿、正确判断完成或失败？ | [MOOS／VRX](results/p5_platforms/README.md) |
-| P6 可重复交付 | 固定输入与依赖，换代码副本后核心结果是否一致？ | [整合验证](results/p6_reproduction/README.md) |
 
-动态案例含20个初始任务、t11新增2任务；X2另有t6禁行、t18撤销、t24的U4故障。通信为距离阈值评价，NEU为几何移动代理，动态分配为集中式事件触发机制。[模型边界与研究缺项](docs/scope.md)
+动态案例含20个初始任务、t11新增2任务；X2另有t6禁行、t18撤销、t24的U4故障。通信为距离阈值评价，NEU为几何移动代理，动态分配为集中式事件触发机制。模型边界：尚未验证真实水声、物理电池功耗、水下六自由度、多艇平台联动或实艇性能。
 
 ## 5、复现结果
 
@@ -88,7 +96,7 @@ usv-uuv-cooperative-planning-reproduction/
 <tr><td><img src="results/p3_baseline/figures/success.gif" alt="P3正常预算多艇执行动画" width="480"></td><td><img src="results/p3_baseline/figures/restricted.gif" alt="P3受限失败多艇执行动画" width="480"></td></tr>
 </table>
 
-失败时间保留 `null`，120 s 是观察截止；完成量不同，不能仅凭受限组能耗较低就判断它更节能。[原始数据与规则](results/p3_baseline/README.md)
+失败时间保留 `null`，120 s 是观察截止；完成量不同，不能仅凭受限组能耗较低就判断它更节能。[最终指标与规则](results/p3_baseline/README.md)
 
 ### 5.3 动态接手：故障以后，剩余任务由谁完成
 
@@ -104,7 +112,7 @@ usv-uuv-cooperative-planning-reproduction/
 <tr><td><img src="results/p4_dynamic/figures/static_frozen_t65.png" alt="P4固定归属t65真实快照" width="480"></td><td><img src="results/p4_dynamic/figures/dynamic_replan_t65.png" alt="P4动态响应t65真实快照" width="480"></td></tr>
 </table>
 
-图取自原GIF的t65帧，观察新任务和U4故障后的任务归属、服务变化。[事件与指标来源](results/p4_dynamic/README.md)
+图取自原GIF的t65帧，观察新任务和U4故障后的任务归属、服务变化。[最终指标](results/p4_dynamic/README.md)
 
 ### 5.4 四／八邻接：路线改变怎样传到整个执行过程
 
@@ -114,7 +122,7 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 ![四邻接与八邻接完整实际路线叠图](results/x1_adjacency/figures/routes.png)
 
-邻接变化也可能改变分配、顺序、动态接手和中继，所以这里比较的是系统整体效果。[X1原始指标](results/x1_adjacency/README.md)
+邻接变化也可能改变分配、顺序、动态接手和中继，所以这里比较的是系统整体效果。[X1最终指标](results/x1_adjacency/README.md)
 
 ### 5.5 六种路径方法：同时看指标和执行过程
 
@@ -135,7 +143,7 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 ![六种路径方法的同帧任务执行动画](results/x2_algorithms/figures/six_algorithms_execution.gif)
 
-六组在本案例中都完成任务，航程和时间仍不同；这个排序不推广为普遍算法优劣。扫描改变访问顺序，PSO 是有限预算路径搜索，不同方法的搜索工作单位也需分别解释。[精选日志与完整边界](results/x2_algorithms/README.md)
+六组在本案例中都完成任务，航程和时间仍不同；这个排序不推广为普遍算法优劣。扫描改变访问顺序，PSO 是有限预算路径搜索，不同方法的搜索工作单位也需分别解释。[最终指标与比较口径](results/x2_algorithms/README.md)
 
 ### 5.6 单艇平台：任务下发之后，艇实际怎样运动
 
@@ -169,7 +177,7 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 <img src="results/p5_platforms/figures/original_first_camera_frame.png" alt="VRX艇载前左相机实收首帧，传感器通路证据" width="800">
 
-MOOS、VRX 原例和 VRX 配对分别运行，0 次坐标包络事件不代表连续避碰证明；项目尚未验证真实水声、物理电池功耗、水下六自由度、多艇平台联动或实艇性能。[平台原始数据与复核](results/p5_platforms/README.md)
+MOOS、VRX 原例和 VRX 配对分别运行，0 次坐标包络事件不代表连续避碰证明；项目尚未验证真实水声、物理电池功耗、水下六自由度、多艇平台联动或实艇性能。[平台成果与指标](results/p5_platforms/README.md)
 
 ## 6、运行指南
 
@@ -177,16 +185,16 @@ MOOS、VRX 原例和 VRX 配对分别运行，0 次坐标包络事件不代表�
 
 | 用途 | 本项目已验证的环境／依赖 | 说明 |
 |---|---|---|
-| 二维主实验与绘图 | Python 3.13；NetworkX、NumPy、Matplotlib、Pillow、OR-Tools | 固定直接依赖见 [core.txt](requirements/core.txt)；P6 的 macOS 完整解析记录见 [macos-lock.txt](requirements/macos-lock.txt) |
+| 二维主实验与绘图 | Python 3.13；NetworkX、NumPy、Matplotlib、Pillow、OR-Tools | 固定直接依赖见 [core.txt](requirements/core.txt)；macOS依赖锁见 [macos-lock.txt](requirements/macos-lock.txt) |
 | Pyomo 初始分配与 X1 完整融合 | 独立 Python 环境；Pyomo、HiGHS | 见 [solver.txt](requirements/solver.txt)，使用 `.venv-solver/` |
 | MOOS 新平台运行 | 外部已编译 MOOS-IvP | 不随本仓库提供二进制，按实际检出位置启动 |
 | VRX 新平台运行 | Ubuntu 24.04、系统 Python 3.12、ROS 2 Jazzy、Gazebo Harmonic | VRX 与 Fuel 身份、环境准备见 [Linux 运行说明](docs/vrx_environment.md) |
 
-二维主实验和保存结果核查可在本机完成；新的 MOOS／VRX 执行使用各自的平台环境。
+二维主实验可在本机完成；新的MOOS／VRX执行使用各自的平台环境。
 
 ### 6.2 从获取代码到查看结果
 
-流程为：**获取代码 → 安装主环境 → 校验输入与保存结果 → 运行核心对比 → 打开摘要 → 从本次日志绘图。**
+流程为：**获取代码 → 安装环境 → 校验代码与输入 → 运行实验 → 查看摘要与绘图。**
 
 在终端执行：
 
@@ -196,7 +204,6 @@ cd usv-uuv-cooperative-planning-reproduction
 python3.13 -m venv .venv
 .venv/bin/python -m pip install -r requirements/core.txt
 .venv/bin/python -B tools/verify_release.py
-.venv/bin/python -B tools/verify_saved_results.py
 .venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-L1 --run-id readme_core_01
 .venv/bin/python -B -m usv_uuc_cooperation.main render --stage X2 --run "$PWD/results/x2_algorithms/runs/readme_core_01" --revision V01
 ```
@@ -233,6 +240,14 @@ python3.13 -m venv .venv-solver
 .venv/bin/python -B -m usv_uuc_cooperation.main integrate --case X1-L4 --run-id readme_x1_full_01
 ```
 
-主环境依赖使用已验证的macOS解析记录；其他系统的wheel和字体需另行核对。每次更换运行名，制图读取保存日志。当前精选原始数据支持A*／Dijkstra独立复核；重绘其余方法或六组动画需完整本地日志或先生成新运行。
+每次更换运行名；重新制图前先生成相应实验日志。仓库保留最终成果与指标，原始完整运行日志和过程记录保存在本地。`tools/verify_release.py`只检查当前发布文件及源码／输入身份。
 
-MOOS／VRX离线复核和新运行见[平台说明](docs/platforms.md)。源码身份为FRAMEWORK-V21，发布文件校验仅证明身份；P6干净副本复跑与本次目录迁移的验证范围见[整合记录](results/p6_reproduction/README.md)。[模型边界](docs/scope.md) · [来源与历史归档](docs/sources.md)
+### 6.4 平台运行
+
+MOOS需先在仓库外编译MOOS-IvP，替换下方绝对路径后执行：
+
+```bash
+.venv/bin/python -B -m usv_uuc_cooperation.experiments.p5_moos --run-id moos_new_01 --moos-root /path/to/moos-ivp --role learner
+```
+
+VRX环境准备、固定源码和完整运行命令见[Linux／VRX运行指南](docs/vrx_environment.md)。第三方软件与大型模型由使用者另行安装，不随本仓库上传。

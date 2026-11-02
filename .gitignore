@@ -8,3 +8,16 @@
 results/**/runs/
 results/**/showcase/
 results/**/checks/
+
+# Course records and intermediate evidence stay in the local workspace.
+/docs/learning/
+/results/**/raw/
+/results/**/reference/
+/results/p6_reproduction/
+/课时资料/
+/课程资料/
+/课程备份/
+/历史运行/
+/HANDOFF.md
+/AGENTS.md
+*.log

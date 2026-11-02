@@ -31,7 +31,7 @@ def run_stage(stage, case, run_id, render=False, initial_result=None):
         from usv_uuc_cooperation.experiments.p4_integrated import run_pair
         return run_pair(run_id, initial_result, render)
     if stage not in ("P1", "P2", "P3"):
-        raise ValueError(f"Unsupported stage; see {DOCS_ROOT / 'reproduction.md'}")
+        raise ValueError(f"Unsupported stage; see {PROJECT_ROOT / 'README.md'}")
     if render and stage != "P3":
         raise ValueError("Only the verified P3 snapshot renderer is connected; P1/P2 use existing static figures")
     allowed = {"P1": {"ALL"}, "P2": {"ALL", "baseline", "counterexample"},
@@ -130,16 +130,14 @@ def main():
     try:
         if args.action == "list":
             for stage, row in stage_catalog().items():
-                print(f"{stage} | {row['title']} | 课程 {row['course_status']} | 效果展示 {row['visual_status']}")
+                print(f"{stage} | {row['title']} | 结果 {row['visual_status']}")
             print(f"入口：{PACKAGE_ROOT / 'README.md'}")
         elif args.action == "show":
             row = stage_catalog()[args.stage]
             print(f"{args.stage}: {row['visual_status']}")
             for path in row["assets"]:
                 print(artifact_path(path))
-            print(DOCS_ROOT / "results.md")
-            if args.stage == "P4":
-                print(DOCS_ROOT / "reproduction.md")
+            print(PROJECT_ROOT / "README.md")
         elif args.action == "plan":
             from usv_uuc_cooperation.experiments.x1_paths import run as run_paths
             folder = run_paths(args.run_id)

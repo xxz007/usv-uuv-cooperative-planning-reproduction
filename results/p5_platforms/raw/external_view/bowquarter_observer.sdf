@@ -1,5 +1,0 @@
-<sdf version="1.9"><model name="p5_observer_bowquarter"><static>true</static>
-<pose>-534.0009956233595 173.99799176502077 4.351410183204813 0 0.29524890366234063 -1.4056476493802699</pose><link name="observer">
-<sensor name="camera" type="camera"><always_on>true</always_on><update_rate>5</update_rate><topic>/p5/external/bowquarter/image</topic>
-<camera><horizontal_fov>1.05</horizontal_fov><image><width>1600</width><height>900</height><format>R8G8B8</format></image>
-<clip><near>0.1</near><far>2000</far></clip></camera></sensor></link></model></sdf>

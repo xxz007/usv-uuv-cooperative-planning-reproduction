@@ -1,0 +1,45 @@
+{
+  "moos": {
+    "completed_tasks": 1,
+    "task_count": 1,
+    "actual": {
+      "completion_time_s": 19.08,
+      "max_cross_track_m": 6.953659999999999,
+      "operating_envelope_violations": 0,
+      "actual_distance_until_completion_m": 33.43870097788565
+    },
+    "ideal_2D": {
+      "completion_time_s": 13.75,
+      "max_cross_track_m": 0.0,
+      "operating_envelope_violations": 0
+    }
+  },
+  "vrx_same_task": {
+    "target_distance_m": 20,
+    "nominal_speed_mps": 1.5,
+    "arrival_radius_m": 2.5,
+    "hold_s": 1,
+    "metrics": [
+      {
+        "system": "VRX",
+        "status": "COMPLETED",
+        "completion_time_s": 15.7,
+        "maximum_cross_track_m": 0.00868237339575284,
+        "boundary_violation_events": 0
+      },
+      {
+        "system": "ideal_2D",
+        "status": "COMPLETED",
+        "completion_time_s": 12.7,
+        "maximum_cross_track_m": 5.46229728115577e-13,
+        "boundary_violation_events": 0
+      }
+    ]
+  },
+  "vrx_original": {
+    "equal_thrust_horizontal_displacement_m": 6.093563239089654,
+    "image_width": 1280,
+    "image_height": 720,
+    "image_encoding": "RGB8"
+  }
+}

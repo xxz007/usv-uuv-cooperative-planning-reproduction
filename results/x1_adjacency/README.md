@@ -1,9 +1,11 @@
-# X1｜四／八邻接融合
+# 四／八邻接的系统效果
 
-同P4动态场景，两组22/22；四邻接150.621588069m／65s，八邻接120.973907199m／54s。分配与顺序也随邻接变化。
+两组均22/22；四邻接150.621588069 m／65 s，八邻接120.973907199 m／54 s。比较包含分配、顺序、动态接手和中继的整体影响。
 
-![对比](figures/comparison.png)
+![指标对比](figures/comparison.png)
 
-[路线叠图](figures/routes.png) · [指标](metrics.json)
+![实际路线](figures/routes.png)
 
-[相关学习笔记](../../docs/learning/01_path_planning.md) · [复现命令](../../README.md#6运行指南) · [结果口径](../../README.md#5复现结果) · [完整旧版归档](../../docs/sources.md)
+[最终指标](metrics.json)
+
+[项目结果总览](../../README.md#5复现结果) · [运行指南](../../README.md#6运行指南)

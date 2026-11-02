@@ -1,0 +1,55 @@
+{
+  "source": "Independent actual Gazebo WAM-V scene rendering; not a task-performance run",
+  "world": "sydney_regatta",
+  "upstream_commit": "7609d1bd90ce7edb29d040a082f949e8b089c864",
+  "views": [
+    {
+      "image": "figures/VRX_external_detail.png",
+      "width": 1600,
+      "height": 900,
+      "simulation_s": 4.8,
+      "world_pose_xyz_rpy": [
+        -521.0009956233595,
+        158.99799176502077,
+        3.2514101832048126,
+        0,
+        0.22420139545144502,
+        2.875340604438868
+      ],
+      "png_sha256": "144bc99fef5c619b7fcdcf3f8c2ec5f1de0e6afbb347e0026d086aeb8c9aad1a",
+      "native_rgb_sha256": "d98e961264f497a2c288428ec967dc50f92cb7a291abb7966db83c40b97217e7"
+    },
+    {
+      "image": "figures/VRX_external_shoreline.png",
+      "width": 1600,
+      "height": 900,
+      "simulation_s": 4.8,
+      "world_pose_xyz_rpy": [
+        -514.0009956233595,
+        155.99799176502077,
+        4.851410183204813,
+        0,
+        0.21784661149668302,
+        2.819842099193151
+      ],
+      "png_sha256": "b04cfa0e8eaf6d1550df311f550182e62125878b4d38d6b22bb4bee4a6d8dd66",
+      "native_rgb_sha256": "750f6754e8c263f4a29f2edd8f0223a06d1fe8134b12ae3c3b91832dcfc7ccf5"
+    },
+    {
+      "image": "figures/VRX_external_bowquarter.png",
+      "width": 1600,
+      "height": 900,
+      "simulation_s": 4.8,
+      "world_pose_xyz_rpy": [
+        -534.0009956233595,
+        173.99799176502077,
+        4.351410183204813,
+        0,
+        0.29524890366234063,
+        -1.4056476493802699
+      ],
+      "png_sha256": "7a61b68003d9a4a3694af479c31f9501733a87932e05251eb845481ba5eabb53",
+      "native_rgb_sha256": "688f5b3c5215342e40a255340fe42deca11dce0c4159965b456e696e720b6619"
+    }
+  ]
+}
