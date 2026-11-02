@@ -13,7 +13,7 @@ def render(run):
     from usv_uuc_cooperation.config import RESULTS_ROOT, FRAMEWORK_VERSION
     assert_frozen_core()
     run = Path(run).resolve()
-    output = RESULTS_ROOT / "P5/P5-V01/showcase" / run.name
+    output = RESULTS_ROOT / "p5_platforms/showcase" / run.name
     output.mkdir(parents=True, exist_ok=False)
     os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "usv-uuv-p5-matplotlib"))
     import matplotlib

@@ -1,9 +1,0 @@
-{
-  "version": "FRAMEWORK-V18",
-  "parent": "FRAMEWORK-V17",
-  "date": "2026-10-30",
-  "scope": "Normalize alog value whitespace once at input boundary and add saved-evidence-only reanalysis; no platform/control/config change",
-  "source_config_records": 99,
-  "prechange_backup": "课程备份/20261030_P5日志解析修复_V18_更新前",
-  "status": "FROZEN_BEFORE_SAVED_LOG_REANALYSIS"
-}

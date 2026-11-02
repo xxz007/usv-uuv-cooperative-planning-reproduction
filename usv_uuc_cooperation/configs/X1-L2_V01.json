@@ -11,7 +11,7 @@
       "sha256": "af73b24e643c9681a6f1434494df54647d1c0d6167bc70efbfb63533ed3cdf94"
     },
     "l1_paths": {
-      "path": "输出文件/阶段结果/X1/X1-V01/runs/X1-L1_本人V01/路径.json",
+      "path": "data/inputs/x1_paths.json",
       "sha256": "eaef4804df6fefa5bfa25e01b0d8ae7386363f7bbb84a88147fbde3ea1be2377"
     }
   },

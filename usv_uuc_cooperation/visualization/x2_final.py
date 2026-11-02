@@ -23,7 +23,7 @@ def load_groups():
     groups, provenance, metrics = {}, [], []
     common, observed = None, None
     for algorithm, label, run_id in SOURCES:
-        run = RESULTS_ROOT / 'X2/X2-V01/runs' / run_id
+        run = RESULTS_ROOT / 'x2_algorithms/runs' / run_id
         verify_manifest(run)
         result_path = run / algorithm / '结果.json'
         result = read_json(result_path)
@@ -134,7 +134,7 @@ def render(name):
     assert_frozen_core()
     if not re.fullmatch(r'[\w\-]+', name): raise ValueError('Use one unique showcase name')
     groups, provenance, metrics = load_groups()
-    output = RESULTS_ROOT / 'X2/X2-V01/showcase' / name
+    output = RESULTS_ROOT / 'x2_algorithms/showcase' / name
     output.mkdir(parents=True, exist_ok=False)
     data_figure(metrics, output / '算法效果_数据对比.png')
     ledger = animation(groups, output)

@@ -144,7 +144,7 @@ def draw_frame(fig, result, index, blocked):
 def render_pair(run_folder):
     run_folder = Path(run_folder).resolve()
     verify_manifest(run_folder)
-    destination = RESULTS_ROOT / "P4/P4-V01/showcase"
+    destination = RESULTS_ROOT / "p4_dynamic/showcase"
     destination.mkdir(parents=True, exist_ok=False)
     reps = destination / "代表帧"
     reps.mkdir()

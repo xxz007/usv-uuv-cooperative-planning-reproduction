@@ -13,7 +13,7 @@ P5 已在 AutoDL Ubuntu 24.04.1 x86_64 完成；也可自行准备兼容 Linux �
 | GPU／渲染 | RTX 2080 Ti 11GB、NVIDIA 595.71.05、OGRE2 实测 OpenGL 4.5 |
 | VRX pin | `7609d1bd90ce7edb29d040a082f949e8b089c864` |
 
-[完整包版本](vrx_runtime_versions.json) · [渲染记录](../输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/renderer.json) · [源码身份](../输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_source_identity_accelerated_V02.json) · [构建记录](../输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_build_result_V01.json)
+[完整包版本](../data/provenance/vrx/runtime_versions.json) · [渲染记录](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/renderer.json) · [源码身份](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_source_identity_accelerated_V02.json) · [构建记录](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/vrx_build_result_V01.json)
 
 这些是原运行身份，不保证所有机器数值或文件字节相同。CUDA 可见不等于 EGL／相机渲染可用。原例使用原生 Pose_V 的 name／id，ROS 用于时钟、推力和图像；对照使用原生真值 Odometry。
 
@@ -56,7 +56,7 @@ export GZ_FUEL_CACHE_PATH="$P5_CACHE"
 
 ## 13 个 Fuel 模型及实际版本
 
-缓存共 13 模型、117 文件、约 162 MB；[独立资产清单](../输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/fuel_cache_identity_V04.json)保存文件 SHA／字节数。所有者均为 openrobotics。Git pin 不冻结 Fuel 资产；目录版本是本次实际解析值，Sydney3／chair3 另有官方响应版本和 archive SHA。
+缓存共 13 模型、117 文件、约 162 MB；[独立资产清单](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/fuel_cache_identity_V04.json)保存文件 SHA／字节数。所有者均为 openrobotics。Git pin 不冻结 Fuel 资产；目录版本是本次实际解析值，Sydney3／chair3 另有官方响应版本和 archive SHA。
 
 | 模型 | 版本 | 模型 | 版本 |
 |---|---:|---|---:|
@@ -116,7 +116,7 @@ done
 核对保存的 117 文件身份；不一致应另存新环境记录，不改旧清单。所有直接及二级资源齐全后才运行：
 
 ```bash
-/usr/bin/python3 - "$P5_REPO/输出文件/阶段结果/P5/P5-V01/vrx_runs/P5_pair_teacher_V01/environment/fuel_cache_identity_V04.json" "$P5_CACHE" <<'PY'
+/usr/bin/python3 - "$P5_REPO/data/provenance/vrx/fuel_cache_identity.json" "$P5_CACHE" <<'PY'
 import hashlib, json, sys
 from pathlib import Path
 expected, cache = json.loads(Path(sys.argv[1]).read_text()), Path(sys.argv[2])
@@ -142,7 +142,7 @@ xacro -o "$P5_URDF" \
 cp "$P5_REPO/usv_uuc_cooperation/experiments/p5_vrx.py" "$P5_TOOLS/"
 cp "$P5_REPO/usv_uuc_cooperation/experiments/p5_vrx_platform.py" "$P5_TOOLS/"
 cp "$P5_REPO/usv_uuc_cooperation/configs/P5-VRX-V01.json" "$P5_TOOLS/"
-cp "$P5_REPO/课时资料/P5/源码/VRX_官方原例记录器_V02.py" "$P5_TOOLS/"
+cp "$P5_REPO/tools/platforms/VRX_官方原例记录器_V02.py" "$P5_TOOLS/"
 ```
 
 使用新的 URDF 文件，完全展开后再传给启动器。关闭 VRX 传感器组合会同时移除 CPU 盒等质量，不是本次对照配置。原例不传派生 URDF，仍使用官方默认船体；对照传 GT 文件。[上游模型生成链](https://github.com/osrf/vrx/blob/7609d1bd90ce7edb29d040a082f949e8b089c864/vrx_gz/src/vrx_gz/model.py)
@@ -156,9 +156,9 @@ cp "$P5_REPO/课时资料/P5/源码/VRX_官方原例记录器_V02.py" "$P5_TOOLS
   --mode all --role learner --run-id replay_p5_all_01 \
   --out-root "$P5_ROOT/runs" --vrx-workspace "$P5_WS" \
   --fuel-cache "$P5_CACHE" --tools-dir "$P5_TOOLS" \
-  --urdf "$P5_URDF" --framework-version FRAMEWORK-V20
+  --urdf "$P5_URDF" --framework-version FRAMEWORK-V21
 ```
 
 先看 `$P5_ROOT/runs/replay_p5_all_01/summary.json`，再看各自 `original/observations/摘要.md`、`pair/observations/摘要.md`。可单选 `--mode original` 或 `pair`。子运行独立 ROS 域／Gazebo partition，保留 100 墙秒真实反馈就绪窗；原例还须实收 Image。未就绪不启动任务，原例失败则 all 停止；只回收本次拥有的进程组。保存实际 Git pin／修改、工具／URDF SHA 和清理记录，上游 pin 不符或有受跟踪修改会阻止运行。
 
-原例为 3 模拟秒零推力＋8 秒左右各 100 N；对照冻结实测起点前方 20 m、标称 1.5 m/s、半径 2.5 m、保持 1 s、预算 90 模拟秒。角色只是运行来源，不自动形成本人理解或 P5 验收。[最终证据及边界](p5_platform.md)
+原例为 3 模拟秒零推力＋8 秒左右各 100 N；对照冻结实测起点前方 20 m、标称 1.5 m/s、半径 2.5 m、保持 1 s、预算 90 模拟秒。角色只是运行来源，不自动形成本人理解或 P5 验收。[最终证据及边界](platforms.md)

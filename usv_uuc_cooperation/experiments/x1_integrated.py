@@ -66,7 +66,7 @@ def run_pair(run_id):
     from usv_uuc_cooperation.metrics.x1_integrated_check import check_initial, check_result, check_pair
     assert_frozen_core()
     config = load_config()
-    interpreter = PROJECT_ROOT / '课时资料/P4/P4-L4/.venv/bin/python'
+    interpreter = PROJECT_ROOT / '.venv-solver/bin/python'
     if not interpreter.is_file():
         raise FileNotFoundError(interpreter)
     folder = new_run_directory('X1', run_id)

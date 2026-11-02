@@ -421,10 +421,10 @@
     },
     "initial_assignment_policy": "Reuse frozen accepted X1-L4 eight-neighbor initial assignment and queues; no new solve",
     "source_sha256": {
-      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/初始问题.json": "c76a74b5d9a104e50f51535d0d7f62c0b5a62f023fb982b307be6c9f31496266",
-      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/初始分配.json": "b7c08930ffeb45e5dba7bbd8857b99fbc8a5c0968007892ce8a72044034445ac",
-      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/增量核查.json": "6e0517f83f4f5b4c3dded942f1695406a3543f3baec50df38e4a8eb8306af67d",
-      "输出文件/阶段结果/X1/X1-V01/runs/X1-L4_本人V01/邻接8/结果.json": "e213da4f1e8a88e936f7dbfdf0858421a1c37304722282e1df2e2c04a26d5df5"
+      "data/inputs/x1_eight_neighbor/初始问题.json": "c76a74b5d9a104e50f51535d0d7f62c0b5a62f023fb982b307be6c9f31496266",
+      "data/inputs/x1_eight_neighbor/初始分配.json": "b7c08930ffeb45e5dba7bbd8857b99fbc8a5c0968007892ce8a72044034445ac",
+      "data/inputs/x1_eight_neighbor/增量核查.json": "6e0517f83f4f5b4c3dded942f1695406a3543f3baec50df38e4a8eb8306af67d",
+      "data/inputs/x1_eight_neighbor/结果.json": "e213da4f1e8a88e936f7dbfdf0858421a1c37304722282e1df2e2c04a26d5df5"
     },
     "map_update_policy": "Observe before planning/movement at event time; only current blocked cells reach planner. Graph versions 0,1,2; no future events or flows in planning input.",
     "map_update_geometry": "Closed 1m temporary forbidden square, positive geometric edges unchanged; t6 block then t18 clear (12,3).",
