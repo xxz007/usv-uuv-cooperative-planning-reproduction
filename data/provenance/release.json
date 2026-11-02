@@ -11,8 +11,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 15517,
-      "sha256": "4d92d90f0b6cda926764ada6de1735e247db8a99ab6ccdafc92e8ae1b1d37f8a"
+      "bytes": 15481,
+      "sha256": "d903af90c2e932895a6d650897ff91072528388a54c1268f51b9699f529393f1"
     },
     {
       "path": "data/inputs/p2_case.json",
@@ -121,8 +121,8 @@
     },
     {
       "path": "docs/sources.md",
-      "bytes": 3189,
-      "sha256": "c46ef1e606cae749f95f6a2274f65a49d635a3f52b073f75ad31011a27462fc4"
+      "bytes": 3188,
+      "sha256": "5880b2f37b5a03b8a91ef72a6d8af28e11f2792b4410caf8ac5e29f918690a55"
     },
     {
       "path": "docs/vrx_environment.md",

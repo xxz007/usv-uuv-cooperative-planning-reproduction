@@ -192,7 +192,7 @@ MOOS、VRX 原例和 VRX 配对分别运行，0 次坐标包络事件不代表�
 在终端执行：
 
 ```bash
-git clone --branch preview/learning-layout-v1 https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction.git
+git clone https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction.git
 cd usv-uuv-cooperative-planning-reproduction
 python3.13 -m venv .venv
 .venv/bin/python -m pip install -r requirements/core.txt
