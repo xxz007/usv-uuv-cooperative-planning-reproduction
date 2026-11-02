@@ -11,8 +11,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 18050,
-      "sha256": "2d3ccfb4862df2cd62daa1edaef6a66950750c7e668f657d7bb7dedab1364866"
+      "bytes": 15517,
+      "sha256": "4d92d90f0b6cda926764ada6de1735e247db8a99ab6ccdafc92e8ae1b1d37f8a"
     },
     {
       "path": "data/inputs/p2_case.json",
@@ -81,13 +81,13 @@
     },
     {
       "path": "docs/learning/01_path_planning.md",
-      "bytes": 2390,
-      "sha256": "4069584a4f6ba1d98e967e33683c05362ca2705af214b30067f1d22adf385d37"
+      "bytes": 2401,
+      "sha256": "4b877a04fe9f8fa8f6e0ecf6bc2c9e5108875992b4512d491db5c1c3552b7e2e"
     },
     {
       "path": "docs/learning/02_task_allocation.md",
-      "bytes": 2570,
-      "sha256": "18e05b4b4d0c0338991ad1bb5c0d3478b9f84ab9eff38ac70a99f2a3ba358106"
+      "bytes": 2592,
+      "sha256": "919dd45e99cac933f51210ef25ca5031af8b2112c33241fd7648166d5f1787f7"
     },
     {
       "path": "docs/learning/03_cooperative_execution.md",
@@ -96,38 +96,23 @@
     },
     {
       "path": "docs/learning/04_dynamic_replanning.md",
-      "bytes": 2774,
-      "sha256": "870f41201061a2dba4993c0a65bb8554a3f7476b6f055aa147a4a917675f1bcd"
+      "bytes": 2801,
+      "sha256": "76950a19a7b632d308bdff22a198bf43766991fed6ec391f8143bfddb41d5c3f"
     },
     {
       "path": "docs/learning/05_algorithm_comparison.md",
-      "bytes": 3121,
-      "sha256": "5c88bf24dd8a108b58391ae19cc0981e4b56473884fe2f186f48ebda89fe4b96"
+      "bytes": 3143,
+      "sha256": "906fd257bb0cc8b19792a584103f374d5a577050901307228b3ae9e7e56c06e9"
     },
     {
       "path": "docs/learning/06_moos_vrx.md",
-      "bytes": 2924,
-      "sha256": "da2c8098d2b59adf76ef41129131650ff937db33756741543f5493ce55e21e27"
-    },
-    {
-      "path": "docs/learning/README.md",
-      "bytes": 2532,
-      "sha256": "35b25b22f76e6148e36bdf292b040aca96408a03bfdff1c02f768e4e1ccbead7"
+      "bytes": 2935,
+      "sha256": "741ecde4ddfd39ecc7625837162c8a4402f0ee200bde3fa76d909db367903b34"
     },
     {
       "path": "docs/platforms.md",
       "bytes": 2456,
       "sha256": "17280d63ced594821853ad94a51ec8be924c33c2e7c7dad3ae04fccecff8355c"
-    },
-    {
-      "path": "docs/reproduction.md",
-      "bytes": 4472,
-      "sha256": "8d8d306b2a1a165b2715bcd685ab68766a0dfebeb243e7a99ff7ce5261f774be"
-    },
-    {
-      "path": "docs/results.md",
-      "bytes": 2324,
-      "sha256": "b3a998c599daed150ac3432ea2b677926026ecc2a02e898375145cc86346dea2"
     },
     {
       "path": "docs/scope.md",
@@ -136,8 +121,8 @@
     },
     {
       "path": "docs/sources.md",
-      "bytes": 3118,
-      "sha256": "c7abb1b23dd60861d8dcb4421dac638952396b75ede2b334382ccd1e61d1dfdf"
+      "bytes": 3189,
+      "sha256": "c46ef1e606cae749f95f6a2274f65a49d635a3f52b073f75ad31011a27462fc4"
     },
     {
       "path": "docs/vrx_environment.md",
@@ -161,8 +146,8 @@
     },
     {
       "path": "results/p1_pathfinding/README.md",
-      "bytes": 353,
-      "sha256": "d9ed629718117adb04285d8c32caacdcb28008e7c3e2f9bf3ae75573d743fdf9"
+      "bytes": 364,
+      "sha256": "66e00b7d9626a10333b16b0586c47eb31a835049091aa72052f46a6daba6e9e5"
     },
     {
       "path": "results/p1_pathfinding/figures/astar_cases.png",
@@ -171,8 +156,8 @@
     },
     {
       "path": "results/p2_assignment/README.md",
-      "bytes": 388,
-      "sha256": "72aafa93b8b283627472ea42f4007167820d1e14320befc81f4a3941c7aacbe1"
+      "bytes": 399,
+      "sha256": "97e65ed7abce9089c8e35fbedff91c14f17c135a972ae3855cedcd3fc9913796"
     },
     {
       "path": "results/p2_assignment/figures/routes.png",
@@ -181,8 +166,8 @@
     },
     {
       "path": "results/p3_baseline/README.md",
-      "bytes": 606,
-      "sha256": "6564f60cb852d3dbe970078e4e23b15bc25415139604de92b0f220d9e1586414"
+      "bytes": 617,
+      "sha256": "764ec920457f25cf3fe2dfecb20def4deed5c6c2816cce191e64f2edbef6875d"
     },
     {
       "path": "results/p3_baseline/figures/restricted.gif",
@@ -256,8 +241,8 @@
     },
     {
       "path": "results/p4_dynamic/README.md",
-      "bytes": 530,
-      "sha256": "08be8eb35325a3e2ed94ca240297e2f9e4281cc65fd8cea4c9ad0e7cd96f05b9"
+      "bytes": 541,
+      "sha256": "2ce866b886e0203ce85f055d8e711aab4037adb1c440dc54ab4996b27d8cf6ef"
     },
     {
       "path": "results/p4_dynamic/figures/dynamic_replan_t65.png",
@@ -276,8 +261,8 @@
     },
     {
       "path": "results/p5_platforms/README.md",
-      "bytes": 2763,
-      "sha256": "d82b7fef7de2e0945ec33530f293543be9812d6e6a2dd913d6be143ea3126f46"
+      "bytes": 2774,
+      "sha256": "4e3e77db317e593cd659f5c75e0f87d33d00a19a42d29c6c13b3edb877dc2c56"
     },
     {
       "path": "results/p5_platforms/figures/2D_VRX_same_task.png",
@@ -521,8 +506,8 @@
     },
     {
       "path": "results/p6_reproduction/README.md",
-      "bytes": 963,
-      "sha256": "33704e9e4bb85230452ab10cefcaf89d1e44bbaf3eeb592a33e1c504607f9ffb"
+      "bytes": 974,
+      "sha256": "7b3135c78dcb8739671b92b840d0f302c9cd5c2296d3900bdcb1949eb09fc865"
     },
     {
       "path": "results/p6_reproduction/validation.json",
@@ -531,8 +516,8 @@
     },
     {
       "path": "results/x1_adjacency/README.md",
-      "bytes": 459,
-      "sha256": "50caa3d82f9cc2a43904e0642d7649eab80707b0518d3bfbe2e2a0a46fe4db67"
+      "bytes": 470,
+      "sha256": "49dacce40b2a85ae9c1bf3686b924e4bdac4dcc9e6e09a7a879eb99f7127779b"
     },
     {
       "path": "results/x1_adjacency/figures/comparison.png",
@@ -551,8 +536,8 @@
     },
     {
       "path": "results/x2_algorithms/README.md",
-      "bytes": 973,
-      "sha256": "b2c9085dfac3cc9c0e036961665b851d0bbe4b75353ca70656480a056600244e"
+      "bytes": 984,
+      "sha256": "9e8086b3761640b394fc0de94c2c24faad6e9b50f791b533d99b7bfa50d52638"
     },
     {
       "path": "results/x2_algorithms/figures/comparison.png",
@@ -631,8 +616,8 @@
     },
     {
       "path": "usv_uuc_cooperation/README.md",
-      "bytes": 488,
-      "sha256": "e91843b78e8092b0fc7a12f1086af2050a72884297b1a1129616e2e7e222275c"
+      "bytes": 491,
+      "sha256": "e4f6e5698e84001215e5963208871f723692e3ebf1300feca9d985550d0e787a"
     },
     {
       "path": "usv_uuc_cooperation/__init__.py",

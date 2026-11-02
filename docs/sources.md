@@ -28,4 +28,4 @@ FRAMEWORK-V21是目录预览版；原课程FRAMEWORK-V20和验收原件保留。
 - [原导师要求逐项评估](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/docs/project_assessment.md)
 - [一页候选研究问题卡](https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction/blob/6b2c7b2476f63fb07875afecf2bdc6bd6fadf934/docs/research_question.md)
 
-本次通过独立预览分支试做，main和完整历史保持。以后采用精简布局时，可将完整材料另作版本附件；当前不重写Git历史。
+仓库现已公开，当前精简布局仍在 `preview/learning-layout-v1`，main和完整历史保持。重复的学习总览、结果汇总与运行说明已合入主README；原文件可从此前提交恢复，不重写Git历史。

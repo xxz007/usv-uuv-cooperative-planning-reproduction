@@ -8,7 +8,7 @@
 
 当前精选包仅保留A*／Dijkstra的完整结果、查询与观测图，足以独立核查；六组完整动画在下方直接展示；其余四算法历史全日志保留于作者本地，当前精选包不包含。
 
-[相关学习笔记](../../docs/learning/05_algorithm_comparison.md) · [复现命令](../../docs/reproduction.md) · [结果口径](../../docs/results.md) · [完整旧版归档](../../docs/sources.md)
+[相关学习笔记](../../docs/learning/05_algorithm_comparison.md) · [复现命令](../../README.md#6运行指南) · [结果口径](../../README.md#5复现结果) · [完整旧版归档](../../docs/sources.md)
 
 ## 六算法同帧回放
 

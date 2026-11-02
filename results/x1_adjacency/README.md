@@ -6,4 +6,4 @@
 
 [路线叠图](figures/routes.png) · [指标](metrics.json)
 
-[相关学习笔记](../../docs/learning/01_path_planning.md) · [复现命令](../../docs/reproduction.md) · [结果口径](../../docs/results.md) · [完整旧版归档](../../docs/sources.md)
+[相关学习笔记](../../docs/learning/01_path_planning.md) · [复现命令](../../README.md#6运行指南) · [结果口径](../../README.md#5复现结果) · [完整旧版归档](../../docs/sources.md)

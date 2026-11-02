@@ -22,7 +22,7 @@ P1保存的小例说明了障碍变化的影响：
 .venv/bin/python -B -m usv_uuc_cooperation.main run --stage P1 --run-id learn_path_01
 ```
 
-摘要位置：`$PWD/results/p1_pathfinding/runs/learn_path_01/摘要.md`。关注`status`、`astar_length`和返回路径；对照[已保存P1结果](../../results/p1_pathfinding/README.md)。运行环境见[复现说明](../reproduction.md)。
+摘要位置：`$PWD/results/p1_pathfinding/runs/learn_path_01/摘要.md`。关注`status`、`astar_length`和返回路径；对照[已保存P1结果](../../results/p1_pathfinding/README.md)。运行环境见[复现说明](../../README.md#6运行指南)。
 
 **从局部路径走向完整执行**
 

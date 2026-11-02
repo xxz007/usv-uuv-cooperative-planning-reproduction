@@ -14,7 +14,7 @@ P5验证两个独立平台入口：MOOS中的单艇任务接口，以及ROS／Ga
 .venv/bin/python -B -m usv_uuc_cooperation.experiments.p5_moos --help
 ```
 
-此命令仅显示帮助，不产生任务结果。实际启动命令、外部依赖和绝对输出位置以[复现说明](../reproduction.md)为准；[P5结果入口](../../results/p5_platforms/README.md)可以直接查看保存数据。
+此命令仅显示帮助，不产生任务结果。实际启动命令、外部依赖和绝对输出位置以[复现说明](../../README.md#6运行指南)为准；[P5结果入口](../../results/p5_platforms/README.md)可以直接查看保存数据。
 
 **VRX：先确认原例，再做同任务对照**
 

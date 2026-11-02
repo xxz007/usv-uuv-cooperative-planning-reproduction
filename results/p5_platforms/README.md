@@ -8,7 +8,7 @@
 
 [MOOS保存结果](raw/moos/result.json) · [VRX配对保存摘要](raw/vrx_pair/summary.json) · [原例位姿](raw/vrx_original/observations/model_pose.csv)
 
-[相关学习笔记](../../docs/learning/06_moos_vrx.md) · [复现命令](../../docs/reproduction.md) · [结果口径](../../docs/results.md) · [完整旧版归档](../../docs/sources.md)
+[相关学习笔记](../../docs/learning/06_moos_vrx.md) · [复现命令](../../README.md#6运行指南) · [结果口径](../../README.md#5复现结果) · [完整旧版归档](../../docs/sources.md)
 
 ## 第三人称外部视角
 

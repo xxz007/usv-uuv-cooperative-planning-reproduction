@@ -24,7 +24,7 @@ STATIC_FROZEN与DYNAMIC_REPLAN共享地图、初始Pyomo解、洋流、任务事
 
 **新运行示例**
 
-按[复现说明](../reproduction.md)建立主环境和`.venv-solver`后，先生成初始解，再执行两策略：
+按[复现说明](../../README.md#6运行指南)建立主环境和`.venv-solver`后，先生成初始解，再执行两策略：
 
 ```bash
 .venv-solver/bin/python -B -m usv_uuc_cooperation.main solve --stage P4 --run-id learn_p4_initial_01
@@ -35,4 +35,4 @@ STATIC_FROZEN与DYNAMIC_REPLAN共享地图、初始Pyomo解、洋流、任务事
 
 本例流场按时间分段、空间均一，等待／服务／故障驻留采用理想补偿。NEU仍按实际对地距离计算；没有据此完成水下六自由度、推进功耗或鲁棒控制研究。较低的失败组NEU与更高的动态组完成量应共同解读。
 
-X1进一步将四／八邻接贯穿分配、访问顺序和执行，结果见[路径规划笔记](01_path_planning.md)与[统一结果表](../results.md)。
+X1进一步将四／八邻接贯穿分配、访问顺序和执行，结果见[路径规划笔记](01_path_planning.md)与[统一结果表](../../README.md#5复现结果)。

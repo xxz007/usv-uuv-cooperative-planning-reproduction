@@ -17,13 +17,13 @@ CE01只改变一个任务位置。保留反例比只展示贪心成功更能说�
 .venv/bin/python -B -m usv_uuc_cooperation.main run --stage P2 --case ALL --run-id learn_assignment_01
 ```
 
-摘要位置：`$PWD/results/p2_assignment/runs/learn_assignment_01/摘要.md`。关注贪心成本、枚举最优值和约束可行性；[P2保存结果](../../results/p2_assignment/README.md)与[复现说明](../reproduction.md)提供入口。
+摘要位置：`$PWD/results/p2_assignment/runs/learn_assignment_01/摘要.md`。关注贪心成本、枚举最优值和约束可行性；[P2保存结果](../../results/p2_assignment/README.md)与[复现说明](../../README.md#6运行指南)提供入口。
 
 **再把路径与求解器接入**
 
 OR-Tools与Pyomo可以表达同类覆盖／容量／可达性约束，但求解状态必须连同问题定义一起解释。`OPTIMAL`仅针对已建模的目标；`INFEASIBLE`与限时未找到解的`UNKNOWN`不能混用。
 
-P4统一案例对5艇×20任务建立A*起点成本矩阵，Pyomo／HiGHS的初始代理目标为253m。这个数是100项候选成本形成的初始分配目标，不是完整实际航程、团队完成时间或动态联合最优值。求解环境的准备与命令见[复现说明](../reproduction.md)。
+P4统一案例对5艇×20任务建立A*起点成本矩阵，Pyomo／HiGHS的初始代理目标为253m。这个数是100项候选成本形成的初始分配目标，不是完整实际航程、团队完成时间或动态联合最优值。求解环境的准备与命令见[复现说明](../../README.md#6运行指南)。
 
 本项目当前没有把距离、物理能耗、通信中断和任务优先级做成完整联合优化目标；任务释放时刻和执行截止也不等同于求解模型中的任务时间窗。
 

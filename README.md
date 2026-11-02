@@ -14,64 +14,56 @@
 
 ```text
 usv-uuv-cooperative-planning-reproduction/
-├── README.md                       # 项目总览与运行入口
-├── usv_uuc_cooperation/             # 运行代码；UUC为历史包名
-│   ├── configs/                    # 固定场景与实验参数
-│   ├── env/                        # 地图、障碍、几何通信与流场
-│   ├── planning/                   # 路径搜索与路径连接
-│   ├── scheduling/                 # 任务分配、排序与求解接口
-│   ├── control/                    # 服务、预算、洋流与动态执行
-│   ├── experiments/                # 各类实验和平台入口
-│   ├── metrics/                    # 指标与保存数据独立核查
-│   └── visualization/              # 从运行日志生成图与动画
+├── README.md                 # 项目介绍、学习路线、结果与运行命令
+├── usv_uuc_cooperation/       # 规划、分配、控制、实验与绘图源码
+│   └── configs/              # 固定场景与参数；UUC为历史包名
 ├── docs/
-│   ├── learning/                   # 学习路线和六篇主题笔记
-│   └── assets/                     # README流程图
-├── data/
-│   ├── inputs/                     # 六份必要的固定来源数据
-│   └── provenance/                 # 版本、来源与文件校验
-├── results/                        # 代表图、指标和必要原始数据
-│   ├── p1_pathfinding/             # 地图与A*三场景
-│   ├── p2_assignment/              # 分配与路线案例
-│   ├── p3_baseline/                # 协同执行成功／受限失败
-│   ├── p4_dynamic/                 # 静态归属／动态响应
-│   ├── x1_adjacency/               # 四／八邻接融合比较
-│   ├── x2_algorithms/              # 六种路径方法比较
-│   ├── p5_platforms/               # MOOS／VRX单艇数据
-│   └── p6_reproduction/            # 整合与目录迁移验证
-├── tools/                          # 发布内容与保存数据检查
-└── requirements/                   # 主环境与独立求解环境依赖
+│   ├── learning/             # 六篇主题学习笔记
+│   ├── platforms.md          # MOOS／VRX复核与启动
+│   ├── vrx_environment.md    # Linux平台环境
+│   ├── scope.md              # 模型范围与研究缺项
+│   ├── sources.md            # 来源与历史归档
+│   └── assets/               # 流程框架图
+├── data/                     # 必要输入、来源与版本校验
+├── results/                  # P1～P6、X1／X2的图、指标和精选原始数据
+├── tools/                    # 发布内容与保存数据检查
+└── requirements/             # 主环境与求解环境依赖
 ```
 
-新运行写入对应案例的 `runs/<运行名>/`，图写入 `showcase/`，核查输出写入 `checks/`；这些新生成目录默认不提交。较长动画、旧发布报告和完整本地课堂档案的范围见[来源与归档说明](docs/sources.md)。
+新运行、图像和核查分别写入对应案例的 `runs/`、`showcase/`、`checks/`，默认不提交。旧课堂档案和完整材料保留在[历史归档](docs/sources.md)。
 
 ## 3、学习路线
 
-1. **先理解地图和安全路径。** 把连续场景放到网格中，学习安全缓冲、A*、四／八邻接，以及路径长度与执行时间的区别。[路径规划笔记](docs/learning/01_path_planning.md)
-2. **再理解任务如何分给不同艇。** 从贪心与枚举的小例子出发，接入 OR-Tools／Pyomo，区分分配成本、完整航程和团队完成时间。[任务分配笔记](docs/learning/02_task_allocation.md)
-3. **把计划接成可执行过程。** 加入任务顺序、移动预算、到达、服务和 USV 中继，观察成功与受限失败。[协同执行笔记](docs/learning/03_cooperative_execution.md)
-4. **处理执行中的变化。** 加入洋流、新任务、临时禁行与故障，理解当前状态、服务保护、重新分配和剩余任务接手。[动态重规划笔记](docs/learning/04_dynamic_replanning.md)
-5. **在共同案例中比较方法。** 对照六种路径方案，统一任务、观测事件和统计口径，保留失败与方法边界。[算法比较笔记](docs/learning/05_algorithm_comparison.md)
-6. **检查任务如何进入仿真平台。** 分别核对 MOOS 的任务反馈，以及 VRX 的位姿、推力、相机和二维参考。[平台验证笔记](docs/learning/06_moos_vrx.md)
-7. **整理为别人可以重跑的记录。** 固定输入、依赖和命令，从保存数据复核结果，并保留模型边界。[学习路线总览](docs/learning/README.md) · [复现与迁移验证](results/p6_reproduction/README.md)
+按顺序阅读；每篇都包含对应案例与运行命令。
+
+| 顺序 | 学习内容 | 笔记 |
+|---|---|---|
+| 1 | 网格地图、安全缓冲、A*与四／八邻接 | [路径规划](docs/learning/01_path_planning.md) |
+| 2 | 任务归属、访问顺序与求解器 | [任务分配](docs/learning/02_task_allocation.md) |
+| 3 | 移动、服务、中继与预算约束 | [协同执行](docs/learning/03_cooperative_execution.md) |
+| 4 | 洋流、新任务、临时禁行与故障接手 | [动态重规划](docs/learning/04_dynamic_replanning.md) |
+| 5 | 六种路径方法的公平比较 | [算法对比](docs/learning/05_algorithm_comparison.md) |
+| 6 | 目标下发、实际位姿与完成反馈 | [MOOS与VRX](docs/learning/06_moos_vrx.md) |
+
+先跑P1小例，再看P2反例、P3成功／失败和P4动态案例。平台实验可以先复核保存日志；最后查看[P6复现与迁移验证](results/p6_reproduction/README.md)。
 
 ## 4、实验拆解
 
-| 实验 | 要回答的问题 | 实施与对照 | 主要产出 |
-|---|---|---|---|
-| 地图与路径（P1） | 有障碍时能否找到合法路径，何时应返回不可达？ | 同地图检查基准、增障和不可达三场景 | [三场景路径图](results/p1_pathfinding/README.md) |
-| 分配与排序（P2） | 最近的分配是否也让整条任务路线最好？ | 贪心、枚举、CP-SAT；分列固定起点成本与完整路线 | [小案例与反例](results/p2_assignment/README.md) |
-| 协同基线（P3） | 分配之后，任务能否在服务和预算规则下完成？ | 同一 1＋5＋20 场景，正常预算对照仅 U3 预算受限 | [成功／失败数据及动画](results/p3_baseline/README.md) |
-| 洋流与动态事件（P4） | 新任务或故障出现后，固定归属与动态接手有何差别？ | 同初始分配、流场、事件及预算，只改变事件响应策略 | [静态／动态指标与同帧快照](results/p4_dynamic/README.md) |
-| 规划到系统效果（X1／X2） | 邻接和路径方法的变化会怎样影响完整执行？ | 四／八邻接融合；六种路径方法在共同动态案例中执行 | [X1](results/x1_adjacency/README.md) · [X2](results/x2_algorithms/README.md) |
-| 平台接口（P5） | 下发目标后，能否读回实际位置并正确判断完成或失败？ | 单艇 MOOS 闭环；单 WAM-V 原例与独立理想二维同任务对照 | [平台数据、图像与核查入口](results/p5_platforms/README.md) |
-| 可重复交付（P6） | 换一个代码副本后，能否得到一致的核心结果？ | 固定提交、输入和依赖；核心复跑、保存数据重查与恢复核对 | [整合验证记录](results/p6_reproduction/README.md) |
+| 实验 | 核心问题与对照 | 结果入口 |
+|---|---|---|
+| P1 地图与路径 | 障碍增加后如何绕行？不可达时返回什么？ | [A*三场景](results/p1_pathfinding/README.md) |
+| P2 分配与排序 | 最近分配是否也让完整路线最好？对照贪心、枚举与CP-SAT | [小案例与反例](results/p2_assignment/README.md) |
+| P3 协同基线 | 服务和预算能否满足？正常预算对照仅U3预算受限 | [成功／受限失败](results/p3_baseline/README.md) |
+| P4 动态事件 | 相同初始分配、流场和事件下，固定归属与动态接手有何差别？ | [静态／动态](results/p4_dynamic/README.md) |
+| X1／X2 方法比较 | 邻接和路径方法如何影响完整执行？ | [四／八邻接](results/x1_adjacency/README.md) · [六种方法](results/x2_algorithms/README.md) |
+| P5 平台接口 | 目标发布后能否读回位姿、正确判断完成或失败？ | [MOOS／VRX](results/p5_platforms/README.md) |
+| P6 可重复交付 | 固定输入与依赖，换代码副本后核心结果是否一致？ | [整合验证](results/p6_reproduction/README.md) |
 
-二维动态实验使用 20 个初始任务，t11 新增 2 个任务；X2 还观察 t6 临时禁行、t18 撤销，以及 t24 的 U4 故障。规划使用当前观测与当前执行状态。通信为距离阈值评价，NEU 为几何移动代理；目前的动态分配是集中式事件触发机制。[完整范围与研究缺项](docs/scope.md)
+动态案例含20个初始任务、t11新增2任务；X2另有t6禁行、t18撤销、t24的U4故障。通信为距离阈值评价，NEU为几何移动代理，动态分配为集中式事件触发机制。[模型边界与研究缺项](docs/scope.md)
 
 ## 5、复现结果
 
-下面直接展示各阶段的代表成果。图和动画均来自保存的实际运行；每组先说明看点，再给图或指标，数据链接仅作补充。
+以下直接展示保存运行的图、动画和指标；每组末尾提供原始数据入口。
 
 ### 5.1 地图避障与任务路线：先看计划是否合理
 
@@ -79,7 +71,7 @@ usv-uuv-cooperative-planning-reproduction/
 
 ![A*基准、增障和不可达三场景](results/p1_pathfinding/figures/astar_cases.png)
 
-**两艇多任务路线：**分配任务之后，还要决定访问顺序和连接路径。下图展示两艇四任务的规划路线；固定起点到任务的分配成本与完整路线长度分别计算。
+**两艇四任务：**同时查看任务归属、访问顺序和连接路径；分配成本与完整路线长度分别计算。
 
 ![两艇四任务的A*路线与访问顺序](results/p2_assignment/figures/routes.png)
 
@@ -113,7 +105,7 @@ usv-uuv-cooperative-planning-reproduction/
 <tr><td><img src="results/p4_dynamic/figures/static_frozen_t65.png" alt="P4固定归属t65真实快照" width="480"></td><td><img src="results/p4_dynamic/figures/dynamic_replan_t65.png" alt="P4动态响应t65真实快照" width="480"></td></tr>
 </table>
 
-看点是新任务到达、U4 故障后的任务归属与服务变化；动态组完成了该案例中的全部 22 项任务。图直接取自原 GIF，没有补画或重跑。[事件与指标来源](results/p4_dynamic/README.md)
+图取自原GIF的t65帧，观察新任务和U4故障后的任务归属、服务变化。[事件与指标来源](results/p4_dynamic/README.md)
 
 ### 5.4 四／八邻接：路线改变怎样传到整个执行过程
 
@@ -140,7 +132,7 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 ![六种路径方法的完成数、实际航程和完成时间](results/x2_algorithms/figures/comparison.png)
 
-**下面直接回放六组任务执行。** 六个独立运行按相同模拟时刻并排，观察任务状态、故障接手、移动路线和各组完成进度。
+**六组独立运行同帧回放：**观察任务状态、故障接手、移动路线和完成进度。
 
 ![六种路径方法的同帧任务执行动画](results/x2_algorithms/figures/six_algorithms_execution.gif)
 
@@ -148,7 +140,7 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 ### 5.6 单艇平台：任务下发之后，艇实际怎样运动
 
-**MOOS：从真实 NAV 日志看任务闭环。** 本人任务完成 1/1，耗时 19.08 模拟秒，超时和非法目标未误报完成。下图由本人已保存日志重新绘制，没有启动新模拟；它展示实际转向、航迹与理想二维参考的差异。
+**MOOS任务闭环：**完成1/1，耗时19.08模拟秒，理想二维参考13.75秒；超时和非法目标未误报完成。下图从已保存NAV日志重绘，观察实际转向与航迹。
 
 ![本人MOOS任务的实际NAV航迹与二维参考](results/p5_platforms/figures/MOOS_learner_same_task.png)
 
@@ -162,7 +154,7 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 两条空间路线近乎重合，主要差异体现在时间响应；本次 VRX 最大横向偏差约 0.008682 m。该单次对照反映当前模型与控制设置下的整体差异，不单独证明某项水动力因素的贡献。
 
-**第三人称场景：从艇外看完整 WAM-V 与岸线。** 下面是本次在悉尼水域场景重新取景的 1600×900 实际渲染。相机放在艇外、略高于水面的位置，让双浮筒、设备平台以及岸线同时进入画面。它便于理解仿真载体与环境，任务效果仍结合上面的航迹和时间读数判断。
+**第三人称实景：**悉尼水域中的完整WAM-V、设备平台与岸线，1600×900实际渲染。两个角度帮助理解载体和环境，任务效果结合上方航迹与时间读数判断。
 
 <table>
 <tr><th>侧面近景：艇体与设备平台</th><th>艇首斜侧方：双浮筒与岸边场景</th></tr>
@@ -174,7 +166,7 @@ X1 两组均完成 22/22：四邻接 **150.621588069 m／65 s**，八邻接 **12
 
 两图分别来自独立的展示取景，未发布推进指令；观察相机没有接入规划和控制。[另一构图及相机位姿、图像来源](results/p5_platforms/README.md#第三人称外部视角)。
 
-**相机图像通路：**下面是 VRX 官方原例实收的 1280×720 RGB8 首帧，可看到艇前方水面和浮标。它是艇载相机证据，本次图像没有参与规划与控制。
+**艇载图像通路：**原例实收1280×720 RGB8首帧，图像未参与规划和控制；该原例采样位移为6.093563 m。
 
 <img src="results/p5_platforms/figures/original_first_camera_frame.png" alt="VRX艇载前左相机实收首帧，传感器通路证据" width="800">
 
@@ -197,7 +189,7 @@ MOOS、VRX 原例和 VRX 配对分别运行，0 次坐标包络事件不代表�
 
 流程为：**获取代码 → 安装主环境 → 校验输入与保存结果 → 运行核心对比 → 打开摘要 → 从本次日志绘图。**
 
-在终端执行（私有仓库需要已有访问权限）：
+在终端执行：
 
 ```bash
 git clone --branch preview/learning-layout-v1 https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction.git
@@ -225,12 +217,14 @@ python3.13 -m venv .venv
 | 贪心／枚举分配 | `run --stage P2 --run-id readme_p2_01` |
 | 协同成功／受限失败 | `run --stage P3 --case ALL --run-id readme_p3_01` |
 | 四／八邻接路径 | `plan --case X1-L1 --run-id readme_paths_01` |
+| 原路径执行 | `execute --case X1-L2 --run-id readme_execute_01` |
+| 重新分配 | `assign --case X1-L3 --phase reassign --run-id readme_assign_01` |
 | D* Lite | `compare --case X2-L2 --run-id readme_dstar_lite_01` |
 | 原始 D* | `compare --case X2-Dstar --run-id readme_dstar_01` |
 | 扫描＋A* | `compare --case X2-Scan --run-id readme_scan_01` |
 | PSO | `compare --case X2-PSO --run-id readme_pso_01` |
 
-若运行 P4／X1 的求解与融合实验，另建求解环境：
+P4／X1求解与融合另建求解环境：
 
 ```bash
 python3.13 -m venv .venv-solver
@@ -240,4 +234,6 @@ python3.13 -m venv .venv-solver
 .venv/bin/python -B -m usv_uuc_cooperation.main integrate --case X1-L4 --run-id readme_x1_full_01
 ```
 
-完整输出路径、单算法制图及保存数据范围见[复现说明](docs/reproduction.md)；MOOS／VRX 的离线复核和新平台启动见[平台说明](docs/platforms.md)。当前为私有结构预览分支，源码 FRAMEWORK-V21；原课程与基线提交保持，更多来源见[资料与归档](docs/sources.md)。
+主环境依赖使用已验证的macOS解析记录；其他系统的wheel和字体需另行核对。每次更换运行名，制图读取保存日志。当前精选原始数据支持A*／Dijkstra独立复核；重绘其余方法或六组动画需完整本地日志或先生成新运行。
+
+MOOS／VRX离线复核和新运行见[平台说明](docs/platforms.md)。源码身份为FRAMEWORK-V21，发布文件校验仅证明身份；P6干净副本复跑与本次目录迁移的验证范围见[整合记录](results/p6_reproduction/README.md)。[模型边界](docs/scope.md) · [来源与历史归档](docs/sources.md)

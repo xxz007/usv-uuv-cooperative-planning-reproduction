@@ -34,7 +34,7 @@ X2把六种方法接入同一完整任务环境。比较时先固定地图、输
 .venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-L1 --run-id learn_astar_dijkstra_01
 ```
 
-摘要位置：`$PWD/results/x2_algorithms/runs/learn_astar_dijkstra_01/摘要.md`。完整方法命令与保存数据制图入口见[复现说明](../reproduction.md)，图表与原始指标见[X2结果入口](../../results/x2_algorithms/README.md)。
+摘要位置：`$PWD/results/x2_algorithms/runs/learn_astar_dijkstra_01/摘要.md`。完整方法命令与保存数据制图入口见[复现说明](../../README.md#6运行指南)，图表与原始指标见[X2结果入口](../../results/x2_algorithms/README.md)。
 
 **结果能支持到哪里**
 
@@ -44,4 +44,4 @@ PSO使用8个中间航点、40粒子、最多60轮和固定局部种子。5个�
 
 完整运行中，未选中分配候选query63存在1.757359313m的局部差距，该数不等于实际多走的航程。有限预算未找到路径也不能直接判定几何不可达；失败和保留前缀的语义需要单独核对。
 
-P6曾从真实远端固定提交与新隔离环境复跑A*／Dijkstra，两组确定性数据与原基线一致。这属于工程复现证据，未增加本人课程运行；后续目录迁移验证单独登记在[复现说明](../reproduction.md)。
+P6曾从真实远端固定提交与新隔离环境复跑A*／Dijkstra，两组确定性数据与原基线一致。这属于工程复现证据，未增加本人课程运行；后续目录迁移验证单独登记在[复现说明](../../README.md#6运行指南)。
