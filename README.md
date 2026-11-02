@@ -44,7 +44,7 @@ usv-uuv-cooperative-planning-reproduction/
 └── requirements/                     # Python与独立求解环境依赖
 ```
 
-UUC为历史包名，正式平台称谓为USV／UUV。GitHub保存运行代码、必要输入和最终成果；课堂记录、原始运行日志、过程核查与交付材料在本地保存。新运行的 `runs/`、`showcase/`、`checks/` 默认不提交。
+
 
 ## 3、学习路线
 
