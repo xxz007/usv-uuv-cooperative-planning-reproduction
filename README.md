@@ -181,73 +181,78 @@ MOOS、VRX 原例和 VRX 配对分别运行，0 次坐标包络事件不代表�
 
 ## 6、运行指南
 
-### 6.1 环境
+### 6.1 直接查看已有成果
 
-| 用途 | 本项目已验证的环境／依赖 | 说明 |
-|---|---|---|
-| 二维主实验与绘图 | Python 3.13；NetworkX、NumPy、Matplotlib、Pillow、OR-Tools | 固定直接依赖见 [core.txt](requirements/core.txt)；macOS依赖锁见 [macos-lock.txt](requirements/macos-lock.txt) |
-| Pyomo 初始分配与 X1 完整融合 | 独立 Python 环境；Pyomo、HiGHS | 见 [solver.txt](requirements/solver.txt)，使用 `.venv-solver/` |
-| MOOS 新平台运行 | 外部已编译 MOOS-IvP | 不随本仓库提供二进制，按实际检出位置启动 |
-| VRX 新平台运行 | Ubuntu 24.04、系统 Python 3.12、ROS 2 Jazzy、Gazebo Harmonic | VRX 与 Fuel 身份、环境准备见 [Linux 运行说明](docs/vrx_environment.md) |
+**查看成果无需安装Python，也无需启动仿真。** 第5节已直接展示代表图与动画；下载后也可打开 `results/<案例>/figures/`，包含数值指标的案例另附 `metrics.json`。
 
-二维主实验可在本机完成；新的MOOS／VRX执行使用各自的平台环境。
+- [六种路径方法的图与动画](results/x2_algorithms/README.md) · [最终指标](results/x2_algorithms/metrics.json)
+- [MOOS／VRX仿真图](results/p5_platforms/README.md) · [平台指标](results/p5_platforms/metrics.json)
 
-### 6.2 从获取代码到查看结果
-
-流程为：**获取代码 → 安装环境 → 校验代码与输入 → 运行实验 → 查看摘要与绘图。**
-
-在终端执行：
+若需要下载代码与成果，在终端执行：
 
 ```bash
 git clone https://github.com/xxz007/usv-uuv-cooperative-planning-reproduction.git
 cd usv-uuv-cooperative-planning-reproduction
+```
+
+以下步骤用于**重新运行实验**，均在仓库根目录执行。
+
+### 6.2 准备二维运行环境
+
+二维主实验使用Python 3.13，以及NetworkX、NumPy、Matplotlib、Pillow和OR-Tools。以下为macOS／Linux终端命令：
+
+```bash
 python3.13 -m venv .venv
 .venv/bin/python -m pip install -r requirements/core.txt
 .venv/bin/python -B tools/verify_release.py
-.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-L1 --run-id readme_core_01
-.venv/bin/python -B -m usv_uuc_cooperation.main render --stage X2 --run "$PWD/results/x2_algorithms/runs/readme_core_01" --revision V01
 ```
 
-- **运行摘要**：`results/x2_algorithms/runs/readme_core_01/摘要.md`。
-- **本次图像**：`results/x2_algorithms/showcase/readme_core_01/V01/`。
-- **关注读数**：两组均应为 **22/22 任务、122.598182196 m、54 s**。搜索计时随机器和运行变化，图像字体也可能不同。
-- **重复尝试**：更换 `--run-id`；旧结果不覆盖。制图读取保存日志，不再启动模拟。
+最后一条命令检查当前发布文件及源码／输入身份，成功时输出 `release PASS`，不会启动模拟。[直接依赖](requirements/core.txt) · [macOS依赖锁](requirements/macos-lock.txt)
 
-### 6.3 运行其他实验
+### 6.3 重新运行二维主案例
 
-主环境命令前缀均为 `.venv/bin/python -B -m usv_uuc_cooperation.main`。
+下面运行同一动态案例下的A*／Dijkstra对照，再从本次日志生成图像：
 
-| 实验 | 在命令前缀后添加的参数 |
+```bash
+.venv/bin/python -B -m usv_uuc_cooperation.main compare --case X2-L1 --run-id demo_core_01
+.venv/bin/python -B -m usv_uuc_cooperation.main render --stage X2 --run "$PWD/results/x2_algorithms/runs/demo_core_01" --revision V01
+```
+
+| 本次生成内容 | 位置 |
 |---|---|
-| 地图三场景 | `run --stage P1 --run-id readme_p1_01` |
-| 贪心／枚举分配 | `run --stage P2 --run-id readme_p2_01` |
-| 协同成功／受限失败 | `run --stage P3 --case ALL --run-id readme_p3_01` |
-| 四／八邻接路径 | `plan --case X1-L1 --run-id readme_paths_01` |
-| 原路径执行 | `execute --case X1-L2 --run-id readme_execute_01` |
-| 重新分配 | `assign --case X1-L3 --phase reassign --run-id readme_assign_01` |
-| D* Lite | `compare --case X2-L2 --run-id readme_dstar_lite_01` |
-| 原始 D* | `compare --case X2-Dstar --run-id readme_dstar_01` |
-| 扫描＋A* | `compare --case X2-Scan --run-id readme_scan_01` |
-| PSO | `compare --case X2-PSO --run-id readme_pso_01` |
+| 运行摘要 | `results/x2_algorithms/runs/demo_core_01/摘要.md` |
+| 运行日志 | `results/x2_algorithms/runs/demo_core_01/` |
+| 图像与来源说明 | `results/x2_algorithms/showcase/demo_core_01/V01/` |
 
-P4／X1求解与融合另建求解环境：
+两组参考读数均为 **22/22任务、122.598182196 m、54 s**。搜索计时会随机器变化。
+
+`runs/` 和 `showcase/` 在运行后才生成，默认只保存在本地；它们不是已上传成果图的存放位置。再次尝试时更换 `--run-id`，制图重复尝试时更换 `--revision`，避免覆盖已有输出。
+
+其他实验入口可通过下列命令查看：
+
+```bash
+.venv/bin/python -B -m usv_uuc_cooperation.main --help
+.venv/bin/python -B -m usv_uuc_cooperation.main list
+```
+
+### 6.4 可选：求解器与仿真平台
+
+**P4／X1完整融合**需要独立的Pyomo／HiGHS环境。仅在运行这些实验时安装：
 
 ```bash
 python3.13 -m venv .venv-solver
 .venv-solver/bin/python -m pip install -r requirements/solver.txt
-.venv-solver/bin/python -B -m usv_uuc_cooperation.main solve --stage P4 --run-id readme_initial_01
-.venv/bin/python -B -m usv_uuc_cooperation.main run --stage P4 --case ALL --run-id readme_dynamic_01 --initial-result "$PWD/results/p4_dynamic/runs/readme_initial_01/初始分配.json"
-.venv/bin/python -B -m usv_uuc_cooperation.main integrate --case X1-L4 --run-id readme_x1_full_01
+.venv-solver/bin/python -B -m usv_uuc_cooperation.main solve --stage P4 --run-id demo_initial_01
+.venv/bin/python -B -m usv_uuc_cooperation.main run --stage P4 --case ALL --run-id demo_dynamic_01 --initial-result "$PWD/results/p4_dynamic/runs/demo_initial_01/初始分配.json"
+.venv/bin/python -B -m usv_uuc_cooperation.main integrate --case X1-L4 --run-id demo_x1_full_01
 ```
 
-每次更换运行名；重新制图前先生成相应实验日志。仓库保留最终成果与指标，原始完整运行日志和过程记录保存在本地。`tools/verify_release.py`只检查当前发布文件及源码／输入身份。
+P4摘要位于 `results/p4_dynamic/runs/demo_dynamic_01/摘要.md`；X1摘要位于 `results/x1_adjacency/runs/demo_x1_full_01/摘要.md`。[求解环境依赖](requirements/solver.txt)
 
-### 6.4 平台运行
-
-MOOS需先在仓库外编译MOOS-IvP，替换下方绝对路径后执行：
+**MOOS**需在仓库外编译MOOS-IvP，替换下方绝对路径后运行：
 
 ```bash
 .venv/bin/python -B -m usv_uuc_cooperation.experiments.p5_moos --run-id moos_new_01 --moos-root /path/to/moos-ivp --role learner
 ```
 
-VRX环境准备、固定源码和完整运行命令见[Linux／VRX运行指南](docs/vrx_environment.md)。第三方软件与大型模型由使用者另行安装，不随本仓库上传。
+**VRX**使用Ubuntu 24.04、系统Python 3.12、ROS 2 Jazzy和Gazebo Harmonic；环境准备与运行命令见[Linux／VRX运行指南](docs/vrx_environment.md)。第三方软件和大型模型由使用者另行安装。
